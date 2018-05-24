@@ -1,0 +1,183 @@
+一、marquee标签
+跑马灯效果（大屏滚动）
+<marquee behavior="scroll/alternate/slide" direction="right/left/up/down" width="" height=""
+	scrollamount="30px" scrolldelay="100ms">
+		今天是个好日子
+</marquee>
+
+
+scroll:循环滚动(一直都是向同一个方向滚动,从右往左)（默认）
+slide:触到边缘停止
+alternate：来回滚动（从右往左到边缘自动反弹，再从左往右）
+
+scrollamount:移动距离。值越大，移动越快
+scrolldelay:下一次移动延迟时间。值越大，移动越慢
+
+二、table标签
+<table border="1" bordercolor="red" width="400" height="200" cellspacing="0" cellpadding="20">
+	<!--border:单元格边框粗细 1：边框粗1像素 bordercolor:边框颜色 width/height:对表格宽高进行修改 
+	cellspacing:单元格外间距（即单元格与单元格之间的间距） cellpadding:单元格内间距（即文字与边框之间的距离）  -->
+	<caption value="">表名</caption>
+	<!-- table表格中，标题标签：<caption></caption> -->
+	<tbody>
+		<!-- <tbody></tbody>与 <thead></thead> 与<tfoot></tfoot>都可以用来将表格划分为几个区域-->
+	<tr>
+		<td rowspan="2">1-1</td>
+		<!-- rowspan:行合并，删除被合并的单元格 -->
+		<td>1-2</td>
+		<td>1-3</td>
+		<td>1-4</td>
+	</tr>
+	<tr>
+		
+		<td>2-2</td>
+		<td>2-3</td>
+		<td>2-4</td>
+	</tr>
+	</tbody>
+
+	<tbody>
+	<tr>
+		<td>3-1</td>
+		<td>3-2</td>
+		<td colspan="2">3-3</td>
+		<!-- colspan:列合并，删除被合并的单元格 -->
+	</tr>
+	<tr>
+		<td width="10">4-1</td>
+		<!-- 要修改某行的宽度，只需修改该行第一个单元格宽度即可 -->
+		<td>4-2</td>
+		<td>4-3</td>
+		<td>4-4</td>
+	</tr>
+	</tbody>
+
+
+	
+</table>
+
+
+
+		
+	<th></th>:文字加粗，水平居中
+	注意：合并行或者合并列时要删除合并掉的行或者列
+	补充标签：
+	<thead></thead>
+	<tbody></tbody>
+	<tfoot></tfoot>
+	用来将表格划分为几个区域
+	
+	<h1></h1>与<caption></caption>的区别：
+	区别在于,一个是规范标题,一个是样式类似
+	table表格的caption的作用是表格标题 --- 这是的XHTML中的规范;
+	而你用h标签仅仅可以达到类似的效果..
+	还是那句老话，就是规范。
+	H一般用文章标题较多，caption一般来说就是使用表格上面的表格标题。
+
+
+
+
+
+三、form表单
+	功能：收集信息
+	登录页面、注册页面
+	<form action="提交的页面地址">收集的信息</form>
+	后台是通过提交的内容的value值来辨别信息的，所有在编写代码时，每个内容都要加value。
+
+form属性：
+	<from action="index.php" method="get/post" enctype="multipart/form-data"></from>
+		action：提交的后台页面地址（对数据存储等操作）
+		
+		method="get|post"
+			  get:  ?传参，也叫做url地址栏传参，不安全，且传递的数据有限
+			  post: 隐藏传参，安全，传递的数据大小可以自己设置
+
+		enctype="multipart/form-data"  (编码格式，有文件/图片上传时必须加)
+		      作用：在后台页面可接收到文件/图片的类型、大小、名字、临时存储位置等全部信息
+
+		name="login" 表单名（假设是登录表）
+			  
+
+
+<from action="">
+			
+		用户名：<input type="text" name="uname" value="默认值" maxlength="限制输入的最大字符个数" disabled="disabled">（单行文本框）
+						*disabled="disabled"  不可再进行修改
+
+		密码：<input type="password" name="upass">
+
+
+		性别：<input type="radio" value="boy" name="sex" checked="checked">男                     
+		性别：<input type="radio" value="girl" name="sex">女
+		性别：<input type="radio" value="noboynogirl" name="sex">人妖
+		<!-- 单选按钮 -->
+
+		爱好：<input type="checkbox" value="0" name="like">吃饭
+			  <input type="checkbox" value="1" name="like">玩
+			  <input type="checkbox" value="2" name="like">睡觉
+
+		<!-- 多选框 -->
+		<!-- 一组单选按钮和一组多选按钮，value和name必须要加，且赋值。name相同 -->
+		
+
+		籍贯：<select name="province" id="">
+				<!--类似于无序列表始于 <ul> 标签,每个列表项始于 <li>。-->
+				<!--下拉列表使用<select>标签，每个下拉列表项始于<option>标签。 -->
+					<option value="0" selected="selected">江苏省</option>
+					<option value="0">安徽省</option>
+					<option value="0">浙江省</option>
+
+		     </select>
+
+			<select name="city" id="">
+				<optgroup>
+					<option value="0">合肥市</option>
+					<option value="0">宿州市</option>
+				</optgroup>
+
+				<optgroup>
+					<option value="0">南京市</option>
+					<option value="0">无锡市</option>
+				</optgroup>	
+				
+				<optgroup>
+					<option value="0">杭州市</option>
+					<option value="0">宁波市</option>				
+				</optgroup>
+			</select>
+			<!-- 下拉列表 -->
+
+
+
+		头像：<input type="file" name="head_pic" multiple>
+				<!-- multiple:允许多文件上传 -->
+
+		
+
+		自我评价：<textarea name="intro" id="" cols="30" rows="10" style="resize:none">默认文字</textarea>
+
+		<!-- 默认值：写在双标记之间
+			 不允许重置大小：style="resize:none"-->
+
+ 
+		隐藏域：<input type="hidden" name="url" value="想要隐藏的内容">
+
+
+
+		<!-- 提交按钮 -->
+		<input type="submit">
+		<input type="image" src="图片地址" width="修改图片大小">
+		<button>提交</button>
+
+
+		<!-- 重置按钮 -->
+		<input type="reset">
+		
+		
+		<!-- 普通按钮 -->
+		<input type="button" value="删除" onclick="alert=('确定删除？')">
+
+
+
+
+		</from>

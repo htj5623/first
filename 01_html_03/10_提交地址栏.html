@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form action="index.php" method="get" enctype="martipart/form-data">
+		用户名：<input type="text" value="apple" name="uname" maxlength="10"><br><br>
+		密码：<input type="password" value="123456" name="upass"><br><br>
+		性别：<input type="radio" value="boy" name="sex">男
+			  <input type="radio" value="girl" name="sex">女
+			  <input type="radio" value="noboynogirl" name="sex">人妖<br><br>
+
+		爱好：<input type="checkbox" value="0" name="like">听音乐
+			  <input type="checkbox" value="1" name="like">上网
+			  <input type="checkbox" value="2" name="like">看书<br><br>
+
+		<input type="submit">
+		<br><br>
+
+		<!--点击提交，出现的提交的页面地址
+		file:///E:/web1706/%E7%AC%AC%E4%B8%80%E9%98%B6%E6%AE%B5/01_html_03/index.php?uname=apple&upass=123456&sex=girl&like=0&like=1&like=2
+		不安全，提交的内容全部显示在地址栏中了，因此要修改method属性的值，默认是get
+		!-->
+
+	</form>
+	<br><br><br><br><br>
+
+
+	<form action="index.php" method="post" enctype="multipart/form-data">
+		用户名：<input type="text" value="apple" name="uname" maxlength="10"><br><br>
+		密码：<input type="password" value="123456" name="upass"><br><br>
+		性别：<input type="radio" value="boy" name="sex">男
+			  <input type="radio" value="girl" name="sex">女
+			  <input type="radio" value="noboynogirl" name="sex">人妖<br><br>
+
+		爱好：<input type="checkbox" value="0" name="like">听音乐
+			  <input type="checkbox" value="1" name="like">上网
+			  <input type="checkbox" value="2" name="like">看书<br><br>
+
+		<input type="submit">
+
+		<!--点击提交，出现的提交的页面地址
+		file:///E:/web1706/%E7%AC%AC%E4%B8%80%E9%98%B6%E6%AE%B5/01_html_03/index.php
+		安全，提交的内容不显示在地址栏中!-->
+
+
+
+	<!-- enctype="multipart/form-data"
+	上传图片或文件时，必须有属性enctype="multipart/form-data"(编码格式)  
+	通过这种编码格式，获得该文件或图片的所有信息；不加的话，只能接收到文件名。大小、类型、文字、临时存储位置等无法接收到，可用来限制“允许超过的最大图片不超过4M”，“只允许上传……格式的文件”等 
+	-->
+
+
+		
+
+
+
+	</form>
+
+
+
+
+
+
+
+
+
+</body>
+</html>

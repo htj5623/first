@@ -1,0 +1,39 @@
+html页面框架可以分为内框架和外框架
+外框架：多个独立的页面，组合成一个整体页面
+ 
+框架页面：使用框架页面，先把框架页面中的body删除
+
+<frameset  cols/rows=" " frameborder=" ">
+	<frame  src=" " noresize="noresize">
+	<frame  src=" " noresize="noresize">
+	<frame  src=" " noresize="noresize">
+	.....
+</frameset>
+
+frameset：框架（外框架），把该页面分割成若干个小区域
+
+cols:页面左右分割
+Rows：页面上下分割
+frameborder：骨架显示/隐藏
+
+<frame src="">:该区域引入页面
+src：引入页面的路径
+
+noresize： 固定相邻2个区域的骨架
+
+如果页面分割完成后，对某一区域再进行分割，那么把该区域所对应的frame删除，改成frameSet标签
+
+
+
+内框架：一个整体页面中的某一块区域，独立出来，放另外的单独一个页面
+		在本页面里链接一个新页面
+<iframe width=""  height=""  src="" frameborder="" name=""></iframe>
+Width:内框架宽度
+height:内框架高度
+src：要放入网页的路径
+Frameborder：边框
+name：起名字
+
+
+iframe 用于在网页内显示网页。
+

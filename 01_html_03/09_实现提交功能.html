@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form action="index.php" enctype="multipart/form-data">
+		用户名：<input type="text" value="apple" name="uname" maxlength="10"><br><br>
+		密码：<input type="password" value="123456" name="upass"><br><br>
+		性别：<input type="radio" value="boy" name="sex">男
+			  <input type="radio" value="girl" name="sex">女
+			  <input type="radio" value="noboynogirl" name="sex">人妖<br><br>
+
+		爱好：<input type="checkbox" value="0" name="like">听音乐
+			  <input type="checkbox" value="1" name="like">上网
+			  <input type="checkbox" value="2" name="like">看书<br><br>
+
+		籍贯：<select name="province" id="">
+					<option value="0">安徽省</option>
+					<option value="1">江苏省</option>
+					<option value="2">浙江省</option>
+
+			 </select>
+
+			 <select name="city" id="">
+					<option value="0">合肥市</option>
+					<option value="1">宿州市</option>
+					<option value="2">南京市</option>
+					<option value="3">无锡市</option>
+					<option value="4">杭州市</option>
+					<option value="5">宁波市</option>
+
+			</select>
+			<br><br><br>
+		上传：<input type="file" name="head_pic" ><br><br>
+
+		自我评价：<textarea name="intro" id="" cols="30" rows="10">本人性格活泼开朗</textarea><br><br>
+
+		<input type="submit"><br><br><br>
+
+	</form>
+
+
+</body>
+</html>
+
+
+<!-- 点击提交，提交到index.php页面,以下是提交到的网址 
+  file:///E:/web1706/%E7%AC%AC%E4%B8%80%E9%98%B6%E6%AE%B5/01_html_03/ 
+  index.php?uname=apple&upass=123456&sex=girl&like=0&province=0&city=0&head_pic=1.jpg&intro=%E6%9C%AC%E4%BA%BA%E6%80%A7%E6%A0%BC%E6%B4%BB%E6%B3%BC%E5%BC%80%E6%9C%97  
+
+所以为了保密，应该在form里添加
+	<form action='index.php' method='post'></form>
+
+-->

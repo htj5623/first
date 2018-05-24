@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+	<table border="1" width="300" height="300" bordercolor="blue" bgcolor="pink" >
+		<!-- bordre:加边框 1：边框粗细为1像素 -->
+		<!-- 改变表格大小：width=""  height=""  -->
+		<!-- bordercolor:单元格边框线的颜色 -->
+		<!-- bgcolor:单元格背景色 -->
+		<caption>表的标题</caption>
+		<!-- 在table中，表格的标题标签：<caption></caption> -->
+		<tr>
+			<td>1-1</td>
+			<td>1-2</td>
+		</tr>
+		<tr>
+			<td>2-1</td>
+			<td>2-2</td>
+		</tr>
+	</table>
+	<br><br><br>
+
+	<table border="1" width="300" height="300" bordercolor="#DE9937" bgcolor="pink" background="img/00.jpg">
+		<!-- bgcolor:背景颜色 
+			 background:背景图片，后面接上背景图片地址 
+			 bordercolor:边框颜色
+		-->
+		<tr>
+			<td>1-1</td>
+			<td>1-2</td>
+		</tr>
+		<tr>
+			<td>2-1</td>
+			<td>2-2</td>
+		</tr>
+	</table>
+	<br><br><br>
+
+
+	<table border="1" bordercolor="green" width="400" height="400">
+		<tr>
+			<td width="100">1-1</td>
+			<!-- 修改某一列的宽/高度：只需要修改该列第一个单元格的宽/高度 -->
+			<td>2-1</td>
+		</tr>
+		<tr>
+			<td>1-2</td>
+			<td>2-2</td>
+		</tr>
+	</table>
+	<br><br><br>
+
+
+	<table border="1" bordercolor="red" width="300" height="300">
+		<tr>
+			<td width="50" height="50">1-1</td>
+			<!-- 修改某一行的宽/高度：只需要修改该行第一个单元格的宽/高度 -->
+			<td>2-1</td>
+		</tr>
+		<tr>
+			<td>1-2</td>
+			<td>2-2</td>
+		</tr>
+	</table>
+	<br><br><br>
+
+
+	<table border="1" bordercolor="#3CE6C9" width="300" height="300" cellspacing="0">
+	<!-- cellspacing:单元格外边距。即单元格与单元格之间的间距 -->
+		<tr>
+			<td>1-1</td>
+			<td>1-2</td>
+		</tr>
+		<tr>
+			<td>2-1</td>
+			<td>2-2</td>
+		</tr>
+	</table>
+	<br><br><br>
+	
+
+	<table border="1" bordercolor="#F01FE1" width="300" height="300" cellpadding="35">
+		<!-- cellpadding:单元格内边距。即单元格与文字的间距 -->
+		<tr>
+			<td>1-1</td>
+			<td>1-2</td>
+		</tr>
+		<tr>
+			<td>2-1</td>
+			<td>2-2</td>
+		</tr>
+	</table>
+	<br><br><br>
+	
+	<table border="1" width="300" height="300">
+		<tr bgcolor="yellow" background="" align="center" valign="middle">
+		<!-- 行/列的属性：bgcolor:单元格背景颜色  background:单元格背景图片（一般不用） align:水平对齐方式  valign；垂直对齐方式-->
+		<!-- align:right/center/left     valign:top/middle/bottom -->
+		<!-- 行中还可以用<th></th>标签   <th></th>标签：自带加粗和居中对齐（一般用于表格第一行） -->
+			<td>1-1</td>
+			<td>1-2</td>
+		</tr>
+		<tr>
+			<td>2-1</td>
+			<td>2-2</td>
+		</tr>
+	</table>
+	
+
+    </body>
+</html>

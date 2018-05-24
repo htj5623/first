@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <!-- <body>
+    </body> -->
+
+	<frameset rows="160,*,100" frameborder="1" border="2" bordercolor="red">
+		<!-- rows：有几个值，代表页面分成几行。这里把框架分成了两行，一行高度100，一行高度100 ，剩下一行自动匹配-->
+		<!-- *自动匹配 浏览器剩余高度-->
+		<!-- cols：有几个值，代表分成几列 -->
+		<!-- rows和cols不能同时使用 -->
+		<!-- frameborder：边框。(1/yes有边框)(0/no无边框)，默认有边框-->
+		<!-- border="2" 代表边框粗细为2像素 -->
+		<!-- 下面先把框架分为三行，再把第二行分成两列 -->
+		<!-- <frameset></frameset>与<frame>可以嵌套使用 -->
+		<frame src="01_top.html" noresize="noresize" style="background:green">
+		<!-- <frame src="02_bottom.html" noresize>不允许重置边框大小 -->
+		<!-- <frame src="链接页面"> -->
+		<!-- style="background:green"设置背景颜色 -->
+		<frameset cols="160,*">
+			<frame src="03_left.html" noresize>
+			<frame src="04_right.html" noresize>
+		</frameset>
+
+
+		<frame src="03_bottom.html" noresize>
+		<!-- noresize：不重置边框大小 -->
+	</frameset>
+
+</html>

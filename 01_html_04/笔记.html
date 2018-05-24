@@ -1,0 +1,76 @@
+一、框架
+1.页面外框架
+分成三行：
+<!-- 举例：三行：第一行：logo
+				 第二行：左右结构
+				 第三行：版权信息 -->
+
+<frameset rows="100,*,160">
+	<frame src="logo.html">
+	<!-- <frame src="main.html"> -->
+	<frameset cols="140,*">
+		<frame src="left.html">
+		<frame src="right.html" name="right">
+	</frameset>	
+	<frame src="bottom.html">
+-------------------------------------------------	
+在页面left.html中：
+<a href="首页.html" target="right"></a>
+<!-- target=''
+	用来指明页面的显示地址
+如上：首页.html在名称为right的页面显示
+ -->
+----------------------------------------------------
+
+
+
+</frameset> 
+ frameset框架集:划分页面结构
+
+
+ frameset属性：
+ <frameset rows="100,*" frameborder="" border="2" bordercolor="red">
+   </frameset>
+   	 *rows="100,*,300" 行划分，行高100，自动匹配，300
+	  rows和cols不能同时使用，后面接几个值就把页面分成了几个部分
+	  *:匹配浏览器剩余页面大小
+	  frameborder="有无边框"
+	  （0/no:无边框 1/yes：有边框）
+	  border="边框大小" 
+	  bordercolor="边框颜色"
+
+
+<frame src="链接子页面的地址">
+frame框架:链接子页面
+
+
+
+frame属性：
+<frame src="链接的子页面" name="想要在这显示的页面的姓名" bgcolor="背景颜色">
+*noresize="noresize" 不允许重置大小
+*scroll="yes|no|auto" 滚动条：默认有|无|自动
+
+
+
+2.页面内框架
+<iframe src="链接的页面地址" frameborder="0"></iframe>
+
+iframe属性：
+<iframe src="../01_html_03/08_form.html" frameborder="1" width="100%" height="500"
+	style="border:2px solid blue" scrolling="auto"></iframe> 
+
+属性：
+frameborder="0/1/yes/no"  有无边框
+width="边框宽度"
+height="边框高度"
+border="边框大小"
+style="border:2px solid blue" (边框：大小2像素，实线，蓝色)
+style="background:red" 背景颜色
+scrolling="no/yes/auto" 无滚动条/有滚动条/自动(默认)
+
+注意：若给标签添加样式修饰时，发现标签没有该样式，那么就将样式加给style属性;
+	  因为所有的标签都有style属性,是公共属性
+
+
+
+

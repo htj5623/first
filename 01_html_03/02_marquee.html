@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<marquee behavior="" direction="">春夏秋冬</marquee>
+	
+	<marquee behavior="" direction=""><font color="red" size="+2">春夏秋冬</font></marquee>
+	<!-- 默认从右向左滚动 -->
+
+	<marquee behavior="" direction="" width="400" height="400">春夏秋冬</marquee>
+	<!-- 页面没有变化，到elements中查看,宽度和高度已经设置成功 -->
+
+	 <style>marquee{border:1px solid red}</style> 
+	<!-- css结构：border:边框样式 1px:1像素 solid：实线 red:红色 即加了1像素红色的实线边框-->
+
+	<marquee behavior="" direction="right">你好吗</marquee>
+	<!-- direction:字体滚动方向 right/left/up/down-->
+
+	<marquee behavior="slide" direction="right">中国</marquee>
+	<!-- behavior:指字体表现样式 scoll/循环滚动（默认）：一直从右往左
+								alternate:从右向左，在从左向右滚动
+								slide:滚动结束，停止在结束位置 -->
+
+
+	<marquee behavior="alternate" direction="right" scrollamount="40px">我爱中国</marquee>
+	<!-- scollamount:滚动距离 值越大，滚动越快 -->
+	
+	<marquee behavior="slide" direction="left" scrolldelay="100ms">哈哈</marquee>
+	<!-- scolldelay：下一次滚动间隔时间，值越大，滚动越慢 -->
+
+
+
+
+
+
+
+
+
+</body>
+</html>
