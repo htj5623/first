@@ -1,0 +1,123 @@
+笔记：
+一、HTML是什么？
+浏览器解析语言
+定义：超文本标记语言  Hyper Text markup language
+
+1)由固定的标签组成
+2）文档类型：.html
+3)网页的组成元素：文本文字、图片、音频、动态flash效果
+
+
+二、写在哪？
+记事本、Notepad++、DreamWeaver、Hbuilder、sublimeText
+
+
+三、Sublime快捷键
+Ctrl + N                新建
+Ctrl Shift D            复制整行并自动换行
+Ctrl + F     	        查找
+Ctrl Shift F            查找并替换
+Ctrl + Z                返回上一步/多步
+Tab                     向后缩进
+Shift Tab               向前缩进
+html: xt (Tab补全)      得到h4页面快捷键
+!        (Tab补全)      得到h5页面快捷键
+Ctrl + /                注释/取消注释
+Ctrl + D                选中删除
+
+注意：html的注释符号
+
+<!--   被注释掉的内容  !-->
+注意:所有的标点符合尽可能的使用英文状态在的符号
+
+F12                     预览正在建的html网页
+
+
+四、html结构
+类似于www.baidu.com.cn，网址的地址是有一定规则的，html也一样
+遵循W3C标准（万维网联盟）
+
+html：网页语言，由固定标签组成
+xhtml：         由固定的标签组成+可扩展标签组成
+xml:            由扩展标签组成----一般用来存储数据，当做小型数据库使用
+
+
+五、html发展历史
+1993年，html 2.0 
+1995年，html 3.2
+1999年，html 4.0 
+2005年，html 5.0 草案
+2014年，移动端APP的兴起带动了html 5.0+ css 3 的发展
+
+六、h4和h5的区分
+
+
+h4快捷键：html:xt(Tab补全)
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+
+
+
+
+
+
+
+h5快捷键：!(Tab补全)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+
+
+七、标签的书写方式：
+1)双标记标签：<标签名> </标签名>
+2)单标记标签：<标签名> 或者<标签名 />
+
+以上的双标记标签：
+<html></html>
+<body></body>
+<head></head>
+
+单标记标签：
+<meta />
+<link >
+
+
+<link>:链接（可链接文件，也可以链接图片）----所以在使用<link>时，要注意属性的类型是否正确
+
+
+3）标签的语法结构：
+<标签名  属性名="属性值">
+如：<人  姓名="陈赫"  性别="男">
+
+
+这里对于<link rel="stylesheet" href="">
+注意：rel指的是属性，指明链接地址以什么方式进行解析，"stylesheet"是css的属性
+     href指的是链接地址
+
+     如果想要显示logo（图标），那么 <link rel="shortcut icon"  href="">
+                                 shortcut icon 剪切图标，并且显示在标题栏里
+
+
+
+
+链接地址：
+相对路径：从当前文件夹查找，如：<link rel="shortcut icon" href="img/1.icon">
+绝对路径：从盘符下面查找，如：<link rel="shortcut icon" href="E:\web1706\第一阶段\01_html_01\img">
+
+注意：使用相对路径，绝对路径容易造成文件路径出错
