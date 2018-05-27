@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{margin:0;padding:0;}
+		.box{border: 1px solid red;height: 3000px;
+			background: url(images/background.jpg);
+			background-size:100%;
+			background-attachment: fixed;
+		}
+		.box .box1{/* border: 1px solid red; */
+			width: 800px;height: 500px;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 350px;background:#F3F1DA;
+			background-attachment: fixed;}
+		.box .login{color: black;font-size: 32px;color: #F671E5;
+					font-weight:bold;
+					font-style: italic;
+					text-align: center;
+					padding-bottom:20px;}
+		.box .p1{color: black;font-size: 24px;}
+		input[type=text]{border: 1px solid black;width: 300px;height: 30px;}
+		input[name=upass]{border: 1px solid black;width: 300px;height: 30px;}
+		
+		
+		.box a{	/* border: 1px solid blue; */
+				width: 80px;height:40px;
+				display: inline-block;
+				color: black;
+				font-size: 24px;
+				text-decoration: none;
+				background: pink;
+				text-align: center;
+				
+			}
+		a:hover{border: 1px solid red;}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="box1">
+			<legend class="login">注册</legend>
+			<p class="p1">
+			
+			用户名：<input type="text" name="uname"><br><br>
+			昵&nbsp;&nbsp;&nbsp;称：<input type="text" name="nic"><br><br>		
+			密&nbsp;&nbsp;&nbsp;码：<input type="password" name="upass"><br><br>
+			性&nbsp;&nbsp;&nbsp;别：<input type="radio" name="sex" value="1">男
+				                    <input type="radio" name="sex" value="2">女
+				  					<input type="radio" name="sex" value="3">变性人<br><br>
+			爱&nbsp;&nbsp;&nbsp;好：<input type="checkbox" name="like" value="1">玩
+				  					<input type="checkbox" name="like" value="2">上网
+				  					<input type="checkbox" name="like" value="3">打lol 
+				  					<br><br><br>		
+			
+
+			</p>
+
+			
+			
+				<a href="">登录</a>
+				<a href="">取消</a>
+			
+
+		</div>
+		
+	</div>
+</body>
+</html>

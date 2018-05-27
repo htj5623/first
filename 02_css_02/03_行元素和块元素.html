@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+		font,b,a{border:solid 1px red;}
+
+		/* b标签设置宽高，换行(等同于块元素) */
+		b{width: 160px;height: 40px;display: block;}
+
+		/* b标签设置宽高，不换行 */
+		b{width: 160px;height: 40px;display: inline-block;}
+		
+
+		h1,p,ul,ol{border:solid 1px green;width: 800px;height: 40px;}
+		/* ul和ol是因为padding-left:; */
+		
+		/* h1改成行元素 */
+		h1{display: inline;}
+
+		p{display: none;}
+
+        </style>
+    </head>
+    <body>
+    	<!-- 行元素 -->
+    	<font>首页</font>
+    	<b>公司简介</b>
+    	<a href="#">友情链接</a>
+		
+		<!-- 块元素 -->
+		<h1>旅游线路</h1>
+		<p>出国旅游攻略</p>
+		<ul>
+			<li>你好</li>
+			<li>你好</li>
+		</ul>
+		<ol>
+			<li>中国</li>
+			<li>中国</li>
+		</ol>
+		
+
+    </body>
+</html>

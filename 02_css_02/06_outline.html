@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		input[name=uname]{color:#aaa;
+			border:1px solid red;
+			/* outline:2px solid orange; */
+			outline: none;}
+			/* online:是鼠标放入输入框时，出现的蓝色边框 */
+		
+		
+
+		/* 鼠标点击进去 背景变成浅黄色 */
+		/* 获取焦点： */
+		input:focus{background: #E6F2B6}
+
+	/* 	a{  border:3px solid red;
+			outline:2px solid blue; */
+			/* outline-offset:-5px;/* 偏移值：2px/-4px*/ /* */
+
+		/* 	} */
+	
+		a{
+			/* border:1px solid red; */
+			width:100px;height:40px;
+			display: inline-block;
+			color:black;
+			background: pink;
+			text-decoration: none;
+			text-align: center;
+			line-height: 40px;
+
+		}
+		/* 鼠标经过a标签，出现边框效果 */
+		/* a:hover{border:1px solid red;} */
+
+		a:hover{outline:1px solid red;}
+		/* 比较分别加上边框border和Outline的区别 */
+		/* border；占位置  outline:不占; */
+	</style>
+</head>
+<body>
+	<input type="text" name="uname" value="邮箱/手机/用户名"><br><br>
+	<input type="password" name="upass"><br>
+	<p>
+		<a href="#">登录</a><a href="#">登录</a>
+	</p>	
+	
+</body>
+</html>

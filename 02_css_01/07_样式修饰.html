@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+            .p1{border:1px solid #2AE4F7;
+                font-size: 24px;
+                color: #2B37F5;
+                text-indent: 30px;
+                height:60px;
+                line-height:60px
+            }
+            .ul_1{border:1px solid #556EF0;padding-left: 0; list-style:inside none;line-height: 36px; }
+            /* padding: 去掉ul左边距 */
+        	.p1,.ul_1{width:300px;}
+            .ul_1 li{border-bottom:1px dashed #ccc;}
+
+            /* 先给1-10添加相同样式，之后在给1-4添加样式 */
+            .ul_1 li font{background: #D3D1D1;color:#598DEF;
+
+                        /* 这里是修饰font标签来改变数字前面的方框大小 */
+                        width:18px ;
+                        height:16px;
+                        text-align: center;
+                        line-height: 16px;
+
+                        /* 加上display属性转换font标签 */
+                       /*  inline-block:font拥有宽和高 */ 
+                        display: inline-block; /* 显示方式*/ 
+                        
+            } 
+
+
+			.ul_1 li font.f_1{background: orange;color:white;} /* 交集选择器 */
+            
+        </style>
+    </head>
+    <body>
+    	<!--要求:p:文字大小：24px 颜色：深蓝色  距离左侧30px 垂直居中 -->
+    	<!-- ul:没有列表符号 行高:36px  前四个序号：橘色背景 白色文字 后6个序号：浅灰色背景 浅蓝色文字 -->
+        <!-- li：虚线下边框 -->
+    	<p class="p1">新闻点击排行榜</p>
+    	<ul class="ul_1">
+    		<li><font class="f_1">1</font>紧急通知</li>
+    		<li><font class="f_1">2</font>“三八节”女性旅游享半价优惠</li>
+    		<li><font class="f_1">3</font>暂停旅游社业务公告</li>
+    		<li><font class="f_1">4</font>九华山门票恢复全价</li>
+    		<li><font>5</font>“三八”节短线游走俏</li>
+    		<li><font>6</font>4月初去动物园看羊驼</li>
+    		<li><font>7</font>安徽省旅游指委召开会议号召</li>
+    		<li><font>8</font>武汉、芜湖旅行商旅线团云集岳西</li>
+    		<li><font>9</font>2011年全省旅游工作会</li>
+    		<li><font>10</font>全椒神山国际生态精品农业</li>
+    	</ul>
+    </body>
+</html>

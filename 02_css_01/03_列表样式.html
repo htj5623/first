@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+			ul{
+				border:1px solid red;
+				width: 600px;
+				/* height: 200px; 边框高  */
+
+				list-style-type: circle; 
+				/*  列表符号类型加给li标签也可以 */
+				/* 通过这个属性可以将无序列表变有序，也可以有序变无序 */
+
+				list-style-type: upper-roman;
+				 /* 无序列表转有序列表，通过list-style-type转
+ */
+				list-style-position:inside; 
+				/* 参照物：li标签 */
+				/* inside; 列表符号在li标签边框内部 */
+				/* outside; 列表符号在li标签边框内部 */
+
+				list-style-image: url(../02_css_01/img/ic6.gif);
+				/* 链接图片作为列表符号 */
+				/* CSS里链接图片，都要通过url()来链接 */
+				/* url()括号里引号可加可不加，视情况决定 */
+				/* 当url()地址中也有引号时，加引号 */
+				
+
+				
+				/* 合并写： */
+				list-style: circle inside;
+				list-style: url(../02_css_01/img/ic6.gif) inside;
+				
+			}
+
+
+			li{
+				border:1px solid lightgreen;
+				h eight:36px;
+				line-height: 36px;
+			}
+        </style>
+    </head>
+    <body>
+		<ul>
+			<li>我们都是好孩子</li>
+			<li>我们都是好孩子</li>
+			<li>我们都是好孩子</li>
+			<li>我们都是好孩子</li>
+		</ul>
+
+		<ul>
+			<li>开心快乐每一天</li>
+			<li>开心快乐每一天</li>
+			<li>开心快乐每一天</li>
+			<li>开心快乐每一天</li>
+		</ul>
+
+
+
+    </body>
+</html>

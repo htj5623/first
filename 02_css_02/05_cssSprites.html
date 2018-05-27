@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.logo_box{border: 1px solid red;}
+		.logo_box a{width: 100px;height: 100px;border:1px solid blue;display: inline-block;
+			background-image:url(img/login_small.svg);
+			
+			}
+		.logo_box qq{background-position: -80px 0;}
+		.logo_box douban{background-position: -160px 0;}
+		.logo_box renren{background-position: -240px 0;}
+		.logo_box weixin{background-position:-320px 0;}
+		/* 第一个是水平方向位移，第二个是垂直方向的位移 */
+
+		/* 鼠标经过新浪，qq,豆瓣，人人，微信，图片变成第二行的样式 */
+		.logo_box .sina:hover{background-position: 0 -80px}
+		.logo_box .qq:hover{background-position: -80px -80px}
+		.logo_box .douban:hover{background-position: -160px -80px}
+		.logo_box .renren:hover{background-position: -240px -80px}
+		.logo_box .weixin:hover{background-position: -320px -80px}
+	
+
+
+
+	</style>
+</head>
+<body>
+	<p class="logo_box">
+		<a href="#" class="sina"></a>
+		<a href="#" class="qq"></a>
+		<a href="#" class="douban"></a>
+		<a href="#" class="renren"></a>
+		<a href="#" class="weixin"></a>
+
+
+
+	</p>
+</body>
+</html>

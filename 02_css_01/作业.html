@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+			.list{border:1px solid #bbb;
+				width: 220px;
+				list-style:none;
+				/* padding-left: 0; */
+                text-align:center;
+				
+            /* 黑白灰：#000 #111 #222 ……#999 #aaa #bbb …… #fff */
+                background: #efeefe;
+			}
+            
+            .list li{border:1px solid #bbb;
+                line-height: 36px;
+                background-repeat: no-repeat;
+                background-position: 40px center;
+            }
+
+             /* 对链接颜色的修饰，必须指到标签a */
+            .list a{color:#333;text-decoration: none;}
+
+            .li_1{background-color: #bbb;}
+            .li_2{background: url(img/ic4.gif);}
+            .li_3{background: url(img/ic1.gif);}
+            .li_4{background: url(img/ic2.gif);}
+            .li_5{background: url(img/ic3.gif);}
+            .li_6{background: url(img/ic5.gif);}
+            .li_7{background: url(img/ic6.gif);}
+        
+            
+
+            /* 鼠标经过每行（li标签） 背景图pain右移 文字变红色 */
+			.list li:hover{background-position: 50px center;}
+            .list li:hover a{color: red;}
+        
+
+        </style>
+    </head>
+    <body>
+    	<!--li下加类，类名相同： ul>li.li_1*7>a[href=#] -->
+    	<!--li下加id，id名相同： ul>li#li_1>a[href=#] -->
+    	<!--li下加类，且类的名字按顺序增大：ul>li.li_$*7>a[href=#] -->
+    	<ul class="list">
+    		<li class="li_1">纵向菜单</a></li>
+    		<li class="li_2"><a href="#">新闻</a></li>
+    		<li class="li_3"><a href="#">电影</a></li>
+    		<li class="li_4"><a href="#">足球</a></li>
+    		<li class="li_5"><a href="#">休闲</a></li>
+    		<li class="li_6"><a href="#">旅游</a></li>
+    		<li class="li_7"><a href="#">家居</a></li>
+    	</ul>
+
+    </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+
+        
+        <style>
+        /* 可通过父级选择器找到li_1对li进行修饰 */
+			.list_1 .li_1{text-decoration: underline;}
+			/* 交集选择器 （用得少） */
+			.list_1 li.li_1{text-decoration: underline;}
+			
+
+        </style>
+    </head>
+    <body>
+    	<ul class="list_1">
+    		<li class="li_1">开心快乐每一天</li>
+    		<li>开心快乐每一天</li>
+    		<li>开心快乐每一天</li>
+    		<li>开心快乐每一天</li>
+    	</ul>
+
+    	<ul>
+    		<li>开心快乐每一天</li>
+    		<li>开心快乐每一天</li>
+    		<li>开心快乐每一天</li>
+    		<li>开心快乐每一天</li>
+    	</ul>
+
+    	<ul>
+    		<li>开心快乐每一天</li>
+    		<li>开心快乐每一天</li>
+    		<li>开心快乐每一天</li>
+    		<li>开心快乐每一天</li>
+    	</ul>
+    </body>
+</html>

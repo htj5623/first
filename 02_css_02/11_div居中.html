@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		/* 初始化页面格式 */
+		/* 在以后得过程中，只要是写css样式，再进行样式修饰前要页面初始。 */
+		*{margin:0;padding:0;}
+		/* 让盒子贴齐浏览器 即左右没有间距 */
+
+		.box{
+			border: 1px solid red;
+			height: 100px;
+			/* width:; */
+			/* div是块元素，宽度默认是占满整个父元素(这里父元素是body,也就是浏览器)的宽度*/
+			background: #4953E8;
+
+		}
+
+		.con{height: 60px;
+			border: 1px solid yellow;
+			color: white;
+			width:960px;
+			/* 内容区一般给个宽度，两侧自适应居中 */
+			margin-right: auto;
+			margin-left: auto;
+			/* 盒子居中显示 */
+		}
+
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="con">
+			我是内容区
+		</div>
+
+	</div>
+</body>
+</html>

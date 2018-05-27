@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+        	/* 通配选择器 */
+        	*{border:3px double purple;}
+        	/* 预览浏览器可观察到有的标签没被修改 是因为后期又进行了修改 覆盖了该修饰 */
+			p{
+				width: 700px;
+				height: 100px;	
+			}
+			/* 上面的p{}是标签选择器，对所有的p标签进行修饰， */
+			
+
+			/* 类选择器 */
+			.p1{border:1px solid red;}
+			.p2{border:1px dashed blue;}
+
+			/* id选择器 */
+			#p3{border:10px double orange;}
+
+			/* 属性选择器 多用于表单元素 */
+			p[name=n1]{background:#E8AEAE }
+
+			/* 表单元素 */
+			input[type=text]{border:1px solid red;}
+			input[type=password]{border:1px solid blue;}
+			input[name=uname]{background: #EEEBAE}
+			input[name=nickname]{background: #B2E5F0}
+
+			input[title=btn]{width: 80px;height: 26px;}
+			input[type=submit]{background: #88E29A}
+
+			/* 很多按钮都可以用type=button，所有想改“取消”时，可添加多个属性 */
+			input[type=button]{background: #7FBFE5}
+			input[type=button][title=btn]{background:#FBCAFA}
+			
+
+        </style>
+    </head>
+    
+    <body>
+		<p class="p1" name="n1">1</p>
+		<p class="p2">2</p>
+		<p id="p3" name="n1">3</p>
+		<p class="p1">4</p>
+		<p id="p3">5</p>
+		<br><br><br>
+
+		<form action="">
+			用户名：<input type="text" name="uname"><br>
+			昵称：<input type="text" name="nickname"><br>
+			密码：<input type="password" name="upass"><br>
+			重复密码：<input type="passwoed" name="repass"><br>
+
+			 <!-- 设置登录和取消按钮高度和宽度相同，这里加name不合适。name在提交时会提交地址；而这两个按钮在提交时，不需要提交地址；这里加title属性(公共属性，所有标签都可用) -->
+			<input type="submit" value="登录" title="btn">
+			<input type="button" value="取消" title="btn">
+			<input type="button" value="删除">
+
+
+		</form>
+		
+    </body>
+</html>

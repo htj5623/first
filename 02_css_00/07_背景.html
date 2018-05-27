@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<style>
+	p{
+	width: 500px;
+	height: 500px;
+	border: 2px solid red;
+	background-color: pink;
+	background-image: url(img/bg_01.gif);
+
+	/* background-repeat: no-repeat; */
+	/*repeat|repeat-x|repeat-y|no-repeat
+		背景图的平铺方式： 水平|垂直|不平铺      */
+
+	/* background-position: right bottom; */
+	/*背景图的位置*/
+						/*水平位置  垂直位置*/
+	/*background-position: right bottom; 图片居于右下角
+	 					   left  top;    图片居于左上角
+						   center;       水平,垂直方向均居中*/
+
+	/* background-position: 50px  20px;
+	background-position: -50px -20px; */
+
+	/*合并写*/
+	/* background: lightgreen; */   /*只要背景色 
+	/* background: url("img/bg_01.gif")  no-repeat center bottom; */  /* 只要背景图  */
+	background:lightgreen url(img/bg_01.gif)  no-repeat center bottom;/* 又要背景色 又有背景图（背景图要小于背景色）
+
+
+
+
+	/*修饰文字样式*/
+	font-size:28px ;/*文字大小，可写固定数值*/
+	color: orange; /*文字颜色*/
+	text-align: center;/*文本水平居中*/
+	}
+
+</style>
+
+</head>
+<body>
+	<p>哈哈哈哈哈</p>
+</body>
+</html>

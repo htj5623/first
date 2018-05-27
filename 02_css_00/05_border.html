@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	p{ height: 100px;
+	   width: 200px;
+	  /* border-top-width: 2px;
+	   border-top-color: red;            
+	   border-top-style: solid;*/
+		
+	  /* border-right-width: 5px;
+	   border-right-color: blue;            
+	   border-right-style: solid;*/
+	   
+	   /*合并方式(4个边框属性不同)*/
+	    border-top:2px solid red;
+	    border-right: solid 3px blue;
+		border-bottom:3px solid orange;
+		border-left:3px solid purple;
+		
+		/*(4个边框属性相同)*/
+		border:2px solid red;
+		/*后面样式会覆盖前面的样式*/	
+	}
+	
+
+
+	h1{width:500px;height: 30px;border:2px solid yellow;}
+	.line_2{border:2px dashed blue;}
+				 /*dashed:短虚线*/
+	.line_3{border:2px dotted orange;}
+				 /*dotted:点虚线*/
+	.line_4{border:2px double green;}
+				 /*double:双边框*/
+	.line_5{border:4px groove purple;}
+				 /*groove:凹槽*/
+	.line_6{border:4px ridge  red;}
+				 /*ridge:凸槽*/
+	/*.line_5 和.line_6 了解即可*/
+
+	.line_7{background-color: pink; /*border:0*/;border:none;}
+	/* 不修饰时line_7，但是因为是h1标签,在之前定义过，所以自动拥有边框效果 */
+	/*上面的修饰是给边框加背景色，且去掉边框*/
+	/*border:0 代表边框粗细为0 可去掉边框*/
+	/*bordre:none 代表边框没有样式 也可去掉边框*/
+
+
+
+	</style>
+</head>
+<body>
+	<p></p>
+	<h1></h1>
+	<h1 class="line_2"></h1>
+	<!-- class：类型  所有标签都可用；class="类型名称" -->
+	<p  class="line_2"></p>
+	<h1 class="line_3"></h1>
+	<h1 class="line_4"></h1>
+	<h1 class="line_5"></h1>
+	<h1 class="line_6"></h1>
+	<h1 class="line_7"></h1>
+	
+</body>
+</html>

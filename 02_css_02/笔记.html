@@ -1,0 +1,84 @@
+一、伪选择器二：
+
+	1)找到第一个子级
+		:first-child{}
+
+	2)找到最后一个子级
+		:last-child{}
+
+	3)找到第N个子级
+		:nth-child(5){}
+		<!-- 找到第五个子级 -->
+	4)段落首字符
+		:first-letter{}
+
+	5)段落首行
+		:first-line{}
+
+	6)获取焦点(针对表单控件)
+		:focus{}
+
+
+二、伪元素
+	1)头部添加元素
+		:before{content:"内容文字"/图片}
+	2)尾部添加元素
+		:after{content:"内容文字"/图片}
+
+		图片：:before{content:url()}
+
+	特点：类似于font标签,行元素
+		1)宽高是内容决定的
+		2)没有width和height属性
+		3)默认在一行显示，不换行
+
+
+三、CSS样式---display（以什么方式显示）
+	display:block;        块元素：有宽高，且换行
+			inline;		  行元素：无宽高，不换行
+			inline-block; 行内块元素：有宽高，不换行
+			none;		  无：隐藏
+
+	行元素：默认在一行显示
+	<font></font>
+	<a href=""></a>
+	<b></b>
+	<i></i>
+	<u></u>
+	<s></s>
+	:after{}
+	:before{}
+	……
+	块元素：换行
+	<table></table>
+	<ul></ul>
+	<ol></ol>
+	<p></p>
+	h1-h6
+	……
+四、CSS样式-background
+	CSS精灵技术；background-position
+	使用方法:
+		利用一张大图，显示不同位置
+	优点：节省内存
+	使用图片要求：图片大小、类型一致
+
+五、CSS样式-outline(轮廓)
+	outline:2px solid red;
+	outline-offset:2px/-5px;<!-- 偏移值：可以实现内外边框效果-->
+	注意：表单控件默认有outline样式
+	去掉outline样式：input{outline:none;}
+
+
+
+六、CSS样式-background
+	background-attachment:fixed;
+	<!-- 固定背景图一直在浏览器窗口 不会被滚轮拖走 -->
+
+
+
+	background-size:宽 高;
+	background-size:100px 300px;
+	background-size:50% 30%;
+	background-size:100%;<!-- 自动适应标签大小 -->
+

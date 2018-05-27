@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+			.list{border: 1px solid red;
+				width: 160px;
+				line-height: 40px;
+			}
+			/* 笔记1) 2) 3) */
+			/* 修改li标签 */
+			.list li:first-child{background: #EFD5D5}
+			.list li:last-child{background: #86F6F3}
+			.list li:nth-child(3){background: #CAF0D3}
+			.list li:nth-child(5){background: #EFF4C6}
+
+			.p1{width: 600px;border: 1px solid blue;
+				text-indent: 2em;}
+
+
+
+			/* 笔记4) */
+			.p1:first-letter{font-size: 24px;color: purple;}
+			.p1:first-line{text-decoration: underline;font-style: italic;}
+
+
+			.p2{width: 600px;border: 1px solid #B34AF7;}
+			
+			/* 伪元素 */
+			.p2:before{content:"贝多芬";color: red;
+					   border: 1px solid #0EF060;
+					   display: inline-block;/* 必须加display:inline-block; 属性，否则无法修改伪元素的宽和高*/
+					   width: 100px;
+					   height: 30px;
+			}
+			.p2:after{content: url(img/ic1.gif);}
+        </style>
+    </head>
+    <body>
+    	<!-- ul>li{新闻}*6 -->
+    	<ul class="list">
+    		<li>新闻</li>
+    		<li>新闻</li>
+    		<li>新闻</li>
+    		<li>新闻</li>
+    		<li>新闻</li>
+    		<li>新闻</li>
+    	</ul>
+
+    	<p class="p1">我们都是好孩子我们都是好孩子我们都是好孩子我们都是好孩子我们都是好孩子我们都是好孩子我们都是好孩子我们都是好孩子我们都是好孩子我们都是好孩子我们都是好孩子我们都是好孩子我们都是好孩子我们都是好孩子我们都是好孩子我们都是好孩子我们都是好孩子我们都是好孩子我们都是好孩子我们都是好孩子我们都是好孩子我们都是好孩子我们都是好孩子我们都是好孩子我们都是好孩子我们都是好孩子我们都是好孩子我们都是好孩子</p>
+
+    	<p class="p2">
+    	中国人民万岁中国人民万岁中国人民万岁中国人民万岁中国人民万岁中国人民万岁中国人民万岁中国人民万岁中国人民万岁中国人民万岁中国人民万岁中国人民万岁中国人民万岁</p>
+    </body>
+</html>

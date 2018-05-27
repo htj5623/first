@@ -1,0 +1,138 @@
+CSS样式：
+html:基本元素 文字 图片 视频 音频------相机照的素颜照片
+CSS:美图秀秀修过的图片
+
+一、什么是CSS？
+定义：(Cascading Style Sheets):层叠样式表
+主要用来修饰标签元素
+
+二、怎么使用CSS？
+
+1.行内样式:	写在标签里，对标签做修饰                           *    当前标签使用
+<标签名 style=" 样式名：样式值; 样式名:样式值 ">
+
+<body>
+	<p style="border:1px solid red;width:200px"></p>
+</body>
+
+
+2.内联样式：写在当前页面的style标签里                      ***		当前页面使用
+
+<head>
+	<style type="text/css">
+
+		选择器名{样式名:样式值;样式名:样式值……;}
+		p{border:1px solid green;width: 200px}
+
+	</style>
+</head>
+<body>
+	<p>这是一个段落标签，这里将它作为选择器使用</p>
+</body>
+
+
+3.外联样式：写成一个外部CSS文件                              *****	当前项目使用
+
+1).新建一个index.css文件(后缀是.css的文件),在index.css文件里对标签进行修饰(以p标签为例)：
+  p{border:1px solid green;width: 200px}
+
+
+2).然后在主页面使用link链接,链接该文件：
+<head>
+	<link rel="stylesheet" href="index.css">
+</head>
+
+注意：外联样式链接外部css文件时，一定要使用link标签链接。
+
+总结：
+行内样式是在<body></body>中嵌套标签对标签进行修饰
+内联样式和外联样式都是在<head></head>中嵌套标签对标签进行修饰
+
+内联：嵌套<style></style>，写在<style></style>标签中
+外联：嵌套<link rel="stylesheet" href="链接地址">
+
+----------------------------------------------------------------------------
+三、CSS样式-border边框
+*border-width:2px;      边框大小
+*border-color；red|#ff0000|rgb(255,0,0);   边框颜色
+*border-style:solid|dashed|dotted|double|groove|ridge|none;
+			  solid;     实线
+			  dashed;    短虚线
+			  dotted;    点虚线
+			  double;    双边框
+			  groove;    凹槽
+			  ridge;     凸槽
+			  none;      无
+
+
+合并方式：
+border-top|bottom|left|right:2px solid red;
+         上|下|左|右 边框每个方向样式不同时的修饰方法
+border:2px solid red  所有边框样式相同时
+
+
+	例子： 三角形小案例：
+	   <!-- transparent:颜色透明 -->
+	        p{
+				width: 0px;
+				height: 0px;
+				border-top:50px solid red;
+				border-right:50px solid transparent;
+				border-bottom:50px solid transparent;
+				border-left:50px solid transparent;
+
+			}
+			
+border特点：占位置
+border:5px 代表边框在页面占了5像素的位置
+
+四、CSS样式--背景
+    1.背景色
+	占位置
+	<style text="text/css">
+		p{
+			background-color: red;
+		}
+
+
+	</style>
+	
+
+
+
+    2.背景图
+    不占位置
+    <style text="text/css">
+	p{
+		background-image:url('1.jpg');
+		background-repeat:repeat|repeat-x|repeat-y|no-repeat;
+						  repeat:默认水平方向，垂直方向都平铺
+						  repeat-x:水平方向平铺;
+						  repeat-y:垂直方向平铺;
+						  no-repeat:不平铺;
+						  
+		background-position:left|center|right|值    |top|center|bottom|值;/* 背景图片的位置 */
+							   水平方式					垂直方式
+		background-position:center;水平方向，垂直位置均居中
+	}
+	
+
+	合并写法：
+	p{
+		background: pink;
+		background: url("img/1.jpeg") no-repeat center bottom;
+		background: pink url("img/1.jpeg") no-repeat center bottom;
+		
+	}
+
+	</style>
+
+
+	作业：
+	1.框架
+	2.背景图
+	3.歌曲
+	复习：
+	1.html标签
+	2.CSS
+	border,background,font

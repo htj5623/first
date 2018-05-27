@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+			ul{border:1px solid red;}
+
+			/* 1.迭代选择器（父子级） */
+
+            /* 例1.给第一个无序列表的li标签加虚线，*/
+			.list_1 li{border-bottom: 1px dashed #4210F3}
+            /* 通过父子级标签 ，可直接加给父级ul标签 */
+			/*再找到ul下面的li子级标签： 父级类名+空格+子级标签/类名/id名+{} */
+			
+
+			/* 例2.找到b标签 */
+			/* b标签父级是li标签，li标签父级是ul;可跨级直接先找到b */
+			.list_1 b{color: #586BF3}
+
+        </style>
+    </head>
+    <body>
+    	<ul class="list_1">
+    		<li><b>开心快乐每一天</b></li>
+    		<li>开心快乐每一天</li>
+    		<li>开心快乐每一天</li>
+    		<li>开心快乐每一天</li>
+    	</ul>
+
+    	<ul class="list_2">
+    		<li>开心快乐每一天</li>
+    		<li>开心快乐每一天</li>
+    		<li>开心快乐每一天</li>
+    		<li>开心快乐每一天</li>
+    	</ul>
+    </body>
+</html>

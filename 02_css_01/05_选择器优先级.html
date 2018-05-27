@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+           /* 标签选择器 内联样式 */
+			p{width: 500px;height: 100px;
+			  border:4px solid red;}
+
+			/* 类选择器 */
+			.p1{border:4px solid green;}
+
+			/* id选择器 */
+			#p2{border:4px solid orange;}
+
+			/* 属性选择器 */
+			p[name=n1]{border:4px solid black;}
+			
+        </style>
+    </head>
+    <body>
+    	<!-- 行内样式 -->
+    	<p style="border:4px solid blue">
+    	<!-- 行内样式>标签选择器 -->
+
+		<p style="border:4px solid blue" class="p1"></p>
+		<!-- 行内样式>类选择器 -->
+
+		<p style="border:4px solid blue" class="p1" id="p2"></p>
+		<!-- 行内>id -->
+		
+		<p class="p1"></p>
+		<!-- 类选择器>标签选择器 -->
+		<!-- 即行内>类>标签 -->
+
+
+		<p class="p1" id="p2"></p>
+		<!-- id>类 -->
+		<!--综上：行内>id>类>标签 -->
+		
+
+		<p class="p1" id="p2" name="n1"></p>
+		<!-- id>属性 -->
+
+		<p class="p1" name="n1"></p>
+		<!-- 属性>类 -->
+
+
+		<!-- 综上：行内>id>属性>类>标签>通配 -->
+    </body>
+</html>

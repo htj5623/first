@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		p{ /*  width: 100px;
+			height: 100px; */
+			/*可去掉注释看一下*/
+
+			/* width: 50px;
+			height: 50px; */
+			/*可去掉注释看一下*/
+
+			width: 0px;
+			height: 0px;
+			/* background: pink; */
+			/* border-top:50px solid red;
+			border-right:50px solid green;
+			border-bottom:50px solid purple;
+			border-left:50px solid orange; */
+			/*想要得到三角形，不能去边框大小，否则无法形成三角形，这里把颜色改成变成透明的*/
+			border-top:50px solid red;
+			border-right:50px solid transparent;
+			border-bottom:50px solid transparent;
+			border-left:50px solid transparent;
+
+			/*transparent; 透明*/
+
+		}
+
+
+/*上述的操作步骤：
+
+ 第一步：<p></p>
+   第二步：对p标签进行css样式修饰,加相同大小的宽和高;加背景色
+   第三步：因为p标签宽高相同，得到正方形,再给正方形四条边加边框;加的边框大小值相同
+   第四步：得到大点的正方形
+   第五步：该大正方形连接对角线分成了四个三角形,即此时p标签的宽和高设置成0
+   第六步：得到由加的边框组成的正方形，此时分成了4个三角形
+   第七步：只显示一个三角形，隐藏其他三个三角形
+   		一个边框不变
+   		其他三个边框的颜色设置成透明(transparent)
+   第八步：隐藏p标签的背景色
+	
+	代码：
+	p{
+		width:0;
+		height:0;
+		border-top:50px solid red;
+		border-right:50px solid transparent;
+		border-bottom:50px solid transparent;
+		border-left:50px solid transparent;
+	
+	}
+
+
+
+
+
+
+ */
+
+
+
+		 */
+
+	</style>
+</head>
+<body>
+	<p></p>
+</body>
+</html>

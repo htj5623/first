@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box{width: 150px;height: 150px;
+			border: 3px solid red;}
+		.box2{
+			/* 外间距：盒子与盒子之间的距离 */
+		/* 	margin-top: 20px;
+			margin-bottom: 50px;
+			margin-left: 30px;
+			margin-right: 40px;  */
+			/* 右侧没有盒子，看不出来，可在控制台查看
+
+
+			/* 合并写() */
+			/* margin:20px 30px 40px 50px ; */
+				   /* 上    右   下   左(顺时针) */
+
+			/* margin: 20px  30px  40px; */
+			         /* 上   左右   下 */
+
+			/* margin: 20px  30px; */
+				    /* 上下   左右 */
+
+			/* margin: 20px; */
+			  /* 上下左右 */
+			
+
+			/* margin-left: auto;
+			margin-right: auto; */
+			/* 根据浏览器大小自动适应，且在浏览器居中显示 */
+			/* auto: 只能给左右方向 */
+
+			/* margin: 20px auto; */
+			/* 上下：20px   左右：自适应 居中 */
+
+			/* margin: 20px auto 40px; */
+			/* 上：20px 下：40xp   左右：自适应 居中 */
+
+			
+			
+
+			/* 内间距：盒子边框到内容之间的距离 */
+			/* 加内间距就是做边框与内容之间添加内容，所以边框会变大;为了保持之前的内容区不变，必须减去增加的内间距。*/
+			padding-top: 20px;
+			padding-right: 30px;
+			padding-bottom: 40px;
+			padding-left: 50px;
+
+			/* 加内间距后，边框变大。相当于填充一块内容，为了保持之前内容区不变，必须把原来边框的上下左右四个方向(即宽高)减掉相应数值 */
+			
+			/* 用法同于margin */
+			/* 合并写() */
+			/* padding:20px 30px 40px 50px ; */
+				   /* 上    右   下   左(顺时针) */
+
+			/* padding: 20px  30px  40px; */
+			         /* 上   左右   下 */
+
+			/* padding: 20px  30px; */
+				    /* 上下   左右 */
+
+			/* padding: 20px; */
+			  /* 上下左右 */
+
+
+		}
+
+
+		/* 为保持盒子原来大小不变，宽高必须减去内间距增加的数值 */
+		/* .box2{width:70px;height: 90px; } */
+
+
+
+		
+	</style>
+
+</head>
+<body>
+	<div class="box box1"></div>
+	<div class="box box2"></div>
+	<div class="box box3"></div>
+</body>
+</html>

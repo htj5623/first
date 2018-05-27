@@ -1,0 +1,165 @@
+一、target属性
+    target=""
+         _self；自身窗口打开(默认)
+         new/_blank：在新窗口打开
+
+二、CSS样式三----文本
+	文字：
+	*font-size:"10px";                                             字体大小(具体数值)
+	*font-family:"微软雅黑|宋体";                                  字体类型
+	*font-weight:bold|bolder|normal;     						   加粗|加粗|去掉加粗效果
+	*font-style:italic|normal;           						   倾斜|正常
+	*color:red;                                                    字体颜色
+	*text-decoration:underline|overline|line-through|none;         上划线|下划线|删除线|无
+	*text-indent:2em|10px;                                         首行缩进两个字符|具体数值
+	*line-height:30px;                                             行高	单行文本：weight=line-height时，文字垂直居中)
+	*text-align:left|center|right;                                 文本水平对齐方式
+	<!-- 单行文本垂直居中 行高=标签高-->
+
+	*vertical-align: middle;垂直对齐
+	
+	p{
+		height:100px;
+		line-height:100px;
+	}
+
+
+三、CSS样式四---列表修饰
+	ul ol dl
+	*list-style-type:disc|square|cicle|upper-alpha(A); 列表符号类型
+	*list-style-position:inside|outside; 列表符号位置(参照物是li标签)
+	*list-style-image:url(icon_star.gif);列表符号以图片显示
+
+	合并；
+	*list-style；circle inside;
+	*list-style:url(icon_star.gif) inside;
+
+
+四、基本选择器：
+	作用：匹配标签
+
+   0)行内选择器
+   <style>
+   </style>
+   <body>
+   		<p style="border:1px solid red"></p>
+   </body>
+
+   1)标签选择器
+	标签名{样式名:样式值;样式名:样式值;……}
+	如：<style>
+			p{}
+			ul{}
+			……
+		</style>
+		<body>
+			<p></p>
+			<ul></ul>
+			……
+		</body>
+	
+
+
+   2)类选择器
+	可添加给多个标签
+  	如：<style>
+	  		.className{样式名:样式值;样式名:样式值;……}
+	 	</style>
+
+		<body>
+		 	<p class="className"></p>
+		</body>
+
+
+   3)id选择器
+    ***具有唯一性(js)，即只能添加给一个标签。在CSS中是体现不出来的。
+    如：<style>
+			#idNmae{样式名:样式值;样式名:样式值;……}
+	    </style>
+
+	 	<body>
+	 		 <p id="idName"></p>
+	 		 <h1 id="idName"></h1><!-- 在js中有唯一性，在css中不体现 -->
+	 	</body>
+	
+ 
+   4)属性选择器(多用于表单元素中)
+		标签[属性名=属性值]{样式名:样式值;样式名:样式值;……}
+		如：
+		<style>
+			p[name=n1]{background: pink;}
+		</style>
+	
+		<body>
+			<p class="p1" name="n1">1</p>
+		</body>
+
+
+
+   表单：
+		<style>
+			input[type=text]{border:1px solid blue;}
+			input[type=button][title=btn]{background:#FBCAFA}
+		</style>
+
+		<body>
+			用户名：<input type="text" name="uname"><br>
+			<input type="button" value="取消" title="btn">
+			<input type="button" value="删除">
+		</body>
+
+
+   5)通配选择器:能找到所有的标签
+     初始化页面样式
+	<style>
+      *{margin:0;
+		padding:0;}
+ 	</style>
+
+----------------------------------------------------------------------------
+	权重比：
+	行内>id>属性>class>标签>*
+-----------------------------------------------------------------------------
+
+五、复合选择器：
+	1)迭代选择器(父子级)
+
+	父级类名+空格+子级标签/类名/id名+{}
+	<style>
+		.ul_1 li{}
+
+
+	
+	2)并集选择器
+	多个标签拥有相同多个属性时使用
+	选择器1，选择器2，...{}
+	.list_1,list_2,#idname{},p.p1{}
+	
+	3)交集选择器
+	p.p1{}
+	.list_1 li.li_1{}
+	ul#ul_1{}
+
+
+六、伪选择器一
+	<style>
+	1).初始状态
+		选择器:link{}
+				/* :link 可加可不加，效果相同*/
+	2).鼠标经过
+		选择器:hover{}
+	3).鼠标按下未松开
+		选择器:active{}
+	4).鼠标访问过后/* CSS中不建议使用 */
+		选择器:visited{}
+	
+	一般用 选择器:hover{} 
+
+
+</style>
+
+
+作业：
+1.横向导航
+2.纵向导航
+3.复习

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+			.menu{border: 1px solid red;
+                width:180px;
+                line-height: 36px;
+                background:pink;}
+            .menu dt{background:#86F1CF;
+                    text-indent:18px;
+                    border-bottom: 1px dashed blue; 
+                    }
+
+            .menu .dt{border-bottom:none;}
+
+
+            /* 隐藏所有城市 */
+            .menu dd{display: none;}
+
+            /* 鼠标经过省份，对应省份的城市显示(也就是鼠标经过省份时，对应省份的dd标签显示)*/
+            .menu dt:hover+dd{display: block;}
+            /* +:找到dt后面紧跟的dd，不是所有dd */
+        </style>
+    </head>
+    <body>
+    	<dl class="menu">
+    		<dt>江苏省</dt>
+    		<dd>
+    			<ul>
+    				<li>南京</li>
+    				<li>无锡</li>
+    			</ul>
+
+    		</dd>
+
+    		<dt>浙江省</dt>
+    		<dd>
+    			<ul>
+    				<li>杭州</li>
+    				<li>宁波</li>
+    			</ul>
+
+    		</dd>
+    		<dt class="dt">安徽省</dt>
+    		<dd>
+    			<ul>
+    				<li>合肥</li>
+    				<li>马鞍山</li>
+    			</ul>
+
+    		</dd>
+    		
+
+    	
+		</dl>
+    </body>
+</html>
