@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script>
+	for(var i=1;i<=10;i++){
+		if(i==5){
+			break;
+		}
+		// 花括号中只有一句时，可省略花括号
+		document.write(i+"---");
+	}
+	document.write("<hr>");
+
+	
+	for(var i=1;i<=10;i++){
+		if(i==5){
+			continue;
+		}
+		// 花括号中只有一句时，可省略花括号
+		document.write(i+"---");
+	}
+	document.write("<hr>");
+
+	
+	// 1.得到1+2+3...+100的和：第一次超过2000的和
+
+	for(var i=1,sum=0;i<=100;i++){
+		sum +=i;
+		if(sum>=2000){
+			document.write(sum);
+			break;
+		}
+		
+	}
+
+
+
+
+</script>
+</body>
+</html>

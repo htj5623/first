@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<form action="">
+	省：
+	<!-- id和name名称可以相同 -->
+	<select name="pro" id="pro" onchange="changePro()"></select>	
+	市：
+	<select name="city" id="city"></select>
+</form>
+<script>
+	var pro_arr = ['江苏','浙江','安徽'];//省份数组
+			// 下标：0		1		2
+	var city_arr = [
+		['南京','无锡','常州','苏州'],
+		// 0
+		['杭州','嘉兴','宁波'],
+		// 1
+		['合肥','马鞍山','黄山']
+		// 2
+	];//城市数组
+
+	// 操作页面标签元素
+	// 对谁操作，先获取到它,这里先获取到省份的select
+	// 首先：找到页面中省份的select元素
+		// 法1：document.forms[0]["pro"]
+		// 法2：document.getElementById(id)：从当前页面通过元素id名获取该元素
+	var pro_sel = document.getElementById("pro");
+	// js中id具有唯一性
+	// console.log(pro_sel);//<select name="pro" id="pro"></select>	
+	// console.log(pro_sel.name);//pro
+	var city_sel = document.getElementById("city");
+	// console.log(city_sel);//<select name="city" id="city"></select>	
+
+	// pro_sel.title = "这是省份的下拉列表";//鼠标放在省份下拉列表上时，会提示“这是省份的下拉列表”
+	// pro_sel.innerHTML = "<option>请选择</option>";
+		//innerHTML:获取pro_sel标签(省份的select)里的内容,select标签里的内容是option标签
+		//想要追加option选项：给innerHTML赋值，<option></option>标签里直接输入追加的值
+	
+
+
+
+	// 把数组中的元素取出来放在下拉列表框中，使用for或for in循环
+	// 1.显示省份
+	for(key in pro_arr){
+		// var option = "<option value="+key+">"+pro_arr[key]+"</option>";
+		// console.log(option);
+// 取到的省份生成一个option数组，赋值给省份的下拉列表
+		// pro_sel.innerHTML = "<option value="+key+">"+pro_arr[key]+"</option>";		
+			 			//   =：赋值，后面赋值会替换掉之前赋值的元素，最后得到：安徽
+
+		pro_sel.innerHTML += "<option value="+key+">"+pro_arr[key]+"</option>";	
+						//+：相连，追加   //江苏、浙江、安徽
+		console.log(pro_sel.innerHTML);
+	}
+
+
+	// 2.显示城市(第一组)
+	// 一打开页面，不显示所有城市，只显示第一组城市
+	for(key in city_arr[0]){
+	// city_arr[key]取到的城市是一个option数组
+		city_sel.innerHTML += "<option value="+key+">"+city_arr[0][key]+"</option>";
+		console.log(city_sel.innerHTML);
+	}
+
+
+	// 3.省份改变显示对应的城市  省市：下标一致
+	// onchange事件定义:内容发生改变触发的事件
+	function changePro(){
+		
+		// select在js中的属性：selectedIndex：获取当前被选中的option的下标
+		var index = pro_sel.selectedIndex;
+		// console.log(index);//option的下标
+		
+
+
+
+		//pro_sel里所有的option标签:<option value=0>江苏</option>
+		//							<option value=1>安徽</option>
+		//							<option value=2>浙江</option>
+		//以上option标签自动组成了一个数组，数组名为pro_sel.options;
+		
+
+		// 根据option数组的下标pro_sel.options[index]找元素:江苏，安徽，浙江
+		
+		//根据option的下标找到对应的option元素
+		var option = pro_sel.options[index];
+		// console.log(pro_sel.options[index]);
+		    
+		
+
+		// option的属性
+		console.log(option.value);
+		//所以是当前选择的option标签(省份)的下标
+		//value:存储的省份下标，也就数对应的城市的下标
+		
+		// console.log(option.innerHTML);//innerHTML：存储的省份的名称
+
+		
+		// 对应的城市 city_arr[option.value]
+		city_sel.innerHTML = "";//清空城市的选项 --写在遍历城市前，且写在循环外
+		for(key in city_arr[option.value]){
+		city_sel.innerHTML += "<option value="+key+">"+city_arr[option.value][key]+"</option>";
+		
+	}
+
+
+
+	}
+
+
+</script>
+
+
+</body>
+</html>

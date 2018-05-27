@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!-- 意思：文档类型是html -->
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript" src="02_index.js"></script>
+        <style type="text/css">
+            .txt{border:1px solid blue;
+                font-size: 20px;
+                font-style: italic;}
+        </style>
+
+    </head>
+    
+    <body>
+    	<script type="text/javascript">
+    	// 单行注释 ctrl+/
+    	/*  多行注释 ctrl+shift+/  */
+    	/*script标签与style标签相同，可以写在head里，也可以写在body里 */
+
+
+    	/*1.写入页面
+    	       document.write(""/'');  */
+         document.write("今天你快乐吗？");
+         document.write('快乐');
+         document.write("<font color='red'>哈哈</font>");
+
+        /*2.弹框效果
+              window.alert(""/''); 显示在整个浏览器窗口      */
+         window.alert("我们都是好孩子");
+         window.alert('走一走，看一看啊!');
+
+       /* 3.输出显示在控制台console里
+              console.log(""/'');    */  
+        console.log("世界那么大，我想去看看");
+
+        /*4.提示输入框
+              prompt(""/'');           */
+        prompt("How old are you?");
+
+    	</script>
+
+
+        <p onclick="alert('确定删除？')">内容</p>
+    </body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<style>
+			#mess{
+				color:red;display:inline-block;
+				width: 240px;/*border: 1px solid blue;*/
+				margin:20px 0; line-height: 28px;
+			}
+
+		</style>
+	</head>
+	<body>
+	<form action="">
+		用户名:<input type="text" name="uname" id="uname" value="" onblur="checkName()"><br><br>
+		密&nbsp;&nbsp;&nbsp;码:<input type="password" name="upass" id="upass" onblur="checkPass()"><br>
+		<span id="mess"></span>
+		<!-- span标签的内容存储在innerHTML属性里 -->
+	</form>
+	<script>
+	// 失去焦点(onblur="")时验证以下条件,并且提示信息显示在span标签里
+	
+		// 验证用户名
+		// 1.不能为空
+		// 2.不能超过8个字符
+		// 3.不能出现已经注册过的用户名
+			
+		
+		var span_obj = document.getElementById("mess");//公共变量
+		// console.log(span_obj);//找到span标签
+		
+		function checkName(){
+			// console.log("no");//测试obnlur
+			var vip = ['邓超','鹿晗','关晓彤','迪丽热巴'];
+			var uname_input = document.getElementById('uname');
+					//获取用户名输入框
+			console.log(uname_input);//<input type="text" name="uname" id="uname" onblur="checkName()">
+			console.log(uname_input.value);
+			
+			if(uname_input.value == ""){
+				span_obj.innerHTML = "用户名不能为空";
+			}else if(uname_input.value.length >8){
+				span_obj.innerHTML = "用户名不能超过8个字符";
+			}else if(vip.indexOf(uname_input.value) != -1){
+					span_obj.innerHTML = "用户名已被注册，请直接登录";
+			}else{
+				span_obj.innerHTML = "";
+			}
+
+		}
+	
+
+
+
+		// 验证密码
+		// 1.不能为空
+		// 2.长度不能超过10个字符
+		// 3.不能出现特殊符号:@ # $
+			// 分析：要验证的是用户输入的密码(如:123@45#ggjh)(字符串)中是否有非法符号---从字符串中查找
+
+	// 即验证输入的字符串中是否有非法字符
+	
+	// 法1：
+	function checkPass(){
+		// console.log("nono");//测试obnlur
+		var upass_input = document.getElementById("upass");
+		console.log(upass_input);
+		console.log(upass_input.value);
+		// var chars = ['@','#','$'];----------在数组中查找元素
+		// 密码:123@45#ggjh:是字符串,应该是在输入的字符串str中查找非法字符-
+		// 即：
+			// str.indexOf('@') != -1
+			// str.indexOf('#') != -1
+			// str.indexOf('$') != -1
+		
+		//这里输入的字符串：upass_input.value 
+		
+		if(upass_input.value == ""){
+			span_obj.innerHTML = "密码不能为空";
+		}else if(upass_input.value.length > 10){
+			span_obj.innerHTML = "密码长度不能超过10个字符";
+		}else if(upass_input.value.indexOf('@') != -1||
+				 upass_input.value.indexOf('#') != -1||
+				 upass_input.value.indexOf('$') != -1
+		){
+			span_obj.innerHTML = "密码不应包含@,#,$";
+		}else{
+			span_obj.innerHTML = "";
+		}
+	
+	}
+
+
+	// 法2：
+     // 验证输入的字符串里有没有特殊字符	   
+	    /* 
+	     如： var str = "hjhk#kj@787";
+	    思路：挨个取出数组中的元素(特殊字符)和用户输入的字符串做对比，查看用户输入的字符串中是否有特殊字符
+	    	  取数组元素---for循环或for in循环
+  		 */
+  function char_index(str){
+    // var str = "12@1%saa";
+    //最初定义str为常量,但实际用户输入的str是变量,当成参数直接写入function char_index(){}的小括号中
+    var chars = ['@','#','$','%','&','*','~','￥'];//特殊字符数组
+
+    var rs = 0;//存储特殊字符的个数
+    
+    for(key in chars){
+    	// key:数组chars的下标
+    	// chars[key]:取出的数组元素,即特殊字符
+    	if(str.indexOf(chars[key]) != -1){
+    		rs++;
+    	}
+
+    }
+
+    // document.write(rs);--只能在页面输出
+    return rs;
+    	//for循环完了之后，返回rs变量
+    	//即得到rs的数值，也就是特殊字符的个数
+
+}
+
+	// char_index('1231%H*r');
+
+
+
+	// 返回的rs值用变量a来接收,并打印出a
+		
+		// 假设这里用户输入的字符串为123%H*r，那么：调用上面定义的char_index()函数 
+		// char_index('1231%H*r'):返回了一个rs值
+		// 将返回的rs值赋给变量a，那么a就代表特殊字符的个数
+	var a = char_index('1231%H*r');
+	console.log(a);
+	// document.write(a);
+		// return返回值:可在页面返回值,可在控制台返回值
+
+
+	// 判断chars_Index()结果是什么?
+	// 没有特殊字符: return返回的值rs,也是a = 0
+	// 有特殊字符:   return返回的值rs,也是a  >0
+	
+	// if(char_index('1231%H*r') == 0){或
+	if(a == 0){
+		document.write("没有特殊字符");
+	}else{
+		document.write("有特殊字符");
+	}
+	document.write("<hr>");
+
+// ------------------------------------------------------------------------------------------------------
+
+
+  // 补充:找有没有特殊字符的方法:
+  // 法1.下标是否为-1
+  		// 不为-1,有
+  		// 为-1,没有
+  // 法2.特殊字符的个数
+  	// return返回值,用常量接收返回值,判断该常量是否为0
+  		// 值:0--没有特殊字符 
+  		// 值:不为0/大于0--有特殊字符
+
+
+
+	// str.indexOf("被查找的字符")--indexOf()是系统已定义的函数
+		// 该函数也是通过return关键字返回结果
+			// 找到:返回(return)下标
+			// 没找到:返回(return)-1
+	var str = "abhjh";
+	var str_ans = str.indexOf("b");
+	document.write(str_ans);
+	// if(str.indexOf("b") == -1){
+	if(str_ans == -1){
+		// ...
+	}else{
+		// ...
+	}
+
+
+	</script>
+	</body>
+	</html>

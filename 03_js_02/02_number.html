@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+   	<script type="text/javascript">
+	   	var num = 10;
+	   	var num1 = 3.1415926;
+	   	//parseInt(s[, radix]);
+	   	document.write(parseInt(num));//10
+	   	document.write("<br>");
+	   	document.write(parseInt(num1));//3	
+	   	document.write("<br>");
+
+	   	document.write(parseFloat(num));//10
+	   	document.write("<br>");
+	   	document.write(parseFloat(num1));//3.1415926
+	  	document.write("<br>");
+
+	   	var str = "56hfjksdhfg";
+	   	var str1 = "56.4565hfjksdhfg";
+	   	console.log(parseInt(str));//56
+	   	console.log(parseInt(str1));//56
+
+	   	console.log(parseFloat(str1));//56.4565
+
+	   	var str2 = "a45bhnghg";
+	   	console.log(parseInt(str2));//NaN
+	   	//NaN----非数值
+	   	
+
+
+	   	// parseInt(string, radix)  把string当成radix进制数解析成10进制 	
+	   	// 只有字符串中的第一个数字会被返回。
+	   	//  radix : 2~36之间 或者为0
+		   	//  如果省略该参数或其值为 0，则数字转成 10进制。
+		   	//  如果它以 “0x” 或 “0X” 开头，数字转成 16进制。
+			// 如果该参数小于2 且不为0 ，或者大于 36，则 parseInt() 将返回 NaN。
+	   
+	   	console.log(parseInt("19",10));//19   (10+9)
+	   	console.log(parseInt("11",3));//4	  (3+1)
+	   	console.log(parseInt("2",1));//NAN
+	   	console.log(parseInt('10'));//10	  (10+0)
+	   	console.log(parseInt('1f',16));//31   (16+15)
+	   	console.log(parseInt('010'));//10	
+
+
+
+	   	//数学运算	+　- * /  %(取余)
+	   	var num1= 10,num2 = 20,num3 = 8;
+	   	console.log(num1+num2);//30
+	   	console.log(num1-num2);//-10
+	   	console.log(num1*num2);//200
+	   	console.log(num1/num2);//0.5
+	   	console.log(num1%num2);//10 商0余10
+
+	   	console.log(5%8);//5 商0余5
+	   	
+	   	var num4 = "20";
+	   	console.log(num1+num4);//1020
+	   	// + ：数值相加，字符相连
+
+	   	var rs = "120"+30-20;
+	   	console.log(rs);//12010
+
+
+	   	//赋值运算 =  +=  -=  *=  /=  %=
+	   	var num1 = 20;
+	   		num1 += 10;	//num1 = num1 + 10;
+	   	console.log(num1); //30
+
+	   	//自增++  自减--
+	   	var a = 10;
+	   	var b = a++;    //先赋值，后运算(把a赋值给b，之后a进行++)
+	   	console.log(a); //11
+	   	console.log(b); //10 
+
+	   	var a1 = 10;
+	   	var b1 = ++a1;    //先运算，后赋值(a1先进行++，再把a1赋值给b1)
+	   	console.log(a1); //11
+	   	console.log(b1); //11 
+	   	
+	   	var c = 10;
+	   	var d = c++;//d:10 c:11
+	   		d += 5; //d:15 
+	   	 // d += "5" //d:105 
+	   	console.log(c);//11
+	   	console.log(d);//15
+
+	   	//条件运算
+	   	 // ==  >=  <=  >  <  !=
+	   	 // == ：判断数值
+	   	 // === :判断数值和类型 
+	   	
+	   	 
+	   	 // 验证邮箱jocfggh@zertfd：有没有@符号
+	   	 // 没有@：提示邮箱格式不正确，应包含@
+	   	 // 有@：提示邮箱可以使用
+	   	 
+	   	 var email = prompt("请输入邮箱");
+	   	 console.log(email);
+	   	 if(email.indexOf("@") == -1){
+	   	 	document.write("提示邮箱格式不正确，应包含@");
+	   	 }else{
+	   	 	document.write("邮箱可以使用");
+	   	 }
+	   	 document.write("<br>");
+	   	
+	   	 // 逻辑运算：并且&&  或者||   非!
+	   	  // 判断数值能被5整除，也能被3整除
+	   	  var num = 4565;
+	   	 if(num % 5 == 0 && num % 3 == 0){
+	   	 	document.write(num+"既是5的倍数，也是3的倍数");
+	   	 }else{
+	   	 	document.write(num+"不符合要求");
+	   	 }
+	   	 document.write("<br>");
+
+
+	   	 //验证性别只能为男或女或人妖
+	   	 var sex = prompt("请输入性别");
+	   	 if(sex == "男" || sex == "女" || sex == "人妖"){
+	   	 	document.write("您的性别为"+sex);
+	   	 }else{
+	   	 	document.write("性别不详");
+	   	 }
+	   	 document.write("<br>");
+
+
+	   	 // if里的判断条件是字符串时，判断的是字母的先后顺序
+	   	 //  nan    nv
+	   	 if(!("男">"女")){
+	   	 	document.write("ok");
+	   	 }else{
+	   	 	document.write("no");
+	   	 }
+	   	 document.write("<br>");
+
+
+	   	 // 判断闰年？
+	   	 // 1)能被4整除，不能被100整除
+	   	 // 2)能被400整除
+	   	 var year = 2060;
+	   	 if(year % 4 ==0 && year % 100 !=0 || year % 400 == 0){
+	   	 	document.write(year+"是闰年");
+	   	 }else{
+	   	 	document.write(year+"是平年");
+	   	 }
+	   	 
+   	</script>
+    </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script>
+
+	// 取关联数组的元素
+		// length 只能 用在 索引数组 中
+		// for循环结构：for(var a =0;a<arr_1.length;a++){}
+	// 关联数组 使用 for in 循环
+	var arr = [];
+		arr['uname'] = "陈赫";
+		arr['sex'] = "人妖";
+		arr['age'] = 30;
+		arr['like'] = "吃"; 
+
+	// for in 循环
+	// for(下标 in 数组名){
+	// 		数组[下标]
+	// }
+	// 隐藏的指针，每次取完一个元素自动往下移，直到元素取完，跳出循环
+	// 不用声明变量来取元素，是通过key自动取元素的
+	
+	var len = 0;
+	// 声明一个变量，用来记录关联数组循环的次数，循环几次就有几个元素
+	// 即获取关联数组长度的方法
+	for(key in arr){
+		// console.log(key);
+				// key:取关联数组的下标
+		// console.log(arr[key]);
+
+		console.log(key+'---'+arr[key]);
+		len++;
+	}
+	console.log(len);
+	console.log("------------------------------");
+
+	var nums = [45,67,89,90,89,86];
+	// for循环
+	// for in循环都能获取索引数组元素
+	for(key in nums){
+		console.log(nums[key]);
+	}
+</script>
+</body>
+</html>

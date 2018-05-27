@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+    /* css样式修饰ul和span,css样式是写在style中的 */
+    *{margin: 0;padding:0}
+    .list{border:1px solid red;
+          width:400px;
+          line-height: 30px;
+          margin-left:50px;
+          list-style: none }
+    .list span{border:1px solid blue;
+              width: 20px;
+              height: 19px;
+              display:inline-block;
+              text-align: center;
+              line-height: 19px;
+              margin:0 4px;}
+     .orange{background:orange;color:#fff;} 
+     .gray{background:gray;color:blue;} 
+  </style>
+</head>
+<body>
+<script>
+	 // 列表
+  var new_list = [
+    '紧急通知',
+    '“三八节”女性旅游乐享半价优惠',
+    '暂停旅游社业务公告',
+    '九华山门票恢复全价',
+    '“三八”节短线游走俏',
+    '4月初去动物园看羊驼',
+    '安徽省旅游指委召开会议号召...',
+    '武汉﹑芜湖旅行商踩线团云集岳西',
+    '2011年全省旅游工作会...',
+    '全椒神山国际生态精品农业...'
+  ];
+
+	
+  // 1.生成列表
+	// 2.前4条序号背景色为橘色，大于4序号背景色是灰色
+  document.write("<ul class='list'>");
+  // i是下标
+  // length：只能使用在索引数组中
+  for(var i=0;i<new_list.length;i++){
+      // document.write("<li><span> " +(i+1)+ "</span> "+new_list[i]+"</li>");
+      
+     if(i<4){
+     		document.write("<li><span class='orange'> " +(i+1)+ "</span> "+new_list[i]+"</li>");
+     }else{
+     		document.write("<li><span class='gray'> " +(i+1)+ "</span> "+new_list[i]+"</li>");
+     }
+  }
+  document.write("</ul>");
+</script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script>
+	// 1.验证用户输入的邮箱中有没有@符号
+		// 没有：提示用户邮箱不正确，应包含@符号
+		// 有：提示邮箱正确
+	var email = prompt("请输入您的邮箱");
+	console.log(email);
+	if(email.indexOf("@") == -1){
+		document.write("用户邮箱不正确，应包含@");
+	}else{
+		document.write("邮箱正确");
+	}
+	document.write("<br>");
+
+
+	// 2.判断输入的年数是不是闰年
+		// 1）能被4整除企鹅补鞥被100整除
+		// 2）能被400整除
+	var year = prompt("输入年数");
+	console.log(year);
+	if(year % 4 == 0 && year % 100 != 0 || year % 400 == 0){
+		document.write(year + "是闰年");
+	}else{
+		document.write(year + "是平年");
+	}
+	document.write("<br>");
+
+
+	// 3.判断是偶数还是奇数
+		// 偶数：整除2
+		// 奇数：除以2有余数
+	var num = prompt("请输入一个数值");
+	console.log(num);
+	if(num % 2 ==0){
+		document.write(num + "是偶数");
+	}else{
+		document.write(num + "是奇数");
+	}
+	document.write("<br>");
+
+
+	// 4.验证用户名有没有被注册
+		// 陈赫，邓超，鹿晗，王祖蓝，郑恺，baby
+		// 有：用户名已被注册，请更换注册名
+		// 没有：用户名可以正常使用
+	var name = ("陈赫","邓超","鹿晗","王祖蓝","郑凯","baby");
+	console.log(name);
+	var uname = prompt("请输入您的用户名");
+	console.log(uname);
+	// 变量名.indexOf('被查找的字符')
+	// 在name里找输入的名字(uname)的下标
+	// 注意：uname是变量，不能写在""中
+	if(name.indexOf(uname) == -1){
+		document.write("用户名可以正常使用");
+	}else{
+		document.write("用户名已被注册，请更换注册名");
+	}
+	document.write("<br>");
+    document.write("---------------------------------------------------------------------------------");
+
+// 以上全是使用prompt()来输入数据，但是prompt()用户体验不好，以后使用form表单来验证 
+
+
+
+
+
+
+ 
+</script>
+</body>
+</html>

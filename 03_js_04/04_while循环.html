@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script>
+	// 输出1+2+3+...+100 = ?
+	// i 		sum=0
+	// 1 			1
+	// 2 			1+2=3
+	// 3 			3+3=6
+	// 4			6+4=10
+	// ...
+	
+	// 法1
+	for(var i=1,sum=0;i<=100;i++){
+			sum = sum+i;//sum +=i;
+			
+	}
+	document.write(sum);
+	document.write("<br>");
+
+
+	// 法2
+	var i=1,sum=0;
+	while(i<=100){
+			sum += i;
+			i++;
+	}
+	document.write(sum);
+	document.write("<br>");
+
+
+	// 法3
+	var i=1,sum=0;
+	do{
+		sum +=i;
+		i++;
+	}while(i<=100);
+	document.write(sum);
+
+
+
+	</script>	
+</body>
+</html>

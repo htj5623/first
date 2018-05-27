@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script>
+var arr_1 = ['a','b','c','d'];
+		//  0 	1   2   3      一维数组
+var arr_2 = [
+			  0,
+			  ['a','b','c'], 
+			  "apple"
+			];
+		// 二维数组
+
+console.log(arr_2);			//[0,['a','b','c'], "apple"];
+console.log(arr_2[1]);		//['a','b','c']
+console.log(arr_2[1][1]);	//b
+
+
+var arr_3 = [
+				["aa","bb","cc"],
+				["apple","男","20","吃饭"],
+				[
+					["南京","无锡","常州"],
+					["合肥","芜湖"],
+					["杭州","宁波"]
+
+				]
+
+   ];//三维数组
+
+console.log(arr_3[1][2]);//20
+console.log(arr_3[0][1]);//bb
+console.log(arr_3[2][1][0]);//合肥
+
+
+</script>
+</body>
+</html>

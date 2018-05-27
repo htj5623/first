@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form action="login">
+		<!-- 用户名：<input type="text" name="uname" value="apple">-->
+		用户名：<input type="text" name="uname" value="" onblur="checkName()" > 
+		<!-- onblur:失去焦点（即鼠标离开框触发的事件）  onfocus:得到焦点（鼠标放在框里触发的事件） -->
+		<!-- checkName：起的事件名字 
+		事件是内容，所以后面加()-->
+	</form>
+	<script>
+	// 多条件判断语句结构
+	/*if () {
+
+	}else if(){
+
+	}else{
+
+	}*/
+
+	 
+	/*失去焦点  1.用户名不能为空
+				2.用户名长度不能超过8个字符
+				 满足以上：提示用户名合法  */
+
+	// 获取用户名：表单控件的值存在value中，即用户名存在value中，即要获取控件的value值
+	// 首先要获取控件
+	// js操作html和css，DOM操作是通过document对象获取，document代表整个文档，它的方法或属性通过 . 引用
+	
+	// document.forms;   forms代表了页面里所有的表单组成的数组
+	// document.forms[name_or_number] 
+	
+	 // console.log(document.forms[0]);
+	   /*得：<form action="login">
+		用户名：<input type="text" name="uname">
+	   </form> */
+	 // console.log(document.forms[0]["uname"]);
+	   //得：表单里的框，即<input type="text" name="uname">
+
+    // 获取框的属性
+	 // console.log(document.forms[0]["uname"].type);//text
+	 // console.log(document.forms[0]["uname"].name);//uname
+	 // console.log(document.forms[0]["uname"].value);//apple
+
+	   // 修改默认属性--即重新赋值
+	 // document.forms[0]["uname"].value = "banana";
+
+
+	 // 声明一个变量方便使用
+	 var uname_input = document.forms[0]["uname"];
+	 console.log(uname_input);// 表单里的框，即<input type="text" name="uname">
+	
+
+
+	 // 定义一下事件过程的名字
+	 function checkName(){
+	 	// console.log("失去焦点");
+	 	console.log(uname_input.value);
+
+		if(uname_input.value == ""){
+		 	console.log("用户名不能为空");
+		}else if(uname_input.value.length > 8){
+		 	console.log("用户名不能超过8个字符");
+		}else{
+		 	console.log("用户名合法");
+		}
+ }
+
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,188 @@
+一、数据类型一---String 字符串类型
+
+	1)存储数据：var 变量名;
+
+	--------String-------------------------------------------------------------------
+	<script type="text/javascript">
+	*声明/定义	"" 或 ''
+		var 变量名 = ""/'';
+		var str = "apple";
+		var str = 'apple';
+		区别：单引号效率比双引号高(存储内容多的时候)
+
+		引号嵌套：
+		var str = "我的名字是:'apple'";
+		var str = "我的名字是:\"apple\"";//	\"----转义字符
+		var str = '我的名字是:\'apple\'';//	\'----转义字符
+
+	*属性：
+		长度：	变量名.length;
+				str.length;//13
+
+	*方法：
+		//从0开始排序
+		*正序查找字符  变量名.indexOf("被查找的字符")
+		str.indexOf("p");//找到第一个p //8
+		str.indexOf("b");//-1
+		*倒序查找字符  变量名.lastIndexOf("被查找的字符")
+		str.lastIndexOf('p');//找到最后一个p //9
+		str.lastIndexOf('c');//-1
+
+		/*结果：找到了，返回字符的下标（序号）
+			  没找到，返回-1	*/
+
+		var str_1 = "AoYb45";
+		*转换大写字母	变量名.toUpperCase()
+		//结果：全部转成大写字符串
+			str_1.toUpperCase();//AOYB45
+
+		*转换小写字母	变量名.toLowerCase()
+		//结果：全部转成小写字符串
+			str_1.toLowerCase();//aoyb45
+
+		*替换字符串	变量名.replace("被替换的字符","替换的字符")
+		//结果：替换完的字符串
+			var str_2 = "我们都爱习近平";
+			str_2.replace("习近平","习大大");
+
+	</script>
+
+二、数据类型二---Number	数值类型(数学运算)
+	<script type="text/javascript">
+	*声明
+		var num = 10;
+		var num1 = 3.141556;
+	*parseInt(变量名)//得整数
+		parseInt(3.14);//3
+		parseInt("456.21sdfh");//456
+		parseInt("fda456.21sdjl")//NaN--非数值
+
+	*parseFloat(变量名)//得浮点数(小数)
+		parseFloat(3.14);//3.14
+		parseFloat("456.21whdj");//456.21
+		parseFloat("ag3.141jkm");//NaN--非数值
+
+	</script>
+
+三、运算
+ 1)算数运算
+	   <script type="text/javascript">
+			+ - * / %(取余/模)
+
+			var rs = 0 % 5; // 商0余0  结果0
+	   </script>
+
+ 2)赋值运算
+	   <script type="text/javascript">
+			=  +=  -=  *=  /=  %=
+
+			var a = 10; //把10赋给变量a
+			a += 20;   // a = a+20;
+	   </script>
+
+ 3)自增++  (加1)
+   自减--	 (减1)
+ 	 <script type="text/javascript">
+ 	 	 var a = 10;
+ 	 		 a++;			//a:11
+ 	 	 var b = ++a;		//a:12 b:12
+ 	 	 var c = a++;		//c:12 a:13
+ 	 	 console.log(a);//13
+ 	 	 console.log(b);//12
+ 	 	 console.log(c);//12
+ 	 </script>
+
+ 4)比较运算
+	   ==  值相等
+	   === 值相等且类型一致
+	   >= <= > < !=
+		<!-- if小括号里判断值相等时必须用两个等号==  -->
+		
+	   <script>
+		   if(10 == "10"){
+		   		document.write("ok");
+		   }else{
+					document.write("no");
+		   }//ok
+
+
+		   if(10 === "10"){
+		   		document.write("ok");
+		   }else{
+					document.write("no");
+		   }//no
+
+	   </script>
+
+ 5)逻辑运算
+	 	A:逻辑和 &&
+	 	B:逻辑或 ||
+	 	C:逻辑非 !
+	 	注意：&& 比 & 执行效率高
+			  || 比 | 执行效率高	 	
+	 	<script>
+	 	  var year = 2008;
+	 	  if(year % 4 ==0 && year % 100 != 0 || year % 400 ==0){
+	 	  		document.write(year+"是闰年")
+	 	  }else{
+	 	  		document.write(year+"是平年")
+	 	  }
+
+
+	 	</script>
+
+	<!-- 做完判断后，if小括号里面的结果是Boolean类型 -->
+四、Boolean布尔类型
+	两个值：true  真
+			false 假
+	作用：判断条件的结果
+	<script>
+	var rs = "apple" > "banana" //字符串时，比较字母先后顺序  ---true
+	var rs1 = 5<10 && 6<8; 		//true
+	var rs2 = 5>10 && 6<8;		//false
+
+	</script>
+
+五、类型转换
+	1)隐式类型转换
+	2)强制类型转换
+	<script>
+		String(true);//"true"
+		Number("10");//10
+		Boolean(0);//false
+		Boolean("");//false
+
+		//数值0------转换成布尔值为false
+		//空字符串---转换成布尔值为false
+		//其他转化成Boolean类型时，都是true
+	</script>
+
+六、判断语句
+	<script>
+		if(true){
+			//条件为true,执行...
+		}else{
+			//条件为false，执行...
+		}
+	
+	</script>
+
+-------------------------------------------------
+练习：
+	1)var a = 5 || (3>8) && false;输出a的值是：5
+	<!-- 把  5 || (3>8) && false 赋值给a,直接把5赋值给a了，true,后面就不去判断了  -->
+	<!-- ||:短路，前面只要是true，后面就不去判断了 -->
+	
+	2)var a = 0 || (3>8) && false;输出a的值是：false
+	<!-- 0赋值给a，得false ,继续下面的-->
+	<!--  0 || (3>8) 得 false，false && false 得false  -->
+
+	3)var b = 20,c = 30;
+		  b += c;     //b=50 
+		  c = b++;    //c=50 b=51
+		 输出b的值：51
+		 输出c的值：50
+
+	4)var cc = Number("1705班级")+20;输出cc的结果是：NaN 
+	//Number():只识别数值
+	5)var cd = ParseInt("1705班级")+20;输出cd的结果是：1725

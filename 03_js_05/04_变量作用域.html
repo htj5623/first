@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+	</head>
+	<body>
+	<script>
+	var hero = "后裔";//公共变量---函数体内体外都能访问函数体外定义的变量
+
+	function game(){
+		hero = "亚瑟";
+		var hero1 = "皇子";//私有变量--函数体内的变量只能在函数体内部访问到
+			hero2 = "公主";//去掉var--提升作用域(在函数体内外被访问到--前提:函数被访问过)
+		console.log(hero1);
+	}
+
+
+	function game2(){
+		hero = "李白";
+	}
+	
+
+	console.log(hero);//后裔
+	
+	game();
+	console.log(hero);//亚瑟
+
+	game2();
+	console.log(hero);//李白
+	//后裔,亚瑟,李白说明:函数体内体外都能访问函数体外定义的变量
+
+	// console.log(hero1);//报错 ：Uncaught ReferenceError: hero1 is not defined
+		// 在函数体外无法访问函数体内定义的变量
+	
+	console.log(hero2);//公主--函数被访问过,去掉var提升作用域,所以函数体外才能访问到
+    
+	</script>
+	</body>
+	</html>

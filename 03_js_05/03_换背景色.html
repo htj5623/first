@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<style>
+			span{display:inline-block;width: 40px;height: 40px;border: 1px solid red;}
+			span#span1{background:pink;}
+			span#span2{background:lightgreen;}
+			span#span3{background:skyblue;}
+		</style>
+	</head>
+	<body>
+	<!-- body的属性:bgcolor=""(背景色),html标签不区分大小写 -->
+	<span id='span1' onclick="changeBg('pink')"></span>
+	<span id='span2' onclick="changeBg('lightgreen')"></span>
+	<span id='span3' onclick="changeBg('skyblue')"></span>
+	<script>
+	function changeBg(bg){
+		document.body.bgColor = bg;
+		// document.body获取body标签
+		// document.body.bgColor :获取body标签的bgColor属性
+		// document.body.bgColor = bg;赋值
+		// js中区分大小写bgColor
+	}
+
+	
+	/* changeBg("green");
+	   传green,body直接变绿色,但是要做的效果是:
+	   点击span才调用事件
+	   所以在span标签里加onclick="changeBg() 
+	*/
+	
+
+	/*
+	
+	注：当调用函数的多个对象具有相同的属性时，将共同的属性写在函数中，
+	 	若属性的值各不相同，那么用变量代替属性值，并将其当成参数传入函数中
+	
+	解释：这里，每个span都有共同的属性：bgColor
+		 那么将共同的属性写在函数中，
+		 因为每个对象的属性值不同，所以属性值用变量bg代替，
+		 并将变量bg当成参数传入函数changeBg()中
+
+	*/
+
+	</script>
+	</body>
+</html>

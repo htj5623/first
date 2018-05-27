@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+	</head>
+	<body>
+	<script>
+	// 1.输出1-10之间的数
+	document.write(1);
+	document.write(2);
+	document.write(3);
+	document.write("<br><br><br>");	
+
+	//  for语句格式
+	/*  for (初始化变量; 变量满足的条件; 变换的步长) {
+			      循环操作的步骤(循环体)
+	    }; */
+	
+		
+	  for(var num=1; num<=10; num++){
+		  document.write(num + "<br>");
+	}
+		  document.write("<br><br><br>");	
+
+	// 2.输出1-10之间的偶数
+	  for(var num1=1; num1<=10; num1++){
+	  	if(num1 % 2 ==0){
+	  	document.write(num1+ "<br>");}
+	  }
+	  	document.write("<br><br><br>");	
+
+  // 3.输出1900-2030年之间的闰年
+	  for(var year=1900,count=0;year<=2030;year++){
+	  	if(year % 4==0 && year % 100 !=0 ||year % 400 ==0){
+	  		document.write(year+"是闰年<br>" );
+	  		count++;
+  		// count:有多少个闰年
+  	}
+  }
+  	document.write("总共有闰年"+count+"个");
+
+
+  // 4.输出10行无序列表：好好学习，天天向上!
+	  document.write("<ul>");
+	  document.write("<li>好好学习，天天向上</li>");
+	  document.write("<li>好好学习，天天向上</li>");
+	  document.write("<li>好好学习，天天向上</li>");
+	  document.write("</ul>");
+ 
+
+
+	document.write("<ul>");
+  	for(var li=1;li<=10;li++){
+  		document.write("<li>好好学习，天天向上！</li>");
+  	}
+  	document.write("</ul>");
+
+
+	// 5.输出10行无序列表：好好学习,天天向上!
+			// 偶数行：pink
+			// 奇数行：skyblue
+  
+	document.write("<ul style='border:1px solid red;lineheight:30px;width:200px;'>");
+
+  	for(var i=1;i<=10;i++){
+  		if(i % 2==0){
+  			document.write("<li style='background:pink'>好好学习，天天向上！</li>");
+  		}else{
+  			document.write("<li style='background:skyblue'>好好学习，天天向上！</li>");
+  		}
+  	}
+  	document.write("</ul>");
+
+
+ 
+  // 6.输出10行无序列表：好好学习,天天向上!
+			// 偶数行：pink
+			// 奇数行：skyblue
+  
+	document.write("<ul style='border:1px solid red;lineheight:30px;width:200px;'>");
+
+  	for(var i1=1;i1<=10;i1++){
+  		// 背景色为变量，声明变量css，指背景色
+  		var css = "";
+  		if(i1 % 2==0){
+  			css = "style='background:pink'";
+  		}else{
+  			css = "style='background:skyblue'";
+  		}
+  		document.write("<li "+css+">好好学习</li>");
+  		// "<li>好好学习</li>"是字符串，想在<li>内加css,css是变量，不能写在""内;
+  		
+  		// 所以先把"<li>好好学习</li>"打断，加""打断;
+  		//  "<li>""好好学习</li>" 分成了两个字符串
+  		//  "<li>" ++ "好好学习</li>" 加号连接
+  		//  "<li>" +css+"好好学习</li>"
+  		//  "<li>" + css+"好好学习</li>" ----css前加空格
+  	   // 或"<li "+css+">好好学习</li>" 
+  	
+  	}
+  	document.write("</ul>");
+	</script>
+	</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#mess{border: 1px solid red;width: 310px;height: 70px;display: inline-block;}
+	</style>
+</head>
+<body>
+<form action="index.php" name="register" onsubmit="return check_form()" >
+	用&nbsp;户&nbsp;名: &nbsp;<input type="text" name="uname"><br><br>
+	性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别: &nbsp;<input type="text" name="sex"><br><br>
+	年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;龄: &nbsp;<input type="text" name="age"><br><br>
+	自我介绍: <textarea name="intro" id="" cols="30" rows="10"></textarea><br><br>
+	<span id="mess"></span><br><br>
+	<input type="submit" value='注册'>
+</form>
+
+
+<script>
+// 表单提交时验证 <form action="index.php" onsubmit="return 函数名()"></form>
+// 提示信息放在span标签里
+
+
+
+ 	var span_obj = document.getElementById('mess');//全局变量
+ 	// console.log(span_obj);
+
+
+
+	// 验证用户名:
+	// 1)不能为空
+	// 2)长度不能超过8位
+	// 3)不能出现注册过的用户
+	function checkName(uname){
+		var vip =['小明','小红','小白'];//已注册的用户
+		if(uname == ''){
+			span_obj.innerHTML = '用户名不能为空';
+			// span标签内容是放在innerHTML中的
+			return false;
+		}else if(uname.length>8){
+			span_obj.innerHTML = '用户名不能超过8位';
+			return false;
+		}else if(vip.indexOf(uname) != -1){
+			span_obj.innerHTML = '用户已注册';
+			return false;
+		}else{
+			span_obj.innerHTML = '';
+			return true;
+		}
+	}
+	
+
+
+	// 性别验证:
+	// 1)性别不能为空
+	// 2)只能为'男'/'女'/'人妖'
+	
+	function checkSex(sex){
+		if(sex == ''){
+			span_obj.innerHTML = '性别不能为空';
+			return false;
+		}else if(sex !='男' && sex !='女' && sex !='人妖'){
+			span_obj.innerHTML = '性别只能为男或女或人妖';
+			return false;
+		}else{
+			span_obj.innerHTML = '';
+			return true;
+		}
+
+	}
+
+
+
+	// 年龄验证:
+	// 1)年龄不能为空
+	// 2)只能为8-25
+	
+	function checkAge(age){
+		if(age == ''){
+			span_obj.innerHTML = '年龄不能为空';
+			return false;
+		}else if(age<8 || age>25){
+			span_obj.innerHTML = '年龄只能在8到25岁';
+			return false;
+		}else{
+			span_obj.innerHTML = '';
+			return true;
+		}
+
+	}
+
+
+
+	// 自我介绍验证:
+	// 1)不能为空
+	// 2)不能超过150个字符
+	// 3)不能出现特殊字符：~,@,#,$,￥,%,&,*
+	
+	function checkIntro(intro){
+		if(intro == ''){
+			span_obj.innerHTML = '自我介绍不能为空';
+			return false;
+		}else if(intro.length>150){
+			span_obj.innerHTML = '自我介绍内容不能超过150个字符';
+			return false;
+		}else if(checkChars(intro) != 0){
+			// else if(checkChars(intro) != 0){
+			// }
+			// else if(){}这里又调用checkChars()函数，传入的参数是intro(因为是验证intro里有没有特殊字符)
+			span_obj.innerHTML = "自我介绍不能包含特殊符号";
+			return false;
+		}else{
+			span_obj.innerHTML = '';
+			return true;
+		}
+
+	}
+
+
+
+	// 特殊字符验证：
+	// 结果：包含特殊字符，返回特殊字符总个数
+	// 		 不包含特殊字符，返回0
+	function checkChars(str){
+		// str代表输入的字符串，是传入的参数
+		var chars = ['@','~','#','$','%','￥','&','*'];//特殊字符库
+		var count = 0; //特殊字符的个数
+
+
+		// 判断自我介绍里有没有特殊字符,
+		// 依次取出数组中的元素和输入的字符串做对比;取出数组元素,使用for循环或者for..in循环
+		for(key in chars){
+			// 取的特殊字符：chars[key]
+			if(str.indexOf(chars[key]) != -1){//找到了特殊字符
+				count++;
+			}
+		}
+		return count;
+
+	}
+	// var a = checkChars(intro);	
+	// if(a == 0){
+	// 		document.write('没有特殊字符');
+	// }else{
+	// 		document.write('有特殊字符');
+	// }
+
+
+
+	// 提交表单
+	function check_form(){
+		var my_name = document.forms["register"]["uname"];//用户名输入框
+		// document.forms[num or name]:获得页面某一个表单
+		
+		// checkName(my_name.value);//可在函数体内调用函数
+		
+		var my_sex = document.forms["register"]["sex"];//性别输入框
+		var my_age = document.forms["register"]["age"];//年龄输入框
+		var my_intro = document.forms["register"]["intro"];//自我评价输入框
+
+
+		if(checkName(my_name.value) && checkSex(my_sex.value) &&checkAge(my_age.value) && checkIntro(my_intro.value)){
+			return true;
+		}else{
+			return false;
+		}
+	
+	}
+
+
+</script>
+</body>
+</html>

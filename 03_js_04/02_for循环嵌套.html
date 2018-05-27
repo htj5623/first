@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.student{border:1px solid blue;
+				line-height: 30px;
+				}
+		.student td{border:1px solid yellow;width: 50px;height: 40px;}
+	</style>
+</head>
+<body>
+<script>
+	// 1.循环数组
+	for(var i=1;i<=4;i++){
+		for(var j=1;j<=2;j++){
+			document.write("i是"+i+";j是"+j);
+		}
+		document.write("<br>");
+	}
+
+
+
+	// 2.存储多条个人信息
+	// 每条信息包括：姓名 性别 年龄 爱好
+	var student = [
+		['陈赫','人妖',80,'吃'],
+		['李晨','男',50,'画眉'],
+		['邓超','男',30,'学习'],
+		['王祖蓝','女',35,'跳舞']
+	];
+
+	// student[0][0]   陈赫
+	// 取['陈赫','人妖',80,'吃']的每个元素
+	for(key in student){
+		console.log(key);//下标
+		console.log(student[key]);//['陈赫','人妖',80,'吃']
+		
+		for(k in student[key]){
+			// k是student[key]数组的下标
+			// student[key][k] :数组每个下标对应的值(元素)
+			document.write(student[key][k]+"---");
+		}
+		document.write("<hr>");
+		// for(k in student[key]){}执行完以后，跳出，执行下一步document.write("<hr>");然后去执行for(key in student[key]){}
+		
+	}
+
+
+
+		// 3.生成标签结构  3行2列的表格
+		// <table>
+		// 		<tr><td>1-1</td><td>1-2</td></tr>
+		// 		<tr><td>2-1</td><td>2-2</td></tr>
+		// 		<tr><td>3-1</td><td>3-2</td></tr>
+		// </table>
+
+		document.write("<table border=1 width=200 height=300 bordercolor=red>");
+		// 行和列都是变量
+		for(var rows=1;rows<=3;rows++){
+			document.write("<tr>");
+
+			for(var cols=1;cols<=2;cols++){
+				document.write("<td>"+rows+"-"+cols+"</td>");
+			};
+			document.write("</tr>");
+		}
+		
+		document.write("</table");
+		document.write("<br>");
+
+
+
+
+		// 4.将元素循环输出到表格里
+		var student = [
+		['陈赫','人妖',80,'吃'],
+		['李晨','男',50,'画眉'],
+		['邓超','男',30,'学习'],
+		['王祖蓝','女',35,'跳舞']
+	];
+
+
+		document.write("<table class='student' cellspacing=0;>");
+		for(key in student){
+			// key:下标；0 1 2 3，看做行tr的下标
+			// student[key]:['陈赫','人妖',80,'吃']
+			document.write("<tr>");
+			// console.log(student[key]);
+			for(k in student[key]){
+				// k是syudent[key]的下标，0 1 2 3，看做列td的下标
+				document.write("<td>"+student[key][k]+"</td>")
+			}
+			document.write("</tr>");
+		}
+		
+		document.write("</table");
+</script>	
+</body>
+</html>

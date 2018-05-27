@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script>
+/* 1)省市联动必须会写 
+ 2)百钱买百鸡 公鸡5元一只,母鸡3元一只,小鸡1元3只,问100元钱买100只鸡,能买公鸡几只，母鸡几只，小鸡几只？ 有几种买法？ 
+ 公鸡：x  母鸡：y  小鸡：z
+ 	x+y+z=100
+ 	5x+3y+z/3=100
+ 	x<=20
+ 	y<=33
+ 	z<=100
+ 3)输出三位水仙花数,并统计个数 三位水仙花数：每个位上的数的三次方加起来等于这个数本身 假如453是一个水仙花数：153=1*1*1+5*5*5+3*3*3 
+ 	三位数：100~999
+ 	153=1*1*1+5*5*5+3*3*3
+ 	百位数：parseInt(153/100=1.53)=1----除以100取整
+ 	十位数：parseInt(153/10)%10=5	----除以10取整再对10取余
+ 		或：parseInt(153%100/10)=5  
+ 	个位数：153%10=3				----对10取余
+ 4)输出一个金字塔(n层) 
+	    	 * 
+	  		*** 
+	 	   ***** 
+	      ******* 
+	        ...
+
+    n：层数  num：*的个数
+    	1        1
+    	2        3
+    	3        5
+    	4        7
+    		...
+    	n        2n-1
+
+  5)输出一个九九乘法表
+	  	x:1~9
+	  	y:1~9
+	  	z=x*y
+*/
+	
+
+	// 2.百钱买百鸡
+ 	for(var x=0,count=0;x<=20;x++){
+		for(var y=0;y<=33;y++){
+			var z=100-x-y;
+			if(5*x+3*y+z/3==100){
+				document.write("公鸡"+x+"只");
+				document.write("母鸡"+y+"只");
+				document.write("小鸡"+z+"只<br>");
+				count++;
+			}
+		}
+ 	}
+ 	document.write(count+'<hr>');
+ 	
+
+ 	// 3.水仙花
+ 	for(var num=100;num<=999;num++){
+ 		var x = parseInt(num/100);
+ 		var y = parseInt(num/10)%10;
+ 		var z = num%10;
+ 		if(num ==x*x*x+y*y*y+z*z*z){
+ 			document.write(num+"是水仙花数<br>");
+ 		}
+ 	}
+ 	// document.write("<br>");
+
+
+ 	// 4.金字塔
+ 	// 假设有9层
+ 	document.write("<p style='width:300px;border:1px solid red;text-align:center'>")
+ 	for(var n=1;n<9;n++){
+ 		for(var num=1;num<=2*n-1;num++){
+ 			document.write(" * ");
+ 		}
+ 		document.write("<br>");
+ 	}
+ 	document.write("</p>");
+
+ 	// 课下扩展：倒金字塔
+ 	// 倒金字塔 
+ 	//   倒金字塔        空格              星号
+ 	//    *******        0=4-4=1-1        7=2*4-1
+    //     *****         1=4-3=2-1        5=2*3-1
+    //      ***          2=4-2=3-1        3=2*2-1
+    //       *           3=4-1=4-1        1=2*1-1
+    // 第i行,空格i-1;星号2*(n-i+1)-1  */
+        document.write("<br><br>倒金字塔<br/>");
+        for(i=1;i<=6;i++){
+            for(j=1;j<=i-1;j++){
+                document.write("&nbsp;");
+            }
+            for(k=1;k<=2*(6-i+1)-1;k++){
+                document.write("*");
+            }
+            document.write("<br/>");
+        }
+ 
+ 	// 5.乘法表
+ 	// 第一行y<=1
+ 	// 第二行y<=2
+ 	// 第三行y<=3
+ 	// ...
+ 	// 第9行y<=9
+ 	
+ 	// x是变量，第x行y<=x
+ 	for(var x=1;x<=9;x++){
+ 		// for(var y=1;y<=9;y++){
+ 		for(var y=1;y<=x;y++){	
+ 			if(x*y<10){
+ 				// 结果是一位数时,后边补个空格
+ 				document.write(y+"*"+x+"="+"&nbsp;&nbsp;"+(x*y)+' &nbsp;&nbsp; ');
+ 			}else{
+ 				// 否则
+ 				document.write(y+"*"+x+"="+(x*y)+' &nbsp;&nbsp; ');
+ 			}
+ 		}
+ 		document.write("<br>");
+ 	}
+
+ 	// 注：只有水仙花是一层循环，百花买百鸡，金字塔，乘法口诀表都是两层循环
+</script>	
+</body>
+</html>

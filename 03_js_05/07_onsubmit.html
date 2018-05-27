@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<form action="index.php" onsubmit="return checkForm()">
+	用户名: <input type="text" name="uname"><br>
+	<input type="submit" value='注册'>
+</form>
+
+<script>
+
+function checkForm(){
+	alert("表单提交");
+
+	// onsubmit函数结果：true或false
+	// return true;//允许提交到index.php
+	return false;  //阻止提交到index.php
+	
+	// onsubmit函数使用结构：
+	// onsubmit = "return 事件名()";
+	
+	// 表单提交onsubmit函数中，return返回值结果只能定义为true或false,不能定义为0,1,yes,no等
+	// 其他函数定义return返回值时，结果可以自己定义
+	
+}
+
+</script>
+</body>
+</html>

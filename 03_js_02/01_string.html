@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+
+    </head>
+    <body>
+    <script type="text/javascript">
+    	// 1.存储姓名：邓超
+	    	var uname ="邓超";
+	    	document.write(uname);//变量名不加引号
+
+			// var myname = prompt("请输入姓名"); 
+			// document.write(myname);
+			
+				var upass = 'apple123';
+				document.write(upass);
+				document.write("<br>");
+
+			// 输出引号：\+引号
+				var str = "安琪拉：\"binggo,人家就是来砸场子的！\"";
+				var str_1 = '安琪拉：\'binggo,人家就是来砸场子的！\'';
+				var str_2 = "<p style='color:red'> 安琪拉：'binggo,人家就是来砸场子的！' </p>"
+				document.write(str);
+				document.write("<br>")
+				document.write(str_1);
+				document.write("<br>")
+				document.write(str_2);
+
+
+			// 1.获取字符串属性：长度 ------变量名.length
+				console.log(uname.length);
+				console.log(str.length);
+
+				var str_3 = "abcdefghijk";
+				console.log(str_3.length<=8);
+
+			// 2.操作字符串的方法
+				console.log(str_3);//打印输出所有字符
+				// 排序，从0开始
+				console.log(str_3[3]);//得到d
+				console.log(str_3[2]);//得到c
+				console.log(str_3[0]);//得到a
+
+			// 3.获取字符的下标(即序号) -----------变量名.indexOf('被查找的字符')
+			
+			 	// console.log(str_3.indexOf(targetElement[, startIndex]))
+			 	// targetElement[i,startIndex]: [目标元素i,从i开始查找] ;可加可不加
+			 	
+			 	// 结果：1)找到了，得到字符对应的下标(下标从0开始排序)
+			 	// 		 2)没有找到，结果-1
+		  	console.log(str_3.indexOf('i'));//8
+		  	console.log(str_3.indexOf('m'));//-1
+		  	console.log(str_3.indexOf('p'));//-1
+
+
+		  	var str_4 = "hello world!"
+
+	  		//正序查找(从前往后)，且只能找到一个下标
+	  		console.log(str_4.indexOf('l'));//得2
+	  	
+	  	
+	  	// 4.倒序查找              --------------变量名.lastIndexOf('被查找的字符')
+		  	console.log(str_4.lastIndexOf('l'));//9 (空格算一个字符)
+		  	console.log(str_4.lastIndexOf("o"));//7	(空格算一个字符)
+		  	console.log(str_4.lastIndexOf("m"));//-1
+
+
+	  	// 5.验证码字符：sRyL sryl SRYL
+	  		// 转大写字母
+	  	 	var code = "sRyL";
+	  	 	console.log(code.toUpperCase());//SRYL
+
+
+	  		// 转小写字母
+	  		var code = "sRyL";
+	  	 	console.log(code.toLowerCase());//sryl
+	  	
+	  	// 6.替换字符串 ** replace()
+	  		//替换萨德 
+	  		var str = "我们的中国我们的中国萨德我们的中国我们的中国"
+	  		/*str.replace(regexp[, replacement]); (被替换的对象，替换成什么)*/
+	  		// str.replace("萨德", "**");
+	  		console.log(str.replace("萨德","**"));
+
+    </script>
+    </body>
+</html>

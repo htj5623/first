@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script>
+	// 1.验证用户名
+	// 结果:通过验证,返回true
+	// 		没通过验证,返回false
+	function checkName(uname){
+		if(uname == ""){
+			document.write("用户名不能为空");
+			return false;
+		}else if(uname.length >8){
+			document.write("用户名长度不能超过8个字符");
+			return false;
+		}else{
+			document.write('用户名可以使用');
+			return true;
+		}
+	}
+
+	// checkName('');//用户名不能为空
+	
+	// console.log(checkName('蔡文姬'));//true //可以使用
+	// document.write(checkName('蔡文姬'));
+		// return返回值可返回在页面,也可以返回在控制台
+
+
+	//函数返回一个结果,调用者决定怎么处理这个结果 
+	console.log(checkName('蔡文姬')); 
+	// if(checkName('') == false){
+	// 	 
+	// }else{
+	// 	
+	// }
+	document.write('<hr>');
+
+
+
+	// 2.验证密码
+	function checkPass(upass){
+		if(upass == ""){
+			document.write("密码不能为空");
+			return 'pass_no';
+		}else if(upass.length >6){
+			document.write("密码长度不能超过6个字符");
+			return 'pass_no';
+		}else{
+			document.write("密码合格<br>");
+			return 'pass_ok';
+		}
+	}
+
+	checkPass('apple');
+	document.write('<hr>');
+
+
+
+	// 3.验证确认密码
+	// 1.不能为空
+	// 2.确认密码与原密码相同
+	function checkRepass(oldpass,repass){
+		if(repass =="" ){
+			document.write("确认密码不能为空");
+			return false;
+		}else if(repass != oldpass){
+			document.write("两次密码输入不一致");
+			return false;
+		}else{
+			document.write("确认密码正确");
+			return true;
+		}
+	}
+
+	checkRepass('apple','apple');
+	document.write('<hr>');
+
+
+	// 4.上面三步满足条件时,验证表单提交
+		//用户名 密码 确认密码 都通过验证 
+	function checkForm(){
+		// if(checkName('蔡文姬') == true && checkPass('apple') == 'pass_ok' && checkRepass('apple','apple') == true){
+		if(checkName('蔡文姬') && checkPass('apple') == 'pass_ok' && checkRepass('apple','apple')){
+			console.log("可以提交表单");
+		}else{
+			console.log("不能提交表单");
+		}
+	}
+
+	checkForm();
+
+</script>
+	
+</body>
+</html>

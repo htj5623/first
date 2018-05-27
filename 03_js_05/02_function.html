@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+  <html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+	</head>
+	<body>
+	<script>
+	// 1.把大象关进冰箱里	
+	function close(){
+		document.write("第一步:打开冰箱门<br>");
+		document.write("第二步:把大象关进去<br>");
+		document.write("第三步:关上冰箱门<br>");
+	}
+
+	close();
+	// 不掉用函数时,在页面上没有输出内容
+	// 函数相当于是方法,要加()
+	
+	close();
+	// 一次定义,多次调用
+	document.write("<hr>");
+	
+
+
+	// 2.放入不同动物
+	function close(animal){
+	document.write("第一步:打开冰箱门<br>");
+	document.write("第二步:把"+animal+"关进去<br>");
+	document.write("第三步:关上冰箱门<br>");
+}
+
+	close("大象");
+	close("哈士奇");
+	document.write("<hr>");
+
+
+
+	// 3.打印个人信息
+	// 姓名,年龄,性别,爱好,个人介绍
+	function person(uname,age,sex,like,intro){
+		document.write("我的名字是:"+uname+"<br>");
+		document.write("年龄:"+age+"<br>");
+		document.write("性别:"+sex+"<br>");
+		document.write("爱好:"+like+"<br>");
+		document.write("自我介绍:"+intro+"<br>");
+	}
+
+	person('邓超',36,'男','学习','人见人爱,花见花开!<hr>');
+	person('鹿晗',28,'男','搞笑','长得帅!');
+
+	/*
+	
+	注：当调用函数的多个对象具有相同的属性时，将共同的属性写在函数中，
+	 	若属性的值各不相同，那么用变量代替属性值，并将其当成参数传入函数中
+	
+	解释：这里，调用函数person()的对象都有共同的属性：‘我的名字是：’，‘年龄’，
+		 ‘性别’，‘爱好’，‘自我介绍’
+		 那么将这些共同的属性写在函数中，
+		 因为每个对象的属性值不同，所以属性值用变量uname,age,sex,like,intro代替 ;并将这些变量当成参数传入函数person()中
+
+	*/
+	</script>
+	</body>
+	</html>

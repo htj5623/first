@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+    <script type="text/javascript">
+        var a = 10,b = 20,c = "20";
+        if(a>b && b == c){
+        	document.write("ok");
+        }else{
+        	document.write("no");
+        }
+        document.write("<br>");
+         //no
+        
+        if(a>b & b == c){
+        	document.write("ok");
+        }else{
+        	document.write("no");
+        }
+        document.write("<br>");
+         //no
+
+        if(b == c || a>b){
+            document.write("ok");
+        }else{
+            document.write("no");
+        }
+        document.write("<br>");
+         //ok
+
+        if(b == c | a>b){
+            document.write("ok");
+        }else{
+            document.write("no");
+        }
+        document.write("<br>");
+         //ok
+
+
+
+        //布尔运算
+        var rs = 5 > 8 && 10 == "10";
+        var rs1 = 5 < 8 && 10 == "10";
+        document.write(rs + "<br>");//false
+        document.write(rs1 +"<br>");//true
+        
+         //数值0，空的字符串---false
+         //非0数值---true
+        if(0){
+            document.write("真");
+        }else{
+            document.write("假"+'<br>');
+        }
+
+
+
+        //数值类型转成布尔类型：Boolean(数值);
+        document.write(Boolean(0)+'<br>');     //false
+
+         //字符串类型转成布尔类型：Boolean("字符串");
+        document.write(Boolean("apple")+'<br>');//true
+        document.write(Boolean("")+'<br>');    //false
+
+        //布尔类型转成字符串类型：String("字符串");
+        document.write(String(true)+'<br>');   //"true"
+        
+        //布尔类型转成数值类型：Number(数值|"字符串");
+        document.write(Number(false)+'<br>');  //0
+
+        // 字符串类型转成数值类型
+        document.write(Number("apple")+'<br>'); //NaN
+        document.write(Number("1705班级")+'<br>');//NaN
+
+        // 数值类型转成字符串类型
+        document.write(String(1)+20);          //"1" --120
+
+    </script>
+</body>
+</html>

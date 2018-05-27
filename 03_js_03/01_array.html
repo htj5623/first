@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+	<script type="text/javascript">
+		// 1.申明数组
+		// 方法1
+		var arr = [0,1,2,3,4,5,6,7,8,9,10];
+		document.write(arr+'<br>');//看不到数组的结构，以后使用console.log()输出
+		console.log(arr);
+		// 方法2
+		var arr_1 = new Array("a","b","c","d","e");
+		console.log(arr_1);
+		// 方法3
+		var arr_2 = new Array();
+			arr_2[0] = "邓超";
+			arr_2[1] = "陈赫";
+			arr_2[2] = "李晨";
+		console.log(arr_2);
+
+		// 2.取元素  数组名[下标]
+		console.log(arr_2[1]);
+		console.log(arr[5]);		
+		// 3.取下标  indexOf("被查找的元素")
+		console.log(arr_2.indexOf("李晨"));//2
+		console.log(arr_2.indexOf("baby"));//-1
+
+
+		//验证用户名有没有被注册
+		var VIP = ["陈赫","邓超","鹿晗","王祖蓝","郑恺","baby"];
+		var uname = prompt("请输入您的用户名");
+		console.log(uname);
+		if(VIP.indexOf(uname) == -1){
+			// uname:变量，不能放在引号内
+			document.write("用户名未被注册，可以使用！");
+		}else{
+			document.write("用户名已注册，请更换！");
+		}
+
+		// 4.获取数组长度
+		console.log(VIP.length);//6
+
+
+		// 关联数组
+		// 存储一个人的信息：姓名apple  性别：男  年龄：20  爱好：学习
+		// var student = new Array();
+		var student = [];
+			student["uname"] = "apple";
+			student["sex"] = "男";
+			student["age"] = 20;
+			student["like"] = "学习";
+		console.log(student);
+		console.log(student["uname"]);
+
+
+		// 数值下标数组：索引数组(默认)  length只能获取索引数组的长度
+		// 字符串下标数组：关联数组，即关联数组只能使用 for key in 方式遍历
+	</script>
+</body>
+</html>

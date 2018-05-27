@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<form action="">
+		用户名：<input type="text" name="uname" value="" onblur="checkName()">
+		<!-- onblur="定义的事件名" 失去焦点
+		onfocus:得到焦点 -->
+	</form>
+</head>
+<body>
+<script>
+	// 5.验证用户名
+	//输入用户名，离开输入框后判断
+	//1）用户名不能为空
+	//2）用户名不能超过8个字符
+	//3）用户名正确 
+	
+	console.log(document.forms[0]);
+	//document.forms[0]; //js操作DOM元素，是通过document获取对象来操作DOM元素的
+	//document:操作DOM元素，即页面的html和css
+	//document.forms:得到页面内的所有表单组成的数组
+	//document.forms[0]:得到数组的第一个元素
+	//console.log(document.forms[0]);将第一个数组元素打印输在在控制台
+			//结果：<forms action="">用户名：<input type="text" name="uname"></forms>
+	console.log(document.forms[0]["uname"]);
+			// 注意：uname是字符串，加引号，格式：["uname"]
+			//结果：输入框；<input type="text" name="uname">
+	
+	// 获取属性：输入的用户名存在value里，所以：
+	// console.log(document.forms[0]["uname"].value);
+			//结果：输入的姓名
+	
+	
+	function checkName(){
+		console.log(document.forms[0]["uname"].value);
+
+		if(document.forms[0]["uname"].value == ""){
+			console.log("用户名不能为空");
+		}else if(document.forms[0]["uname"].value.length >8){
+			console.log("用户名不能超过8个字符");
+		}else{
+			console.log("用户名正确");
+		}
+	}
+
+
+</script>
+</body>
+</html>
