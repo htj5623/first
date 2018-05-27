@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .left {
+        float: left;
+    }
+
+    .right {
+        float: right;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+
+    img {
+        display: block;
+    }
+    /* img与边框之间有距离,因为img是行内块元素，div是块元素，两者不同类，默认会为他们加上间距;只要把img转成块元素即可，相当于div套着一个div,这样就没有缝隙了 */
+
+    .header {
+        height: 50px;
+        background: #606060;
+    }
+
+    .auto {
+        width: 1000px;
+        margin: 0 auto;
+        border: 1px solid red;
+    }
+
+    .header .nav_box {
+        border: 1px solid orange;
+        float: left;
+        line-height: 50px;
+        font-size: 18px;
+        font-family: "微软雅黑";
+        /* padding:0 15px; */
+        /*padding:0 15px;加给.nav_box时，再给.nav_box下的ul加背景色时，无法充满整个框;
+                           padding值可以加给父元素.nav_box，也可以加给子元素.nav_box下的a标签，这里加给子元素a标签*/
+        position: relative;
+        /*  top: 0;
+                              left: 0;  默认,写不写都行*/
+    }
+
+    .header .logo {
+        float: left;
+        margin-right: 20px;
+        margin-top: 13px;
+    }
+
+    .header .nav_box ul {
+        background: #ccc;
+        /*padding:0 15px;加给.nav_box时，再给.nav_box下的ul加背景色时，无法充满整个框  */
+        /* 所以把padding:0 15px;加给.nav_box下的a标签 */
+        /* ul不占位置，使用定位;并且根据父元素(.nav_box)定位;*/
+        position: absolute;
+        top: 50px;
+        left: 0;
+
+        /* 打开页面时，所有ul隐藏 */
+        display: none;
+
+        z-index: 11;
+        /*提高纵向深度 */
+    }
+
+    .header .nav_box a {
+        padding: 0 15px;
+    }
+    /* 鼠标经过一级标题，二级导航显示 */
+    /* .header .nav_box>a:hover+ul{display: block;} */
+    /* .nav_box+空格+a: 跨级查找 */
+    /* .nav_box>a :找到nav_box的儿子，大于号只能找到儿子,找到第一个a标签 */
+    /* +：紧跟的弟弟 */
+    /*bug:选不中二级导航; 鼠标离开一级标题时，二级标题无法选择;所以鼠标经过.nav_box时，二级标题显示 */
+
+    .nav_box:hover ul {
+        display: block;
+    }
+
+    .nav_box:hover ul a {
+        color: black;
+    }
+    /* banner */
+
+    .banner {
+        border: 1px solid blue;
+        width: 1300px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 10;
+    }
+    /* 左右箭头 */
+
+    .banner .btns {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        background: #999;
+        font-size: 30px;
+        font-weight: bold;
+        text-align: center;
+        line-height: 40px;
+
+        /* 左右箭头垂直居中 */
+        position: absolute;
+        top: 50%;
+        margin-top: -20px;
+    }
+    /* 水平方向：箭头一个在左侧，一个在右侧 */
+
+    .banner .left_btn {
+        left: 0;
+    }
+
+    .banner .right_btn {
+        right: 0;
+    }
+    /* 矩形块，定位在底部中间 */
+
+    .points span {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        background: black;
+        /* 2.给每个去掉空格的span标签加外间距 */
+        /* margin:0 5px; */
+    }
+
+    .points {
+        border: 1px solid red;
+        position: absolute;
+        bottom: 0;
+        /*  left: 50%;
+                 margin-left: - px; */
+        /* 这里不知道ponits盒子的宽度，所以无法设置 margin-left的值;这里调整一下span标签
+                首先：去掉每个因为换行导致每个span标签之间的空隙
+                其次：给每个span标签设置外间距
+                再者：得到point盒子的宽度 */
+        /* 3.得到points盒子宽度：（5+12+5）*4= 88*/
+        left: 50%;
+        margin-left: -44px;
+    }
+    /* 导航ul被banner格式覆盖了,鼠标经过一级标题时，二级标题不显示;这里要给ul,banner加
+                z-index
+
+                /*提高纵向深度,值越大，图层越往上*/
+    /* 图片切换 */
+
+    .img_box {
+        border: 1px solid blue;
+        position: relative;
+    }
+
+    .img_box img:last-child {
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: none;
+    }
+    /* 鼠标经过盒子，显示第二张图片;
+          两张图片放在相同位置，说明第二张图片不占位置，在另一图层，
+          所以使用到定位，针对父盒子的定位
+           */
+    /*鼠标经过父盒子，第二张图片显示  */
+
+    .img_box:hover img:last-child {
+        display: block;
+    }
+    /* 不使用下面，经过图片时会闪 */
+    /* .img_box img:first-child:hover+img{display: block;} */
+    </style>
+</head>
+
+<body>
+    <!-- 导航 -->
+    <div class="header">
+        <div class="auto">
+            <img src="images/applelogo.png" alt="" class="logo">
+            <div class="nav_box">
+                <a href="#">在线商店</a>
+                <ul>
+                    <li><a href="#">了解更多</a></li>
+                    <li><a href="#">继续查看</a></li>
+                    <li><a href="#">商业用途</a></li>
+                </ul>
+            </div>
+            <div class="nav_box">
+                <a href="#">Mac</a>
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">次页</a></li>
+                    <li><a href="#">尾页</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- banner -->
+    <div class="banner">
+        <img src="images/ipad4_03.png" height="601" width="1300" alt="">
+        <!-- 左右箭头 -->
+        <span class="btns left_btn"><</span>
+        <!-- &lt; -->
+        <span class="btns right_btn">></span>
+        <!-- &gt; -->
+        <!-- 切换矩形块 -->
+        <div class="points">
+            <!--  <span></span>
+       <span></span>
+       <span></span>
+       <span></span>   因为要知道points盒子的宽度，所以去掉空隙-->
+            <!-- 1.去掉span标签之间空格 -->
+            <span></span><span></span><span></span><span></span>
+        </div>
+    </div>
+    <!-- 图片切换-->
+    <div class="auto">
+        <div class="img_box left">
+            <!-- 盒子浮动后，相当于变成了行内块元素，盒子宽度由内容决定 -->
+            <img src="images/2-5_03.png" height="159" width="210" alt="">
+            <img src="images/1-5_03.png" height="159" width="210" alt="">
+        </div>
+        <div class="img_box left">
+            <img src="images/2-6_03.png" height="159" width="426" alt="">
+            <img src="images/1-6_03.png" height="159" width="426" alt="">
+        </div>
+        <div class="img_box left">
+            <img src="images/2-2_03.png" height="159" width="326" alt="">
+            <img src="images/1-2_03.png" height="159" width="326" alt="">
+        </div>
+    </div>
+</body>
+
+</html>

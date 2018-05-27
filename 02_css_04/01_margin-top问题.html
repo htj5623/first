@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+        	*{margin:0;padding: 0;}
+			.father{
+				width: 600px;height: 600px;
+				background: red;
+				/* 方法1 */
+				/*border: 1px solid green;  */
+				/* 不加边框时，给子盒子加的外间距直
+				接加给了父盒子 */
+
+				/* 方法2 */
+				/* 给父盒子加内间距 */
+				padding-top: 30px;
+				
+			}
+			.son{
+				width: 260px;height: 260px;
+				background: blue;
+
+				/* 方法1 */
+				/*margin-top: 30px; */
+			}
+        </style>
+    </head>
+    <body>
+    	<div class="father">
+    		<div class="son"></div>
+    	</div>
+    </body>
+</html>

@@ -1,0 +1,71 @@
+一、CSS-hack:；浏览器兼容性问题
+Margin-top
+
+<div class="father">
+	<div class="son"></div>
+</div>
+
+	.son{margin-top:20px;}
+Margin-top对子盒子不生效，叠加给了father父盒子
+解决方式：
+	1、 .father{border:1px solid red;}
+	2、 .father{padding-top:20px;}
+	3、 .father:before{
+			content:'';
+			display:table;
+		}
+
+二、CSS样式--定位：position
+	元素的定位
+	1、position:relative;  ----相对定位 
+	   top:0;
+	   bottom:0;
+	   left:0;
+	   right:0;
+  	左下角：left:0;bottom:0;
+	参照物：他自己原来的位置   
+			在页面占位置
+
+
+	2、position:absolute;  ----绝对定位
+	参照物：自己设定的，找 有定位元素的父元素 并且遵循就近原则；
+	如果父级若都无定位元素，则找body标签
+
+	不占位置
+
+
+
+	3、position:fixed;      ----固定定位
+	参照物：大多数是浏览器窗口  
+	不占位置
+	
+	4、position:static;		----初始定位
+	
+
+三、实现定位居中
+	在页面不占位置的盒子实现在浏览器定位居中
+
+
+	div{
+		position:absolute|fixed;
+		top:50%;
+		left:50%;
+		margin-left: -宽度的一半； ----------负宽度的一半
+		margin-top:  -高度的一半;	 ----------负高度的一半
+	}
+
+			
+四、z-index:纵向深度
+	作用：可以调整定位元素的图层顺序
+	数值越大，图层越靠上
+	使用：只能结合定位一起使用，单写时不起作用
+
+
+
+	练习：
+	1.登录/注册覆盖层
+	要求：
+		a:内容区能看到但选不中
+		b:半透明的遮罩层覆盖内容区
+		c:登录/注册div盒子在浏览器窗口里水平居中，垂直居中
+	2.苹果APP

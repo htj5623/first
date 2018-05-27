@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+        *{margin:0;padding:0;}
+       .box{border:1px solid red;width: 1280px;margin:0 auto;}
+	   .login_reg{width: 300px;height:200px; border:1px solid red;}
+	   .login_reg h3 span{width: 50%;height: 36px;
+						background: #F44949;
+						/* display: inline-block; */
+						/* 这里用display仍然分行，不知道什么原因，这里选择浮动 */
+						/* 浮动后，h3没有内容了 */
+						float: left;
+						text-align: center;
+						color: white;
+						line-height: 36px;}
+
+		/* 去除span浮动后造成的无内容 */
+		.login_reg h3{overflow: hidden;}
+
+		.login_reg h3 span.login_btn{background: pink;}
+		.login_reg form{line-height: 36px;
+						/* border:1px solid blue; */
+						text-align: center;}
+		
+		.login_reg form input[type=submit]{width: 220px;height: 26px;
+							background: green;
+							border:none;
+							outline: none;
+							color: white;
+							line-height: 40px;} 
+
+		
+		/* 打开时，隐藏注册表单 ---后期用js实现*/
+		.login_reg form[name=register]{display: none;}
+
+
+		/*鼠标经过登录，登录变红，注册变粉  */
+		.login_reg h3 span.login_btn:hover{background: #F44949;}
+		.login_reg h3 span.login_btn:hover+.reg_btn{background: pink;}
+		
+
+
+
+		/* 半透明的遮罩层 */
+		/* div盒子本来是块元素，定位之后，就是类似于浮动效果了，
+		相当于转化成了行内块元素，所以定位之后的div盒子要设置宽高 */
+		.mask{height: 100%;width: 100%;
+			background: #000;
+			position: fixed;
+			top: 0;
+			left: 0;
+			opacity: 0.5;
+		}
+		
+
+		/* 登录注册 */
+		.login_reg{
+			background: white;
+			position: fixed;
+			
+		
+  /* top:50%   是父元素高度的一半
+			 left:50%  是父元素宽度的一半，
+			 在这里父元素是body（浏览器）; */
+			top: 50%;
+			left: 50%;
+			/*每个div盒子的坐标轴原点都是左上角的那个点*/
+			
+			/*先移动login_reg盒子的坐标轴原点，
+			设置top:50%;left: 50%;是代表坐标轴原点距离上下左右距离都是宽度的50%，
+			这时盒子坐标轴原点就是整个浏览器的中心点  */
+
+
+			/* 现在想要整个login_reg盒子居中，那么盒子的中心点与浏览器中心点要在同一位置，
+				 所以盒子的中心点要向上和向左移动，即盒子原点要向上向左移动 */
+
+			/* 盒子的中心点要变成浏览器中心点，所以盒子要向左移动了盒子宽度的一半和向上移动盒子高度的一半 */
+			/* 坐标轴的正方向是向右和向下，所以这里设置为负值 */
+			margin-left: -150px;
+			margin-top: -100px;
+		}
+
+
+    </style>
+    </head>
+    <body>
+    <div class="box"> 
+    	<img src="home.jpg" height="2120" width="1280" alt="">
+    </div>	
+    	<!-- 半透明遮罩层 -->
+	<div class="mask"></div>
+
+
+
+	<!-- 登录注册 -->
+	<div class="login_reg">
+		<h3>
+			<span class="login_btn">登录</span>
+			<span class="reg_btn">注册</span>
+		</h3>
+		<form name="login">
+			用户名：<input type="text" name="uname" value="邮箱/手机/用户名"><br>
+			密&nbsp;&nbsp;&nbsp;码：<input type="password" name="upass"><br>
+			<input type="submit" value="登录">
+		</form>
+		<form name="register">
+			用户名：<input type="text" name="uname" value="邮箱/手机/用户名"><br>
+			密&nbsp;&nbsp;&nbsp;码：<input type="password" name="upass"><br>
+			确认密码：<input type="password" name="repass"><br>
+			<input type="submit" value="注册">
+		</form>
+	</div>
+ </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+        .box{border: 1px solid red;width: 500px;
+        	margin-left: 100px;}
+    	 .red{width: 80px;height: 80px;
+    	 	  background: red;}
+    	 .blue{width: 100px;height: 100px;
+    	 	   background: blue;
+    	 	   position: relative;
+    	 	   top:50px;
+    	 	   left: 100px;
+    	 	   /* 定位：蓝色盒子浮动在黄色盒子上面，但是蓝色盒子原来位置还在,其他元素不会占有它的位置 */
+    			/* 参照物：该元素原来的位置 */
+    			/* 在页面占位置 */
+
+    	 	}
+
+    	 .yellow{width: 120px;height: 120px;background: yellow;}
+    	 .orange{width: 140px;height: 140px;background: orange;}
+
+
+        </style>
+    </head>
+    <body>
+     <div class="box">
+    	<div class="red"></div>
+    	<div class="blue"></div>
+    	<div class="yellow"></div>
+    	<div class="orange"></div>
+     </div>
+    </body>
+</html>
