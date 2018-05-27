@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<form action="index.php">
+	出生年月:<input type="date"><br>
+	时间:<input type="time"><br>		
+	时间1:<input type="datetime"><br>		
+	月份:<input type="month"><br>		
+	星期:<input type="week"><br>	
+
+	年龄:<input type="number" min=0 max=60><br>
+	<!-- 只能输入数字和字母e -->
+	邮箱:<input type="email"><br>
+	<!-- 提交时简单验证  只检验:@ -->
+	主页:<input type="url"><br>
+	<!-- http://www.baidu.com才能提交 检验是否有:http:// -->
+	颜色:<input type="color"><br>
+	控制条:<input type="range" max=100 value="0" step=50><br>
+	<!-- step:移动步长 -->
+
+
+
+	<input type="submit">
+
+</form>
+</body>
+</html>

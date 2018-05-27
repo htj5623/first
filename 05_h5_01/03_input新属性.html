@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<form action="index.php">
+	<input type="text" name="uname" required placeholder='用户名/邮箱' autofocus><br><br>
+	<!-- required:限制输入框为空时会提示 -->
+	<!-- placeholder='用户名/邮箱';提示文字,显示在输入框内容里,这里不是通过value添加的 ,点击输入框输入文字时,默认文字会消失;再删除填入的文字时，文字会自动显示-->
+	<input type="text" name="tel" pattern='[1][34578][0-9]{9}' required><br><br>
+	<input type="submit" ><br><br>
+</form>
+</body>
+</html>

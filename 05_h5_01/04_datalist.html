@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	/* 消除input倒三角 */
+		input: -webkit-calendar-picker-indicator{display: none};
+	</style>
+</head>
+<body>
+	<!-- datalist：虚拟的数据列表
+		需要一个载体:input
+					 属性->list=datalist的id名
+	 -->
+	<datalist id='data'>
+		<option>花瓣网</option>
+		<option>花儿与少年</option>
+		<option>花千骨</option>
+		<option>花泽类</option>
+	</datalist>
+	<!-- 载体:form表单 -->
+	<input type="text" list='data'>
+
+	<br><br>
+
+
+
+
+
+
+	<!-- 进度条 progress-->
+	<!-- 动态加载进度条,给进度条设置最大值100;增加到100时页面跳转 -->
+	<progress id='pro' value=0 max=100></progress>
+	<script>
+	function loading(){
+		var v = document.getElementById('pro');
+		v.value++;
+		console.log(v.value);
+		if(v.value == 100){
+			clearInterval(t);
+			window.location = '03_input新属性.html';
+		}
+	}
+
+	var t = setInterval(loading, 1000);
+
+
+</script>
+
+</body>
+</html>

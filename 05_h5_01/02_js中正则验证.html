@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<form name='login' action="index.php">
+	用户名:<input type="text" name="uname">
+</form>
+<script>
+	// 文本框失去焦点验证 onblur / blur()
+	var obj = document.forms['login']['uname'];
+	obj.onblur = function(){
+		console.log(obj.value);
+		
+		// 只允许输入小写字符	a~z 数组
+		// var pattern = /^[a-z]$/;
+		// [a-z]:代表a到z的小写字符,[]只能验证一个字符
+		// ^ :开始符号
+		// $ :结束符号
+		
+		
+		var pattern = /^[a-z]{4}$/;
+		// 							[范围]{验证次数/4位字符}
+		
+		
+		var pattern = /^[a-z]+$/;
+		// 							+:至少验证1次,验证多次
+		
+
+		var pattern = /^[a-z]{4,11}$/;
+		// 							{4,11}:最少4位,最多11位
+		
+
+		var pattern = /^[a-zA-Z]{4}$/;
+		// 不区分大小写,4位字符
+		
+
+		var pattern = /^[a-zA-Z0-9]{4}$/;
+		// 不区分大小写,且有数字,4位字符
+		
+
+		// 手机号	11位 第一位:1  第二位:34578  第三位以后:0-9
+		// 第一位,第二位各验证1次,第三位之后验证9次
+		var pattern = /^[1][34578][0-9]{9}$/;
+
+		// 男 女 人妖
+		var pattern = /^(男|女|人妖)$/;
+		
+		var reg = new RegExp(pattern);
+		
+		if(reg.test(obj.value)){
+			console.log('验证成功');
+		}else{
+			console.log('失败');
+		}
+
+
+		// 课下扩展		邮箱的验证
+		// 				网址验证
+	
+
+}
+	
+</script>
+</body>
+</html>

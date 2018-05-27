@@ -1,0 +1,65 @@
+1.h5新标签(离不开js)
+	手机移动端
+	1.form表单控件
+	2.多媒体播放控件:音频,视频
+	3.canvas画布:js来实现绘图功能
+	...
+
+一.form表单控件
+	old: text,password,radio,checkbox,select,file,textarea,hidden(隐藏域),submit,reset,image(图片按钮),button
+	
+	补充的类型:
+	1)日期	 date 　	年/月/日
+			 time 		上/下午 时:分
+			 datetime   pc端不支持
+			 month		月份
+			 week		星期
+	2)数值	 number   
+				*min	最小值
+				*max	最大值
+	3)邮箱	 email		检验是否有@符号
+	4)网址	 url			检验是否有http://
+	5)颜色	 color		拾色器
+	6)控制条 range
+				*max
+				*step	拖动的步长
+
+
+js里正则对象:自定义验证对象
+RegExp:正则对象
+
+<script>
+1)定义规则
+	var pattern = /^[满足的范围]{次数}$/;
+2)生成正则对象 
+	var reg = new RegExp(规则);
+3)验证正则对象是否符合正则规范
+	reg.test(用户名)	返回值：true/false
+</script>
+
+*****重点:W3School参考手册--js对象--js正则表达式
+
+h5新增属性:
+1)required							验证输入框是否为空
+2)placeholder='提示文字'			默认提示文本
+3)autofocus							自动获取焦点
+4)pattern='正则表达式'				可直接进行正则验证					
+
+
+数据列表:百度时输入文字时下面会有很多类似列表提示的信息
+		如:输入'花'字时,会提示'花千骨','花瓣网','花生壳'等
+		<datalist id='data'>
+			<option>花瓣网</option>
+			<option>花儿与少年</option>
+			<option>花千骨</option>
+			<option>花泽类</option>
+		</datalist>
+		<input type="text" list='data'>
+
+	注：data是虚拟的数据列表，要用载体来接；
+		载体是input，设置input的属性list = datalist的id名
+
+作业:
+1.轮播图--3遍
+2.实训页面
+3.正则表达式的应用
