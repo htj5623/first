@@ -1,0 +1,197 @@
+/*
+* @Author: Administrator
+* @Date:   2017-09-23 15:03:06
+* @Last Modified by:   Administrator
+* @Last Modified time: 2018-01-11 14:39:23
+*/
+
+
+/* *{border:1px solid red;}
+测试css链接路径有没有错误，没有错误的话才可以在页面修饰 */
+
+/* 初始化页面 */
+*{margin: 0;padding: 0;}
+html,body{font-size: 12px;font-family: "宋体";}
+
+/* 公共类 */
+.auto{width: 970px;margin: 0 auto;/* border: 1px solid red; */}
+.left{float: left;/* border: 1px solid green;  */}
+.right{float: right;/* border:1px solid orange; */ }
+.overflowH{overflow: hidden;}
+a{text-decoration: none;}
+#a_hover a:hover{text-decoration: underline;color: red;}
+/*a:hover{}权重比较低，要提高权重，才能修饰到所有的标签a,这里加id  */
+
+
+/* header */
+.header_top{/* border:1px solid blue; */background:#EFEFEF;padding-top:11px;padding-bottom: 8px; }
+.header_top .left a{color:#002AA4;}
+.header_top .right a{color: #000000;}
+
+
+
+
+.header_center{/* border:1px solid green; */background-image: url(../images/bigbg.jpg);padding-top: 20px;padding-bottom: 25px;}
+/* .header_center .auto{margin-top: 20px;margin-bottom: 25px;} */
+/* 想要把蓝天背景图片的边框去掉，发现子盒子auto加的间距值没有了；所以直接给父盒子加内间距即可。 */
+.header_center .tel{margin-left: 30px;line-height: 26px;margin-top: 28px;}
+/* line-height:调整两行之间的行高; 即电话号码与下行文字的间距*/
+/* margin-top: 28px; */
+.header_center .new p{clear:right;background: url(../images/topbg2.gif);width: 227px;height: 31px;
+					line-height: 31px;text-indent:28px;margin-top: 30px;}
+/* margin-top: 30px; img盒子与p盒子不在同一层，img向右浮动了，所以这里给p标签加大点的外上间距；
+这里的外间距指p标签到new盒子的外间距,只要大过img标签的大小就可以产生位移了。 */
+.header_center .new{margin-top: 28px;}
+
+
+
+
+.header_bottom{/* border:1px solid purple; */background: url(../images/topnavbg1.gif) repeat-x;
+			color: white;}
+       		/* color: white;空格颜色 */
+			/* 背景图高度35px; */
+.header_bottom .nav{/* border:1px solid yellow; */font-size: 16px;
+					font-family: "黑体";line-height: 35px;}
+.header_bottom a{color: white;}
+.header_bottom .nav a{/* border: 1px solid red;*/ /* width: 70px; */height: 35px;
+					  display: inline-block;
+					  padding: 0 14px;
+					  background: url(../images/topline.gif) no-repeat right center;}
+/* 加width="70px"时，每个内容宽度相同;但是现在每个内容宽度由内容决定; 所以给a标签加相同的左右内间距。
+这里盒子宽度=内容+内间距*/
+.header_bottom .nav a.current{background: url(../images/topnavcur2.gif) no-repeat center;}
+.header_bottom .small_nav{width: 338px;height: 19px;
+						/* 加内填充16px,为保证盒子总高度保持35px不变，盒子总高度要变成35-16=19px */
+						 background: url(../images/topnavbg2.gif);
+						 padding-top: 16px; 
+
+
+						 /* 方法1：首行缩进 */
+						 text-indent: 115px;
+						/* 方法2：给a标签父盒子small_nav加左内边距;宽度-左内间距*/
+						/* padding-left: 115px;width:223px; *//* 338px-115px=223px */ 
+						}
+
+/* 方法3：移动第一个a标签,给第一个a标签加左外边距*/							 				
+/* .header_bottom .small_nav a:first-child{margin-left: 115px;} */
+#a_hover .header_bottom a:hover{color: white;}
+
+
+
+
+
+/* container内容区 */
+.container{margin-top: 10px;}
+
+/* left_box */
+.container .left_box{width: 300px;/* height: 500px; */}
+/* 宽度由内容撑起 */
+
+/* 橘色 */
+.container .left_box .box{border: 1px solid #FFCC66;/* height: 200px; */
+													background:#F3ECCF;margin-bottom: 10px;}
+.container .left_box .box .con{/* border: 1px solid blue; *//* height:150px; */}
+.container .left_box .box h3{background: url(../images/titbg1.gif);
+														height: 27px;line-height: 27px;
+														text-indent: 15px;
+														color: red;
+														font-size: 18px;
+														border-bottom:1px solid #FFCC66; }
+/* 蓝色 */
+.container .left_box .box1{border:1px solid #7DC5D7;
+													background:#EBFCFC;}
+.container .left_box .box1 h3{background: url(../images/titbg2.gif);
+														border-bottom: 1px solid #7DC5D7;color:#003399;}
+
+
+/* 线路搜索内容修饰 */
+.left_box .xlss table{/* border:1px solid blue; */line-height: 30px;}
+/* line-height: 30px;调整每行行高 */
+.left_box .xlss input[name=address]{width: 200px;}
+.left_box .xlss select{width: 70px;}
+.left_box .xlss input[name=keywords]{width: 223px;}
+.left_box table{margin-left: 14px;}
+
+.left_box .xlss .con p{color: #8B3030;font-size: 15px;
+												font-weight: bold;
+												line-height: 30px;
+												margin-left: 14px;
+												margin-right: 50px;}
+.left_box .xlss p a{color:green;}
+
+
+
+/* 最新攻略内容修饰 */
+.left_box .zxgl .con1 p:first-child{font-size: 14px;}
+.left_box .zxgl .con1 a{color: #003366;font-weight: bold;}
+.left_box .zxgl .con1 p:nth-child(2){text-indent: 2em;}
+.left_box .zxgl .con1 p:nth-child(3){text-align: right;}
+.left_box .zxgl .con1 ul{list-style-position: inside;line-height: 42px;}
+/*未初始化时，ul与li标签之间有ul内左间距;
+由于页面初始化去掉了间距，导致ul和li所加的边框在一起了;所以符号看不太见;
+所以这里要加list-style-position: inside; */
+.left_box .zxgl .con1 span{float: right;}
+.left_box .zxgl .con1{padding:14px 8px 40px;}
+.left_box .zxgl .con1 li{border-bottom:1px dashed #999;}
+/* 加上下边框 */
+
+
+
+/* 新闻点击排行榜内容修饰 */
+.left_box .xwdj .con1 ol{list-style-position:none;line-height: 30px; }
+.left_box .xwdj .con1 a{color:#003366;font-weight: bold; }
+.left_box .xwdj .con1 ol span{/* border: 1px solid red; */
+						width: 20px;height: 20px;
+						display: inline-block;
+						margin-left: 10px;
+						background: #ddd;
+						color: blue;
+						text-align: center;
+}
+.left_box .xwdj .con1 ol .span_1{background: orange;color: white;}
+
+
+
+/* 联系我们内容修饰 */
+.left_box .lxwm .con2 p{margin-left:15px;color: orange;
+											font-size: 15px;font-weight: bold; }
+.left_box .lxwm .con2 table{line-height:25px;width:300px;}
+
+
+
+
+/* right_box */
+.container .right_box{width: 660px;}
+.container .right_box .right_box1{/* border: 1px solid red; */
+								line-height: 30px;
+								text-align: center;
+								margin-top:10px;
+							border-bottom: 1px dashed #333;}
+
+.container .right_box .right_box1 h1{margin-bottom: 8px;}
+.container .right_box .right_box1 span{margin-right: 20px;}
+.container .right_box .right_box2{/* border: 1px solid blue; */text-align: center;
+							margin-top: 20px;}
+.container .right_box .right_box2 p{margin-bottom: 20px;}
+.container .right_box .right_box3{text-indent: 4em;line-height: 5px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* foot */
+.foot{background:#ccc;height: 30px;}

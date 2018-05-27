@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+        	*{margin: 0;padding: 0;}
+        	.left{float: left;}
+        	.right{float: right;}
+        	html,body{font-size: 12px;font-family: "宋体";}
+			/* 头部 */
+			.header_top{/* border:1px solid red; */height: 30px;}
+			.header_top a{text-decoration: none;height: 30px;line-height: 30px;}
+			
+
+			.header_center{/* border:1px solid blue; */height: 60px;}
+			.header_center .con{height: 60px;line-height: 60px;}
+			.header_center .left{font-size: 20px;}
+			.header_center a{margin-left: 15px;text-decoration: none;color: #333;font-size: 15px;}
+			.header_center a:hover{color: #5CD137;}
+
+
+
+			.header_bottom{border:1px solid green;height: 80px;background: #45A152;color: white;}
+			.header_bottom .left{font-size: 26px; }
+			.header_bottom a{color: white;}
+			.header_bottom .right{font-size: 16px;}
+			.header_bottom .right a{margin-left: 10px;text-decoration: none;margin-top: 10px;display: inline-block;}
+				/* margin-top: 10px;display: inline-block;让右侧链接往下，和Products在一行;这里要把a标签转化成块元素，这里假设margin_top:10px; 行元素添加margin_top:10px;无法移动。*/
+
+			.header_bottom .con p{margin-bottom: 23px;}
+			/*margin-bottom: 23px ;让第二行统一向下移动 */
+	
+
+			.con{/* border:1px solid#CBC90E; */width:1000px;margin: 0 auto;overflow: hidden;}
+			
+			
+			
+
+
+			/* 内容区 */
+
+
+
+
+			/* 尾部 */
+
+
+
+
+
+        </style>
+    </head>
+    <body>
+    	<!-- 头部 -->
+			<div class="header_top">
+				<div class="con">
+					<span class="left">
+						<a href="">中文</a>|
+						<a href="">En</a>
+					</span>
+					<p class="right">
+						<input type="text">
+						<input type="button" value="搜索">
+					</p>
+				</div>
+			</div>
+
+
+			<div class="header_center">
+				<div class="con">
+					<span class="left">logo</span>
+					<p class="right">
+						<a href="">产品</a>
+						<a href="">方案</a>
+						<a href="">新闻</a>
+						<a href="">下载</a>
+						<a href="">联系</a>
+					</p>
+				</div>
+			</div>
+
+
+			<div class="header_bottom">
+				<div class="con">
+						<p>
+							<a href="">首页</a>>
+							<a href="">产品</a>
+						</p>
+						<!-- 第一行独占一行，所以选择块元素，这里选p标签 -->
+						
+
+							<span class="left">Products</span>
+							<div class="right">
+								<a href="#">电子血压计</a>
+								<a href="#">血压计</a>
+								<a href="#">听诊器</a>
+								<a href="#">血氧仪</a>
+							</div>
+						
+						
+					
+				</div>
+
+			</div>
+		
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+    	<!-- 内容区 -->
+
+
+
+
+    	<!-- 尾部 -->
+
+
+    </body>
+</html>

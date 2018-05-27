@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+			div{border:1px solid red;width: 400px;margin: 10px auto;}
+			.box1 img:last-child{display: none;} /* display：none;隐藏之后，不占位置 */
+
+			.box2 img:nth-child(2){opacity: 0;} /* opacity:0;隐藏之后，仍占位置 */
+			/* 低版本ie浏览器兼容性差，无法识别opacity */
+			/* 只能识别 filter:Alpha(opacity=0); */
+			.box img:nth-child(2){filter:Alpha(opacity=0);}
+
+
+			.box3 img:last-child{visibility: hidden;} /*visibility:hidden;隐藏之后，仍然占位置 */
+        </style>
+
+    </head>
+    <body>
+		<div class="box1">
+			<img src="img/3.jpg" height="200" width="200" alt="">
+			<img src="img/7.jpg" height="200" width="200" alt="">
+		</div>
+
+		<div class="box2">
+			<img src="img/3.jpg" height="200" width="200" alt="">
+			<img src="img/7.jpg" height="200" width="200" alt="">
+		</div>
+
+		<div class="box3">
+			<img src="img/3.jpg" height="200" width="200" alt="">
+			<img src="img/7.jpg" height="200" width="200" alt="">
+		</div>
+    </body>
+</html>

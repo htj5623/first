@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+			a{ display: inline-block;
+				border:1px solid red;
+				width: 240px;
+				height: 30px;
+				line-height: 30px;
+
+
+				word-break:keep-all;
+				/* word-break:keep-all; 让文字全部在一行显示 */
+				word-spacing: nowrap;
+				/* 遇见空格或标点符号不换行 */
+				
+				/* letter-spacing: 15px; */
+				/* 字间距 */
+
+				overflow: hidden; /* 溢出内容:引藏起来 */
+				text-overflow:ellipsis; /* 溢出文本(即隐藏的内容)：以省略号显示 */
+
+			}
+    
+
+        </style>
+
+
+    </head>
+    <body>
+    	<a href="#">比我优秀的人比我还努力那我还努力有什么用？
+    	</a>
+    	<!-- 文字之间不能有逗号、空格等标点符号，默认为空格，会换行;所以要加word-spacing:nowrap; -->
+    </body>
+</html>
+
+
+
+
+<!-- 当内容过多时，overflow:hidden;可以让溢出的内容以省略号结束 -->

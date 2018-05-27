@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+			.father{border:4px solid red;width: 800px;margin: 0 auto;margin-top: 15px;}
+			.left{background:pink;width: 200px;height: 200px;float: left;}
+			.right{background: skyblue;width: 400px;height: 150px;float: right;}
+			.box{width: 800px;height: 80px;background:orange;margin: 0 auto;}
+
+			/* 方法1.给父盒子加固定高度height */
+			.f_1{height: 200px;}
+
+			/* 方法2. 给box盒子(父盒子弟弟)加清除浮动(外墙法)*/
+			.f_2+.box{clear: both;}
+			
+			/* 方法3.给父盒子加overflow:hidden; */
+			.f_3{overflow: hidden;}
+
+			/* 方法4.尾部加一个不浮动的盒子占位置，撑起父盒子高度(内墙法) */
+			.clear_box{ /* height: 200px; background: blue; */clear: both;} 
+
+			/* 方法5.尾部添加子盒子(伪元素)(内墙法) */
+			.f_5:after{content: "";
+					   clear: both;
+						/* border:4px solid green; */
+						 /*查看伪元素的大小，文字的大小  */
+						/*  width: 100%;height: 30px; */
+					   display: block;
+		}
+        </style>
+    </head>
+    <body>
+    <!-- 1.方法1 -->
+    	<div class="father f_1">
+    		<div class="left"></div>
+    		<div class="right"></div>
+    	</div>
+    	<div class="box"></div>
+
+
+	<!-- 2.方法2 -->
+    	<div class="father f_2">
+    		<div class="left"></div>
+    		<div class="right"></div>
+    	</div>
+    	<div class="box"></div>
+
+
+    <!-- 3.方法3 -->
+    	<div class="father f_3">
+    		<div class="left"></div>
+    		<div class="right"></div>
+    	</div>
+    	<div class="box"></div>
+    	
+
+    <!-- 4.方法4 -->
+    	<div class="father">
+    		<div class="left"></div>
+    		<div class="right"></div>
+
+    		<!-- 父盒子尾部加子盒子占位置 -->
+    		<div class="clear_box"></div>
+    	</div>
+    	<div class="box"></div>
+
+
+    <!--5.方法5  -->
+    	<div class="father f_5">
+    		<div class="left"></div>
+    		<div class="right"></div>
+
+            <!-- 伪元素 -->
+    	</div>
+    	<div class="box"></div>
+    </body>
+</html>
