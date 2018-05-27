@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jq/jquery-1.9.1.min.js"></script>
+	<script>
+	
+	// 1.原生js获取标签
+	window.onload = function(){
+	// window.onload：所有的html元素，外部链接文件，资源等加载完成才会执行
+	var p_obj = document.getElementsByTagName("P");
+	console.log(p_obj[0]);//undefined//要有window.onload
+}
+
+
+	// 2.jq：提供的全是方法，方法有小括号
+	// 		 不提供属性		 属性没有小括号
+	// ready事件
+	// 加载完DOM元素之后，就会执行
+
+	//console.log($);
+	//function (e,t){return new b.fn.init(e,t,r)}  //即$：代表jq
+	
+
+	// ready事件的书写方式
+	//1.书写方式1
+	jQuery(document).ready(function($) {
+		console.log('ready go !');
+	//ready先于window.onload,在onload事件之前执行
+		
+		var obj = $("p");//选择器名称
+		console.log(obj[0]);
+
+		console.log($("div"));
+
+		console.log($('.nav a'));
+
+		console.log($('.nav a')[0]);
+	});
+
+
+	// 2.书写方式2
+	$(document).ready(function(){
+		console.log("加载");
+
+	});
+	//jq是对页面的DOM元素的操作
+	//当页面的DOM准备好之后，要去做的事件,事件有小括号()
+	//事件内容写在匿名函数function(){ } 中
+	
+
+
+	// 3.书写方式3
+	$(function(){
+		console.log("闹心");
+	});
+
+	
+
+	</script>
+</head>
+<body>
+	<p>好好学习，天天向上</p>
+	<h1>世界那么大，我想去看看！</h1>
+	<div>人丑就要多读书</div>
+	<div>成长是种烦恼</div>
+	<div class="nav">
+		<a href="#">首页</a>
+		<a href="#">公司简介</a>
+		<a href="#">公司业务</a>
+		<a href="#">友情链接</a>
+	</div>
+</body>
+</html>

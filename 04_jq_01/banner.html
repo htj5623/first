@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{margin:0;padding:0;}
+		.banner{
+			border: 1px solid red;
+			width: 800px;
+			height: 350px;
+			margin: 0 auto;
+			position: relative;
+		}
+		.banner img{width: 800px;display: none;}
+		.banner img:first-child{display: inline-block;}
+		.points{/* border: 1px solid blue; */position: absolute;
+		left: 0;bottom: 0;width: 100%;text-align: center;}
+		.points span{border: 1px solid white;
+			width: 18px;
+			height: 18px;
+			display: inline-block;
+			border-radius:18px;}
+		.points span.current{background: white;}
+	</style>
+</head>
+<body>
+	<script src="jq/jquery-1.9.1.min.js"></script>
+	<script>
+		$(function(){
+			$(".banner .points span").click(function(){
+				console.log($(this).index());
+				var i = $(this).index();
+				$(".banner img").css("display","none");
+				$(".banner img").eq(i).css("display","block");
+				$(".banner .points span").eq(i).addClass('current');
+				$(".banner .points span").eq(i).siblings('span').removeClass('current');
+			})
+		})
+	</script>
+	<div class="banner">
+		<img src="hero/b_1.jpg" alt="">
+		<img src="hero/b_2.jpg" alt="">
+		<img src="hero/b_3.jpg" alt="">
+		<img src="hero/b_4.jpg" alt="">
+		<div class="points">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+	</div>
+
+</body>
+</html>

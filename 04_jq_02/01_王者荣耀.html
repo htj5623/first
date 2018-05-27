@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jq/jquery-1.9.1.min.js"></script>
+	<link rel="stylesheet" href="css/王者荣耀.css">
+	<script>
+	
+	// 点击小图，切换大图并切换文字
+	// 使用jq
+	$(function(){
+		// 第二步：
+		// 存储个人信息——>将个人信息存储成二维数组——>从二维数组中取出小图循环遍历输出到small_img空盒子里。
+		//  0:名字 1：昵称 2：语录 3：小图  4：大图
+		var arr = [
+		['鲁班七号','机关造物','鲁班大师，智障250，膜拜，忌惮膜拜。','s_1.jpg','b_1.jpg'],
+		['安琪拉','暗夜萝莉','生命就像人家的魔法书，涂涂改改又是一年','s_2.jpg','b_2.jpg'],
+		['庄周','逍遥梦幻','蝴蝶是我，我就是蝴蝶','s_3.jpg','b_3.jpg'],
+		['大乔','伊势巫女','守望着天空，大海，和你的回忆。','s_4.jpg','b_4.jpg'],
+		['妲己','魅惑之狐','为什么会痛苦，一直微笑就好了','s_5.jpg','b_5.jpg'],
+		['狄仁杰','断案大师','以陛下的名义，你被捕了','s_6.jpg','b_6.jpg'],
+		['曹操','鲜血枭雄','宁叫我负天下人','s_7.jpg','b_7.jpg'],
+		['李白','青莲剑仙','一篇诗，一斗酒，一曲长歌，一剑天涯','s_8.jpg','b_8.jpg']
+	];
+		console.log(arr);
+		//第三步：从数组中取出小图放到small_img空盒子里 
+		
+		var imgbox = "";//存储小图图片的变量
+		for(key in arr){
+			// arr[key]：取出某个人的整套信息，又是一个数组
+			// arr[key][3]：小图
+			console.log(arr[key][3]);
+			
+			// 1) 取出小图图片
+						// <img src="hero/s_2.jpg">
+						// 两端要加引号，因为要输出<img src="hero/""+arr[key][3]+">
+			imgbox += "<img src='hero/"+arr[key][3]+"'>";	
+		}
+			// 2) 放到small_img盒子里
+			// 循环完成之后，把所有的小图放到small_img里
+		console.log(imgbox);
+		$(".box .small_img").html(imgbox);
+
+
+
+	// 点击小图，相应的大图和名字，昵称，语录显示在相应位置 。
+	
+	$('.box .small_img img').click(function(){
+		console.log($(this).index());
+		// 点击第一张图，得到下标是0，该图所在数组在整个数组arr中下标也为0
+		// 即：			 下标0
+		// 人物所在数组：arr[0]
+		// 名字：		 arr[0][0]
+		// 昵称：		 arr[0][1]
+		// 语录：		 arr[0][2]
+		// 大图：		 arr[0][4]
+		var i = $(this).index();
+		// 即：			 下标i
+		// 人物所在数组：arr[i]
+		// 名字：		 arr[i][0]
+		// 昵称：		 arr[i][1]
+		// 语录：		 arr[i][2]
+		// 大图：		 arr[i][4]
+		$('.box .txt p.hero_name').html(arr[i][0]);
+		$('.box .txt p.nick_name').html(arr[i][1]);
+		$('.box .txt p.speak').html(arr[i][2]);
+		$('.box>img').attr('src','hero/'+arr[i][4]);
+
+	})
+	
+
+})
+
+	</script>
+</head>
+<body>
+<div class="box">
+	<img src="hero/b_1.jpg" alt="">
+	<div class="small_img">
+	<!-- <img src="hero/s_1.jpg" alt="">
+		<img src="hero/s_2.jpg" alt="">
+		<img src="hero/s_3.jpg" alt="">
+		<img src="hero/s_4.jpg" alt="">
+		<img src="hero/s_5.jpg" alt="">
+		<img src="hero/s_6.jpg" alt="">
+		<img src="hero/s_7.jpg" alt="">
+		<img src="hero/s_8.jpg" alt=""> -->
+<!-- 第一步： 
+	一般来说，这里的元素是可变的，所以这里我们不写固定的img 。不放内容，定义成一个空盒子
+ 	因为元素是可变的，且输出的img循环多次，所以定义成数组，使用循环将小图输出到该盒子(small_img)里 -->
+	</div>
+	<div class="txt">
+		<p class="nick_name">机关造物</p>
+		<p class="hero_name">鲁班七号</p>
+		<P class="speak">鲁班大师，智障250，膜拜，忌惮膜拜。</p>
+	</div>
+</div>	
+</body>
+</html>
+	
+
+<!--题目：点击小图，显示对应的大图和信息
+	要的效果:切换小图，后面的背景图和信息都切换
+	注意：这里操作的有两种图(大图和小图),不是单一的切换小图转大图
+	分析：
+	因为 切换小图转大图 里是针对一种图片操作的,是把大图设置宽高，转化成的小图。
+	而这里是小图不是通过设置大图的宽高得来的,而是有小图，也有大图。
+
+	所以这里如果想要 点击小图切换至大图的话 ，可以设置宽高变称大图，但是转化成
+	的大图就很不清晰了,这里不能使用点击小图切换大图的办法。
+
+
+
+	这里声明数组，把所有人物的信息都存储为一个数组;而每个人又有很多条信息，所以
+	一个人物的信息又是一个数组;二维数组。-->
+	
+	<!--
+知识点1:
+	页面中只有 一个大盒子 
+
+	大盒子又分为: 装小图的盒子
+				  文字的盒子
+				  大图
+
+知识点2:
+	存储个人信息:
+		多维数组
+		var arr = [
+		[],
+		[],
+		[],
+		[],
+	];
+	
+	数组:如果之后有追加或减少的元素,不需要去html页面修改,直接在数组中添加或减少元素即可;这是数组比较便利的地方.
+	即只要元素会变动时,使用数组
+
+知识点3:
+	一打开页面,要做初始效果
+
+	一般来说,定义的数组是可变化的,可任意增加一组数据,也可以任意减少数据;要根据数组中的元素决定
+	那么使用循环取出小图输出到小图的盒子里<div class='small_img'></div>
+	取到s_1放到small_img中
+	取到s_2放到small_img中
+	取到s_3放到small_img中
+	....
+
+	使用循环
+	for(key in arr){
+		// arr[key]:取出的是某个人的整套信息
+		// arr[key][3]:某个人整套信息里的小图
+
+		// 把小图放到small_img 盒子里
+			var a = <img src="hero/'+arr[key][3]+'" alt="">
+			$('.small_img').html(a);
+				// 往small_img 的内容里放值
+
+	}
+		
+
+		// 此时只能得到最后一张小图
+
+		
+		for循环外声明变量,把所有循环得到的小图存储起来用变量接收，循环结束后输出该变量。
+		
+		var a = '';
+		for(key in arr){
+			a += <img src="hero/'+arr[key][3]+'" alt="">
+			
+		}
+		$('.small_img').html(a);
+
+知识点4:
+	点击切换效果
+	单击小图,切换大图,姓名,昵称,语录
+	
+	$('.small_img img').click(function{
+		
+		console.log($(this).index());
+		
+		由上行代码可知: 小图的下标: 0 1 2 3...
+		
+		点击第一张小图,下标为0
+		点击第二张小图,下标为1
+		点击第三张小图,下标为2
+		...
+		
+		第一张小图所在数组在整个数组中的下标也是0
+		第二张小图所在数组在整个数组中的下标也是1
+		第三张小图所在数组在整个数组中的下标也是3
+		...
+
+		即:
+		小图的下标 == 该小图所在数组的下标
+		var i = $(this).index();
+		console.log(arr[i]);   //得到某个人物的整套信息
+							   //数组
+		
+		点击大乔,
+		取到大乔整套信息的数组,
+		再从大乔的数组中取出大图和信息,
+		大图换成大乔,信息换成大乔的信息
+
+		0:名字 1:昵称 2:语录 3:小图 4:大图
+		
+		1> 更换大图:
+			先找大乔数组的大图,赋值给大图
+			大乔数组的大图: arr[i][4]
+			背景大图:       $('.box img')
+			赋值:  $('.box img').attr('src','hero/'+arr[i][4]);
+
+		2> 更换昵称:
+			$('.nick_name').html(arr[i][1]);
+		3> 更换名字:
+			$('.hero_name').html(arr[i][0]);
+		4> 更换语录:
+			$('.speak').html(arr[i][2]);
+
+
+
+	});	
+
+-->
+
+
+	
+
+
+
+
+ 

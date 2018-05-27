@@ -1,0 +1,32 @@
+*{margin: 0;padding: 0}
+html,body{ font-size: 14px; font-family: '微软雅黑'; }
+
+.banner_box{ width: 1000px; height: 580px; margin: 10px auto;
+	/* border:15px solid red; */position: relative; overflow: hidden; }
+.banner_box .imgs{ width: 4000px;/*  border: 3px solid green; */
+	/*margin-left: 100px;*/
+ }
+
+
+.banner_box .imgs img{width: 1000px; height: 580px; float: left;}
+.banner_box .points{/*border: 1px solid blue;*/text-align: center;
+	position: absolute;left: 0;bottom:0;width: 100%; 
+	/*background: rgba(0,0,0,0.2);*/ }
+.banner_box .points span{ display: inline-block; width: 14px; margin:2px;
+	height: 14px;border-radius: 100px;border:2px solid white;
+ }
+ .banner_box .points span.current{ background: white }
+ /*箭头按钮*/
+ .banner_box .left_btn, .banner_box .right_btn{
+ 	display: inline-block;width:60px;height: 60px;
+ 	font-size: 40px;background:rgba(0,0,0,0.4); color: white;
+ 	text-align: center;line-height: 60px;
+ 	position: absolute;top: 50%;margin-top: -30px;
+ 	opacity: 0.2;
+ }
+  .banner_box .left_btn{left: 0;}
+  .banner_box .right_btn{right: 0;}
+
+ .banner_box .left_btn:hover, .banner_box .right_btn:hover{
+	opacity: 1
+ }

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{padding:0;margin:0;}
+		#tabContainer{border:1px solid blue;width: 900px;
+			margin:0 auto;overflow: hidden;}
+		#tab li{float: left;border: 1px solid red;width: 220px;
+			height: 30px;line-height: 30px;background: pink;
+			text-align: center;list-style: none;}
+		#con ul{clear: both;display: none;}
+		#con ul:first-child{display: block;}
+		#con ul li{list-style-position: inside;line-height: 30px;}
+	</style>
+</head>
+<body>
+	<!-- 思路：1) 给标题加点击事件，传入参数，这里参数为每个标题的下标
+			   2) 找到内容区的所有内容
+			   3) 遍历内容数组
+			   		判断：如果传入的参数 等于 该内容区 的下标，显示该内容
+			   			否则，不显示该内容 
+	 -->
+	<div id="tabContainer">
+		<div id="tab">
+			<ul>
+				<li onclick="fun(0)">《人生若只如初见》经典语录</li>
+				<li onclick="fun(1)">《目送》经典语录</li>
+				<li onclick="fun(2)">《撒哈拉的故事》经典语录</li>
+				<li onclick="fun(3)">《迷路的云》经典语录</li>
+			</ul>
+		</div>
+		<div id="con">
+			<ul>
+				<li>静待一树花开，盼你叶落归来。</li>
+				<li>不是无情，亦非薄幸，只是我们一生中会遇上很多人，真正能停留驻足的又有几个？生命是终将荒芜的渡口，连我们自己都是过客。</li>
+				<li>烟花不会让人懂得，它化作的尘埃是怎样的温暖，他宁肯留下一地冰冷的幻象，一地破碎。如果你哀伤，你可以为他悼念，却无法改变它的坚持。</li>
+				<li>有些人，他们的心田只能耕种一次，一次之后，宁愿荒芜。后来的人，只能眼睁睁看它荒芜死去。 何必可惜？昙花一现的惊艳，只要出现一次已经可以。荒芜的本身就是一种保留。因为静默，你永远不会了解它蕴藏了怎样深沉如海的情感。</li>
+				<li>我们最常看到的结果是：终于明白要寻找的那个人是谁时，回首灯火阑珊处，已空无一人</li>
+			</ul>
+			<ul>
+				<li>我慢慢地、慢慢地了解到，所谓父女母子一场，只不过意味着，你和他的缘分就是今生今世不断地在目送他的背影渐行渐远。你站在小路的这一端，看着他逐渐消失在小路转弯的地方，而且，他用背影默默告诉你：不必追</li>
+				<li>时间是一只藏在黑暗中的温柔的手，在你一出神一恍惚之间，物走星移。</li>
+			</ul>
+			<ul>
+				<li>飞蛾扑火时，一定是极快乐幸福的。</li>
+				<li>人，真是奇怪，没有外人来证明你，就往往看不出自己的价值。</li>
+				<li>生命的过程，无论是阳春白雪，青菜豆腐，我都得尝尝是什么滋味，才不枉来走这么一遭！</li>
+				<li>每想你一次，天上飘落一粒沙，从此形成了撒哈拉。</li>
+				<li>夜来了， 我点上白蜡烛 看它的眼泪淌成什么形象。</li>
+				<li>自由自在的生活，在我的解释里，就是精神的文明。</li>
+				<li>没有变化的生活，就像织布机上的经纬，一匹一匹的岁月都织出来了，而花色确实一个样子的单调。</li>
+			</ul>
+			<ul>
+				<li>有的心情你不会明白的，有时候过了五分钟，心情就完全不同了。生命的很多事，你错过一小时，很可能就错过一生了。</li>
+				<li>秋天的云是一种如何的美呢？它是那种繁华落尽见真醇，是无情荒地有情天，是蓦然回首的灯火阑珊，是诗歌里轻轻的惊叹号，是碧蓝大海里的小舟。</li>
+				<li>无常是幻，无常是苦，无常是迁流不息，无常是变动不拘，无常是美，却是苍凉的美。人人不免一死，如同每一片云都不可能停在相同的地方。</li>
+				<li>普贤菩萨警众偈：“是日已过，命亦随减，如鱼少水，斯有何乐？当勤精进，如救头然，但念无常，慎勿放逸。”</li>
+			</ul>
+		</div>
+	</div>
+	<script>
+		function fun(n){
+			var tab = document.querySelectorAll('#con ul');
+			for(var i=0;i<tab.length;i++){
+				if(n==i){
+					tab[i].style.display = 'block';
+				}else{
+					tab[i].style.display = 'none';
+				}
+
+
+			}
+		}
+
+	</script>
+</body>
+</html>

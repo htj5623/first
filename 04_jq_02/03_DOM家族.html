@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jq/jquery-1.9.1.min.js"></script>
+	<script>
+	$(function(){
+		$('ul').children().css('border','1px solid red');
+		// children()为空时,找到所有儿子
+		
+		$('ul').children('.current').css('border','1px solid #0FF6B7');
+		
+		// $('ul').children('a').css('text-decoration','none');//找不到
+	 	//children()只能找到儿子
+		
+		$('ul').children().children('a').css('text-decoration','none');
+		$("ul").find("a").css('color','#71F94E');
+		// find():不能为空	
+		// 上面两种方法都能找到a标签
+		
+		$("ul").find("*").css("border","1px solid #C845EB");//找到ul所有子元素
+	
+		
+		$("a").parent().css("width","300px");
+		// a的爸爸
+		
+		$("a").parents().css({"width":"700px",
+							  "border":"1px solid #EFC321"});
+		// a的所有父元素。爸爸，爷爷,曾祖父。li ul body
+		
+		$("a").parents('ul').css('background','pink');
+		// a的父元素，标签是ul的父元素。
+		
+		$(".father p").prev().css('color','red');
+		// prev()：前一个哥哥
+		
+		$(".father p").prevAll().css('border','1px solid blue');
+		// prevAll()：前面所有哥哥
+	
+		$(".father p").prevUntil("h1").css('background','pink');
+	
+	});
+
+
+	</script>
+</head>
+<body>
+<ul>
+	<li>你玩手机的时候，你的情敌正在学习。</li>
+	<li>都长成这样了，还不好好学习。</li>
+	<li>摔倒了不爬起来还等着别人去踩吗</li>
+	<li>你一无所有 还那么矫情和懒惰</li>
+	<li>生命就像人家的魔法书，涂涂改改又是一年</li>
+	<li>智商太低会传染，离我远点。</li>
+	<li>鲁班大师，智障250，膜拜，忌惮膜拜。</li>
+</ul>
+<ul>
+	<li class="current"><a href="#">庄周</a><span>2017-10-24</span></li>
+	<li><a href="#">庄周</a><span>2017-10-24</span></li>
+	<li><a href="#">庄周</a><span>2017-10-24</span></li>
+	<li><a href="#">庄周</a><span>2017-10-24</span></li>
+	<li><a href="#">庄周</a><span>2017-10-24</span></li>
+</ul>
+
+<br><br><br><hr><br><br>
+
+<div class="father">
+	<h1>你一无所有 还那么矫情和懒惰</h1>
+	<h2>都长成这样了，还不好好学习。</h2>
+	<h3>鲁班大师，智障250，膜拜，忌惮膜拜。</h3>
+	<p>智商太低会传染，离我远点。</p>
+	<h4>摔倒了不爬起来还等着别人去踩吗</h4>
+	<h5>生命就像人家的魔法书，涂涂改改又是一年</h5>
+	<h6>膜拜，忌惮膜拜。</h6>
+</div>
+
+
+
+
+
+
+
+</body>
+</html>

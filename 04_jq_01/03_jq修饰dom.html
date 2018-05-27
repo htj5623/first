@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jq/jquery-1.9.1.min.js"></script>
+	<script>
+	$(function(){
+		$(".box>img").css({
+			width: '655px',
+			height: '350px',
+		});
+		$('.box div img').css({
+			width: '160px'
+		});
+	
+		$('.box').css({
+			width: '665px',
+			border: '1px solid red',
+			margin:'0 auto'
+		});
+
+		// 点击小图，切换大图
+		// 给小图添加点击事件
+		$('.box div img').click(function(){
+			// 把当前被点击的小图的src地址赋值给大图
+			
+			// console.log(this);//原生js,只能使用原生js的属性
+			// console.log(this.src);//原生js属性
+
+			// $(this);//jq中---当前操作的对象
+			console.log($(this).attr('src'));//当前小图的src地址//变量
+			$('.box>img').attr('src',$(this).attr('src'));
+			// 赋值格式：$("").attr('','');
+			//但这里：$(this).attr('src')是变量，不能放在引号中
+
+		});
+
+		// 获取div .box的内容
+		console.log($('.box').html());
+		console.log($('.box').text());//只识别纯文本
+
+		// 给内容赋值
+		$(".box1").html("<font color='red'>老师你好，请问像我这样的没有背景的北大毕业生应该如何定位自己？</font>");
+
+		// $(".box1").text("<font color='red'>老师你好，请问像我这样的没有背景的北大毕业生应该如何定位自己？</font>");
+
+	
+	})
+	</script>
+</head>
+<body>
+<div class="box">
+	<img src="hero/b_1.jpg"  alt="">
+	<div>
+		<img src="hero/b_1.jpg"  alt="">
+		<img src="hero/b_2.jpg"  alt="">
+		<img src="hero/b_3.jpg"  alt="">
+		<img src="hero/b_4.jpg"  alt="">
+	</div>
+</div>
+	<div class="box1"></div>
+</body>
+</html>
+
+<!-- jq中全是方法，没有等于号，大于号这些
+	
+	jq:即$
+	
+	1)使用jq前，首先将jq文件链接在页面中
+	<script src="../04_jq_01/jq/jquery-1.9.1.min.js"></script>
+	script标签加src属性后，只做链接使用
+	想要进行页面修饰等，需要重新写一个script标签
+
+
+	2)页面加载完成后要做的事件：
+	$(function(){
+	
+	});
+
+
+	3)获取当前对象
+	$(this)
+
+	4)获取当前操作对象的src属性
+	$(this).attr('src')
+
+	5)将当前操作对象的src赋值给大图的src
+	大图 ： $('.box>img')
+	大图的src属性： $('.box>img').attr('src')
+	给大图src属性赋值： $('.img>img').sttr('src',$(this).attr('src'))
+	因为当前操作对象是变量，不能加引号
+
+	6)选择器
+	.box>img
+	代表类名为box的盒子的第一个儿子
+
+	
+ -->

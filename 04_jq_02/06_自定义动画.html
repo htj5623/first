@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <style>
+	div,p{width: 150px;height: 150px;border:1px solid red;}
+    div{background: pink;}
+    p{background: skyblue;}
+    </style>
+    <script src="jq/jquery-1.9.1.min.js"></script>
+    <script>
+    $(function(){
+        // 1.一次动画，直接指定最终位置
+    	// 从原点直接往右下角，沿对角线运动
+  
+    	$("div").animate({
+         //直接给了黑子要去的位置：一次动画
+    		marginLeft: '400px',
+            // marginTop:'400px'
+            },
+    		2000, function() {
+    		  alert('这里是回调函数，动画完成之后才会调用');
+            });
+    	
+   
+        alert('在页面代码加载完成后直接弹框，不会等待动画完成之后再执行');
+
+
+        
+        // 2.多次动画：
+        // 一次动画完成之后，再进行一次动画：在回调函数里在使用动画效果：
+             // marginLeft/marginTop:可以近似看做 坐标
+             // 盒子原点位置在左上角
+	
+      
+             $('p').animate({
+                 marginLeft: '300px'},
+                 3000, function() {
+                    $('p').animate({
+                        marginTop: '300px'},
+                        3000, function() {
+                            $('p').animate({
+                                marginLeft: 0},
+                                3000, function() {
+                                    $('p').animate({
+                                        marginTop: 0},
+                                        3000, function() {
+                                            
+                                    });
+                            });
+                    });
+             });
+
+
+
+
+
+
+
+
+
+
+ })
+     
+    </script>
+</head>
+<body>
+    <div></div>
+    <p></p>
+</body>
+</html>
+<!-- 
+          marginLeft  :'400px'
+     或：'margin-left':'400px'
+        属性值加引号时，属性书写方式按照css的来
+        属性值不加引号时，属性书写方式按照js的来
+            
+    
+    $('div').animate({
+        {（参数1）样式1：样式值1,样式2：样式值2},
+         （参数2）speed,
+         （参数3）function(){回调函数}
+    })
+
+    
+    自定义动画中的 第一个参数 只识别 值类型为 数值类型的
+
+ -->

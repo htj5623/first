@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    <script>
+    window.onload = function(){
+    	//加载完成事件--加载完以后要做的事件
+    	var obj = document.getElementsByTagName('img');
+	    console.log(obj);
+	    console.log(obj[0]);
+
+	    var obj_1 = document.getElementById('pic');
+	    console.log(obj_1);
+	    
+    }
+
+
+
+	    var obj = document.getElementsByTagName('img');
+	    console.log(obj);//控制台：[]
+	    console.log(obj[0]);//undefined
+
+	    var obj_1 = document.getElementById('pic');
+	    console.log(obj_1);//null
+	    
+	    var num;//声明变量
+	    console.log(num);//undefined//没有初始化
+
+	    var num1 = 10;//初始化变量
+	 	
+	 	// 所以，当修饰效果在html标签之前时，要加 window.onload事件
+	 	// window.onload事件：当页面DOM元素，外部链接，资源等加载完成
+
+	    
+	</script>
+	
+	    <img src="../03_js_06/img/a.gif">
+	    <img src="../03_js_06/img/b.gif" id='pic'>
+	  	
+	  	
+	  	<!-- <script>
+	    var obj = document.getElementsByTagName('img');
+	    console.log(obj);//控制台：[img,img]
+	    console.log(obj[0]);//<img src="../03_js_06/img/a.gif">
+	    </script> -->
+	   
+    </body>
+</html>

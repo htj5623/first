@@ -1,0 +1,104 @@
+一.注意:
+	js:
+	<script>
+		document.getElementsByName('name');
+		document.getElementsByClassName('class_name');
+		document.getElementsByTagName('tag_name');
+		以上都是数组
+		取出数组中的元素做css样式修饰或者添加点击/失去焦点等事件时,要使用for/for in循环
+		for(){
+
+		}
+	</script>
+
+	jq:
+	<script>
+		$('p').css('border','1px solid red');
+
+		jq中找到的数组,可以直接修饰或添加点击/失去焦点等事件时,类似于css样式直接对标签选择器的修饰
+	</script>
+
+二.DOM元素
+	1)过滤选择器
+	<script>
+	a)找到第一个		$('ul li:first')
+	b)找到最后一个	$("ul li:last")
+	c)找到第n+1个	$("ul li:eq(n)")
+						找到下标是n的li标签
+
+	d)找到第n个		$("ul li").eq(n)
+						n为变量使用
+	e)找到偶数下标行	$("ul li:even")
+	e)找到奇数下标行	$("ul li:odd")
+	</script>
+
+三、找DOM家族
+	<script>
+	1)找孩子
+	  a)找儿子	$("ul").children();找到所有儿子  
+				$("ul").children("选择器");
+				children:只能找到儿子
+	  b)找子元素(可跨级)
+				$("ul").find();
+				$("ul").find("选择器");
+	2)找爸爸
+	  a)找爸爸	$("a").parent('选择器');
+	  b)找爸爸，爷爷，祖父...(可跨级)
+				$("a").parents('选择器');
+	3)找兄弟
+	  a)找哥哥	
+				$("p").prev('选择器'); //前一个哥哥
+				$("p").prevAll('选择器'); //前面所有哥哥
+				$("p").prevUntil('选择器'); //找哥哥，直到遇到选择器停止查找
+				//如： $("p").prevUntil('h1');
+	  b)找弟弟
+				
+				$("p").next('选择器'); //后一个弟弟
+				$("p").nextAll('选择器'); //后面所有弟弟
+				$("p").nextUntil('选择器'); //找弟弟，直到遇到选择器停止查找
+				//如： $("p").nextUntil('h1');
+	  c)找所有的兄弟
+				$("p").siblings('选择器');
+	</script>
+
+四、jq效果
+	<script type="text/javascript">
+	1)显示/隐藏
+		show('slow'/400/'fast',function(){});
+		hide('slow'/400/'fast',function(){});
+		toggle('slow'/400/'fast',function(){});
+	2)滑动
+		slideUp(slow/400/fast):折叠
+		slideDown(slow/400/fast):展开
+		slideToggle(slow/400/fast):自动切换
+	3)淡入淡出
+		fadeTo('slow/400/fast', function(){});淡入
+		fadeOut('slow/400/fast', function(){});淡出
+		fadeToggle('slow/400/fast', function(){});
+	4)自定义
+	 // 对象.animate({参数1：样式},slow/fast/400,function(){})
+		animate({
+			样式1: '值',
+			样式2: '值',},
+			'slow/fast/400', function() {
+			/* stuff to do after animation is complete */
+			回调函数：
+			动画完成以后触发的事情...
+		});
+		// 3个参数
+		// 参数1：{param1: value1,
+				// param2: value2},
+		// 参数2：speed，值为slow/fast/移动时长
+		// 参数3：function(){动画完成之后做的事情}
+
+		
+		自定义动画css样式
+		只识别值类型为数值类型的;
+		width,height,line-height,padding,margin,left,top,bottom,right...
+		不识别的样式：
+		background,color,text-align,text-decoration...
+
+
+	</script>
+
+案例：

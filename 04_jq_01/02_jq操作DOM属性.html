@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{border: 1px solid red;width: 500px;}
+	</style>
+	<script src="jq/jquery-1.9.1.min.js"></script>
+	<script>
+	$(function(){
+		// 1.得到属性
+		// $("选择器名").attr("属性名");
+		console.log($("img").attr("src"));//hero/b_1.jpg
+		console.log($("img").attr("height"));//530
+
+
+		// 2.给属性赋值
+		// $("img").attr("src","hero/b_2.jpg");
+		// $("img").attr("title","这是安琪拉");
+		
+		// $("img").attr({
+		// 	property1: 'value1',
+		// 	property2: 'value2'
+		// //  属性名:"属性值"
+		// });
+
+		// 赋值时，且有多个属性时，写成json数组
+		// 属性名的引号可加可不加，属性值必须加
+		$("img").attr({
+			src: 'hero/b_2.jpg',
+			title: '这是安琪拉'
+		});
+		
+
+		// {}:json数组
+		var arr = ['安琪拉','女','bingo,人家就是来砸场子的'];//索引数组
+		var arr_2 = {
+			'uname':'安琪拉',
+			'sex':'女',
+			'intro':'bingo,人家就是来砸场子的'
+		};//json数组：一般存储关联数组
+		console.log(arr);
+		console.log(arr_2);
+
+
+		// css操作
+		console.log($("div").css("width"));//500px
+		console.log($("div").css("border"));//50px
+
+		$("div").css("color","pink");
+		$("div").css({
+			border: '1px solid #F011AA',
+			height: '300px',
+			fontSize:'20px',
+			"line-height":'50px'
+		});
+
+	});
+
+	</script>
+</head>
+<body>
+	<img src="hero/b_1.jpg" height="530" width="1200">
+	<div>
+		“老师你好，请问像我这样的没有背景的北大毕业生应该如何定位自己？”“社会底层群众中受教育程度最高的一批人。”6.以前我以为钱可以买到一切，后来才发现没有办法，因为我钱不够。7.很多朋友喜欢分享旅游经验，看着他们把钱花光出去走一趟。
+	</div>
+	<div>	
+		8.人生很多事，终究是会随着时间好起来的。像很多人原本只是胖，久了就变好胖。
+		9.谁说你没有毅力的，单身这事你不就坚持了好几十年吗?
+		10.不敢跟别人说自己有认真读书，是因为不想，用尽全力来证明自己脑袋不好。
+		11.上帝为你关上一扇门的同时，还顺带夹了一下你的脑袋
+	</div>
+</body>
+</html>

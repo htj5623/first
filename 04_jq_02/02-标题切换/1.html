@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style>
+    *{padding: 0;
+      margin: 0;
+    }
+    li{
+      list-style: none;
+      float: left;
+    }
+    #tabNav ul li{margin-right: 20px;width: 60px;height: 20px;background: pink;}
+    #tab{clear: both;margin-top: 20px;width: 300px;height: 300px;background: #efefef;text-align: center;line-height: 300px;}
+    #tab div{display: none;}
+    #tab div:first-child{display: block;}
+</style>
+<script>
+    function tab(pid){
+        var tabs=["tab1","tab2","tab3","tab4"];
+        for(var i=0;i<tabs.length;i++){
+            if(tabs[i]==pid){
+                document.getElementById(tabs[i]).style.display = 'block';
+            }else{
+                document.getElementById(tabs[i]).style.display = 'none';
+            }
+        }       
+    }
+</script>
+</head>
+<body>
+    <div id="tanContainer">
+        <!-- 标题盒子 -->
+        <div id="tabNav">
+            <ul>
+                <li onclick="tab('tab1')">标题一</li>
+                <li onclick="tab('tab2')">标题二</li>
+                <li onclick="tab('tab3')">标题三</li>
+                <li onclick="tab('tab4')">标题四</li>
+            </ul>
+        </div>
+        <!-- 内容 -->
+        <div id="tab">
+            <div id="tab1">内容一</div>
+            <div id="tab2">内容二</div>
+            <div id="tab3">内容三</div>
+            <div id="tab4">内容四</div>
+        </div>
+    </div>
+</body>
+</html>

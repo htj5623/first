@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+    *{padding: 0;
+      margin: 0;
+    }
+    li{
+      list-style: none;
+      float: left;
+    }
+    #tabNav ul li{margin-right: 20px;width: 60px;height: 20px;background: pink;}
+    #tab{clear: both;margin-top: 20px;width: 300px;height: 300px;background: #efefef;text-align: center;line-height: 300px;}
+    #tab div{display: none;}
+    #tab div:first-child{display: block;}
+</style>
+</head>
+<body>
+	 <div id="tanContainer">
+        <!-- 标题盒子 -->
+        <div id="tabNav">
+            <ul>
+                <li onclick="fun(0)">标题一</li>
+                <li onclick="fun(1)">标题二</li>
+                <li onclick="fun(2)">标题三</li>
+                <li onclick="fun(3)">标题四</li>
+            </ul>
+        </div>
+        <!-- 内容 -->
+        <div id="tab">
+            <div>内容一</div>
+            <div>内容二</div>
+            <div>内容三</div>
+            <div>内容四</div>
+        </div>
+    </div>
+    <script>
+    	function fun(n){
+    		var con = document.querySelectorAll('#tab div');
+	    	for(var i=0;i<con.length;i++){
+	    		if(n==i){
+	    			con[i].style.display = 'block';
+	    		}else{
+	    			con[i].style.display = 'none';
+	    		}
+	    	}
+    	}
+    </script>
+</body>
+</html>

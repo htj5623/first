@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <style>
+		/* 添加css样式时，第一步就是初始化页面 */
+		*{margin: 0;padding: 0}
+		.menu{border:1px solid #333;
+			width: 220px;line-height: 35px;
+			background: #ccc;
+			margin: 0 auto;
+		}
+		.menu dt{background: #333;
+				color: white;
+				text-indent: 36px;
+		}
+		.menu dd{text-align: center;border-bottom: 1px dashed #999;}
+		
+  </style>
+  <script src="jq/jquery-1.9.1.min.js"></script>
+  <script>
+  // 最后一个dd不加下边框
+ 
+  $(function(){
+  	// 找每组最后一个dd,也就是dt的第一个哥哥
+  	$(".menu dt").prev().css('border','none');
+
+  	// 找dl的最后一个dd
+  	$(".menu dd:last").css('border','none');
+
+  	// 点击dt,对应的dd隐藏或显示
+  	$(".menu dt").click(function(){
+// 基本：
+	 // 隐藏：hide()		
+	 // $(this).nextUntil("dt").hide();
+     // hide('slow/400/fast', function(){});
+	 // 400：固定数值，隐藏时间(毫秒);时间越大，越慢
+	 // 隐藏的快慢, 隐藏之后要做的事情
+	  	
+	 // 显示：show()
+	 // $(this).nextUntil("dt").show();
+	 
+	 // 切换元素的可见状态：toggle()
+	 // $(this).nextUntil("dt").toggle();
+
+
+// 滑动:
+	// slideUp()：向上滑,隐藏
+	// slideDown()：向下滑,显示
+	// slideToggle()：自动切换
+	
+	// $(this).nextUntil("dt").slideToggle();
+
+
+// 淡入淡出：
+	// fadeTo()
+	// fadeIn()
+	// fadeOut()：淡出隐藏
+	// fadeToggle()：自动切换淡出淡入
+	// $(this).nextUntil("dt").fadeToggle();
+
+
+
+
+
+// 要的效果：点击一级导航，只切换显示对应的二级导航，其他的二级导航隐藏
+			
+			// 1.隐藏所有的二级导航
+			// $(".menu dd").slideUp();
+			// 2.显示/隐藏当前的二级导航
+				//因为要给电脑指定 当前点击 的对象 ，所以要 $(this) 
+			$(this).nextUntil("dt").slideToggle();
+  	})
+
+  })
+
+  </script>
+</head>
+<body>
+<!-- dl>(dt+dd*3)*3-->
+<dl class="menu">
+ 		<dt>图书</dt>
+ 		<dd>青年文摘</dd>
+ 		<dd>科幻小说</dd>
+ 		<dd>HTML+CSS</dd>
+ 		
+ 		<dt>电子产品</dt>
+ 		<dd>Iphone</dd>
+ 		<dd>三星</dd>
+ 		<dd>华为</dd>
+ 		
+ 		<dt>服装</dt>
+ 		<dd>男装</dd>
+ 		<dd>女装</dd>
+ 		<dd>童装</dd>
+ 		<dd>婴幼儿</dd>
+</dl> 	
+</body>
+</html>

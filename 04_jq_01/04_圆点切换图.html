@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.banner_box{width: 800px;border:1px solid red;margin:0 auto;position: relative}
+		.banner_box img{display: none;}
+		.banner_box img:first-child{display: block;}
+		.banner_box .points{/* border: 1px solid blue; */position:absolute;bottom: 0;width: 100%;text-align: center;}
+		/* width: 100%;使加的边框的宽度与父元素相同，可以自动水平居中 */
+		.banner_box .points span{display: inline-block;width:12px;height: 12px;background: #ccc;}
+
+	</style>
+	<script src="jq/jquery-1.9.1.min.js"></script>
+	<script>
+	$(function(){
+		// 点击span,切换对应的图片
+		$('.banner_box .points span').click(function(){
+			// jq中获取当前点击事件对象的下标
+			// index
+			console.log($(this).index());
+			var i = $(this).index();
+			// 先隐藏所有img
+			$(".img_box img").css('display','none');
+			// 找到指定的img
+			// $('.img_box img')[i].css('display','block');//报错
+			$('.img_box img').eq(i).css('display','block');
+
+		});
+
+
+	})
+
+	</script>
+</head>
+<body>
+	<div class="banner_box">
+		<div class="img_box">
+			<img src="hero/b_1.jpg" width="800">
+			<img src="hero/b_2.jpg" width="800">
+			<img src="hero/b_3.jpg" width="800">
+			<img src="hero/b_4.jpg" width="800">
+		</div>
+		<div class="points">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+	</div>
+</body>
+</html>

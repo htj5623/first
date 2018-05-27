@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<script src="jq/jquery-1.9.1.min.js"></script>
+<script>
+	$(function(){
+		$('*').css("fontSize","24px");
+		$("ul li:first").css('color','red');
+		$("ul li:last").css('color','blue');
+		$("ul li:eq(4)").css("color","green");//下标为4
+		$("ul li").eq(3).css('color','orange');//下标为3
+		
+		// eq()写在外面,是方法
+		// 跟上面一个相同
+		// 若为变量时,使用,即可以以下使用：
+		// $("ul li").eq(i).css('color','orange');
+		// 但是写在里面的话，不可以传变量
+
+		// 偶数下标行 
+		$("ul li:even").css("text-decoration",'underline');
+		// 奇数下标行
+		$("ul li:odd").css("text-decoration",'line-through');
+		
+	});
+
+</script>
+</head>
+<body>
+<ul>
+	<li>你玩手机的时候，你的情敌正在学习。</li>
+	<li>都长成这样了，还不好好学习。</li>
+	<li>摔倒了不爬起来还等着别人去踩吗</li>
+	<li>你一无所有 还那么矫情和懒惰</li>
+	<li>生命就像人家的魔法书，涂涂改改又是一年</li>
+	<li>智商太低会传染，离我远点。</li>
+	<li>鲁班大师，智障250，膜拜，忌惮膜拜。</li>
+</ul>
+</body>
+</html>

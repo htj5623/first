@@ -1,0 +1,210 @@
+一、jquery
+	1)jquery是什么？
+		一个js框架,轻量级
+		优点:操作DOM元素简单
+		是用js写好的很多方法,供我们调用
+	2)文件格式(.js)
+		jquery-1.4.js
+		jquery-1.6.2.min.js
+		jquery-1.9.2.min.js
+	3)怎么使用jquery?
+		<script type="text/javascript" src="jq/jquery-1.9.1.min.js"></script>
+		<!-- script标签加src属性时，只做链接使用 -->
+		<script>
+			//写自己的js语句
+		</script>
+	4)对比js和jq
+	注释:原生js语句
+	<script type="text/javascript">
+	var obj = getElementById("btn");//原生js
+
+	var obj_n = $("选择器名");.// jq
+	如：
+	var obj_1 = $("#btn");
+
+	
+	5)onload事件和ready事件
+	window.onload = function(){
+
+	}
+
+	
+	// ready事件书写方式
+	方法1：
+	// $().ready自动补全
+	jQuery(document).ready(function($) {
+		
+	});
+
+	方法2：
+	$(document).ready(function(){
+
+	});
+
+	方法3：
+	$(function(){
+
+	});
+
+	onload:只能使用一次	等页面DOM元素，外部资源等全部加载完成以后执行
+	ready:可以使用多次	等页面DOM元素加载完
+
+	***执行顺序：先ready后onload
+
+	6)对数组添加点击事件时
+
+	js:要利用for循环，取出数组中的元素，对元素添加点击事件
+		for(var key=0;key<arr.length;key++){
+			arr[key].onclick = function(){
+
+			}
+		}
+
+	jq:直接获取标签，添加点击事件
+		$('.img_box img').click(function(){
+
+		});
+
+		//$('.img_box img')：类名为img_box的盒子里的所有的img标签
+	----------------------------------------------------------------------
+
+
+	</script>
+
+二、获取DOM元素
+ <script>
+	通过选择器获取(等同于CSS选择器)
+	1)标签选择器		$("p")
+	2)类选择器		$(".className")
+	3)id选择器		$("#idName")
+	4)属性选择器		$("input[name=uname]")
+	5)通配选择器		$("*")
+	6)交集选择器		$(".box1,.box2")
+	7)并集选择器		$("a.current")
+	8)迭代选择器		$("ul li a")
+
+ </script>
+
+三、操作DOM元素属性
+	<script>
+	方法：attr()
+	1)获取属性
+	$(obj).attr("属性名");
+	如：
+	$("img").attr("width");
+	2)给属性赋值
+		
+		A:给单个属性赋值
+		$(obj).attr("属性名","属性值");
+		
+		如：
+		$("img").attr("title","这是描述文字");
+		
+
+		B:给多个属性赋值
+		$(obj).attr({
+			属性名1: '属性值1',
+			属性名2: '属性值2'
+		});
+		
+		如：
+		$("img").attr({
+			src: 'hero/b_1.jpg',
+			title: '这是描述文字',
+			alt:"图片有误"
+		});
+
+	</script>
+
+四、操作CSS样式
+	<script>
+	方法：css()
+	1)获取样式
+	$(obj).css("样式名");
+	如：
+	$("img").css("color");
+	2)给样式赋值
+		
+		A:给单个样式赋值
+		$(obj).css("样式名","样式值");
+		
+		如：
+		$("img").css("width","300px");
+		
+
+		B:给多个样式赋值
+		$(obj).css({
+			样式名1: '样式值1',
+			样式名2: '样式值2'
+		});
+		
+		如：
+		$("img").css({
+			width: '300px',
+			height: '200px',
+			border:"1px solid red"
+		});
+
+
+
+	</script>
+
+五、操作事件
+	<script>
+	// 1.原生的js
+	document.getElementById("idName").onclick = function(){
+
+	}
+
+	// 2.jQuery
+	$(obj).click(function(){ });
+
+	$(obj).focus(function(){ });
+
+	$(obj).blur(function(){ });
+	
+	$(obj).change(function(){ });
+
+
+	</script>
+
+六、this关键字
+	<script>
+	1)原生js
+		this
+		this.属性名;
+		this.style.border = '1px solid red';
+	2)jQuery
+		$(this)
+		$(this).attr("属性名");
+		$(this).css("border","1px solid red");
+
+	注意：
+		1)jq可以写js语句
+		2)jq对象只能使用jq方法
+		  js对象只能使用js方法
+
+	</script>
+
+七、内容操作
+	<script>
+	1.针对于双标记标签
+		1)html()	等同于原生的innerHTML()
+		2)text()	等同于原生的innerText()
+	
+	2.表单元素
+		1)val()		等同于原生的value()
+
+
+	</script>
+
+八、index()
+	<script>
+	$(this).index();
+	// 获取当前操作对象的下标
+
+	</script>
+
+练习：
+	切换效果
+	
