@@ -1,0 +1,99 @@
+
+只要子盒子全都浮动了，父盒子就没有高度了；因为div盒子的高度是是由内容决定的；所以必须给父盒子加自适应高度的效果。
+下面是方法：
+
+
+六、父盒子高度自适应（网页内容区模块）
+	1.给父盒子加一个固定宽度      缺点：高度不能自动适应，除非内容高度是固定的，不需要修改
+		.f_1{height:80px;}
+
+	2.给父盒子加overflow:hidden;
+		缺点：会把溢出的内容隐藏起来
+		.f_2{overflow: hidden;}
+
+	3.外墙法
+		给父盒子的弟弟加清除浮动
+		.f_3+.box{clear: both;}
+	4.内墙法1
+		给父盒子尾部加一个块元素
+		.clear_box{clear: both;}
+
+		<div class="father">
+			<div class="left"></div>
+			<div class="right"></div>
+			<div class="clear_box"></div>
+		</div>
+	
+	5.内墙法2:
+		在父盒子尾部添加一个伪元素(行元素)
+		
+		.f_5:after{
+			content=""
+			display:block;
+			clear:both;
+		}
+	
+七、CSS样式一：overflow
+	overflow:hidden;   隐藏溢出内容；
+
+八、CSS样式二：opacity
+	显示和隐藏--------------------------隐藏之后，在页面仍然占位置
+
+	opacity(透明度)：0~1;
+	opacity:0;    隐藏
+	opacity:1;    显示
+	opacity:0.5;  半透明
+
+	浏览器兼容性：
+	IE6，7，8识别的样式：
+	filter:Alpha(opacity=0~100);
+	
+
+九、CSS样式三：visibility
+	显示和隐藏
+
+	p{visibility:hidden;} 隐藏---------------------------隐藏之后，在页面仍然占位置
+	p{visibility:visible;}显示
+
+
+十、CSS样式四：display
+	显示和隐藏
+
+	display:none; 隐藏-----------------------------------隐藏之后，在页面不占位置
+		   :block|inline|inline-block;  块元素|行元素|行内块元素显示
+
+		   
+</style>
+
+十一、补充效果
+	省略号代替溢出内容：
+	word-break:keep-all;     让文字全部在一行显示
+	word-spacing: nowrap;    遇见空格或标点符号不换行
+	overflow: hidden;        溢出内容:引藏起来
+	text-overflow:ellipsis;  溢出文本(即隐藏的内容)以省略号显示
+
+十二、项目目录
+	项目名称(北青)
+			----index.html        首页
+			----newRoad.html      子页
+			----newDetail.html    子页
+				...
+
+			----img文件夹         存放各种图片
+				---logo.png       logo图
+				---banner.png 	  banner图
+				---foot.png
+				...
+
+
+		    ----CSS文件夹
+		    	---index.css
+		    	---comm.css        公共样式、头部、尾部样式等
+				...
+
+		    ----Js文件夹			
+		    	---index.js
+		    	---comm.js
+		    	...
+
+		    外部插件文件
