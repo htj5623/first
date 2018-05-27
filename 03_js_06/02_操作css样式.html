@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<ul id="list">
+	<li>面朝大海，春暖花开</li>
+	<li>曾经我们敷衍的情绪，在别人记忆的曲线里渐行渐远渐无言。</li>
+	<li>曾经我们也不知道忙碌夜夜狂欢</li>
+	<li>曾经我们也有过假装欺骗自己</li>
+</ul>
+
+<script>
+	//找到ul标签
+	var ul_obj = document.getElementById('list');
+	// 在css中通过#list()
+	console.log(ul_obj);
+	
+	
+	ul_obj.style.border = "1px solid red";
+	ul_obj.style.width = "600px";
+	ul_obj.style.lineHeight = "50px";
+	// lineHeight:JS的命名方式
+	// 数字,字母,下划线的组合
+	// 第二个单词首字母大写
+	ul_obj.style.margin = "0 auto";
+
+
+	// li标签加虚线下边框
+	// 最后一个li取消下边框
+	var li_obj = document.getElementsByTagName("li");
+	console.log(li_obj);//[li,li,li,li]数组
+
+	// 找到每个li标签,再对li标签做修饰
+	// 取数组元素,使用for循环
+	
+	// for(key in li_obj){
+	// console.log(key);
+	// li_obj[key].style.borderBottom = "1px dashed blue";
+		 
+		 // Uncaught TypeError: Cannot set property 'borderBottom' of undefined
+		 // 是对上面取到的字符串下标报的错(在数组中,只要是 : 前后的就代表数组的下标,这里将length:4也看成了数组的下标)
+	// }
+	
+	
+	// 不能用for..in循环
+	//for..in循环里的key能取到所有下标(数值下标和字符串下标，这里只需要取到数值下标，所以使用for循环即可)
+	
+	for(var key=0;key<li_obj.length-1;key++){
+		console.log(key);//0 1 2 
+		li_obj[key].style.borderBottom = "1px dashed blue";
+	}
+ 
+
+
+
+ // 操作点击事件--当做属性
+ 
+ // 单击第一个li，弹框
+ // li_obj[0].onclick = function(){
+ // 		alert('ok');
+ // }
+ 
+
+ // 无论单击哪个li标签，都弹框
+ // for(var key=0;key< li_obj.length;key++){
+ // 	li_obj[key].onclick = function(){
+ // 	alert('ok');
+ // 	} 
+ // }
+  
+
+
+ // 点击的li标签，文字颜色：红色
+ // 其他li:黑色
+ 	//先把所有的li标签设置成黑色，当前对象变成红色 
+ 	for(var key=0;key< li_obj.length;key++){
+ 		li_obj[key].onclick = function(){
+ 		// console.log(this);//触发当前函数的这个对象
+ 		
+ 		// 把所有的li(li_obj数组)都设成黑色
+ 		// 对li_obj数组的每个元素做操作，for循环
+ 		for(var k=0;k<li_obj.length;k++){
+ 			li_obj[k].style.color = "black";
+ 		}
+ 		// 点击点击的对象颜色变红色
+ 		this.style.color = "red";
+ 	} 
+ }
+
+</script>
+</body>
+</html>

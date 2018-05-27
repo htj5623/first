@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="checkbox" name="all">全选<br>
+	<input type="checkbox" name="cloth">呢子大衣<br>
+	<input type="checkbox" name="cloth">外套<br>
+	<input type="checkbox" name="cloth">连衣裙<br>
+	<input type="checkbox" name="cloth">裤子<br>
+<script>
+	// 点击全选，下面的选项全部选中 
+	
+	var all_obj = document.getElementsByName("all");
+	console.log(all_obj);//数组
+	console.log(all_obj[0]);//<input type="checkbox" name="all">全选<br>
+	var cloth_obj = document.getElementsByName("cloth");
+	console.log(cloth_obj);//[input,input,input,input,input,input,input,input]数组
+
+	all_obj[0].onclick = function(){
+		console.log(all_obj[0].checked);//true
+		for(var k=0;k<cloth_obj.length;k++){
+			cloth_obj[k].checked = all_obj[0].checked; 
+		}
+
+	}
+	
+
+</script>
+</body>
+</html>
+<!-- 知识点整理：
+	要的效果：
+	点击全选，下面选框一起选中;再点击全选，下面选框一起被取消选中;
+
+	思路：
+	获取全选的checked状态，将全选的checked赋值给下面的选框。
+
+
+
+
+
+ -->

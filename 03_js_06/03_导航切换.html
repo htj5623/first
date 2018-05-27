@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <style type="text/css">
+    	#navbox{width: 800px;margin:20px auto;border:1px solid red;}
+    	#navbox a{width: 20%;
+    		line-height: 40px;
+    		font-size: 18px;
+    		text-align: center;
+    		background: #D1544F;
+    		display: inline-block;
+    		font-family: '微软雅黑';
+    		color: white;
+    		text-decoration: none;
+    	}
+    	#navbox a.current{font-weight: bold;background: #A71212}
+    </style>
+    <script type="text/javascript">
+        window.onload = function(){
+            // 点击a,当前a显示：文字加粗 背景变深 onclick
+            // 其他的a恢复默认状态
+        	
+            // 1.找到所有的a
+            var a_obj = document.getElementsByTagName('a');    
+          	// 2.给每个a都添加点击事件
+        	for(key in a_obj){
+        		a_obj[key].onclick = function(){
+        			
+                    // 3.把所有的a恢复默认状态 a_obj数组
+    				for(var k=0;k<a_obj.length;k++){
+    					a_obj[k].style.fontWeight = "normal";
+        				a_obj[k].style.background = "#D1544F";
+    				}
+
+        			// 4.当前点击的这个a -- this关键字
+        			this.style.fontWeight = "bold";
+        			this.style.background = "#A71212";
+        		}
+        	}
+        }
+    </script>
+</head>
+<body>
+    <div id="navbox">
+    	<a href="#" class="current">聚划算</a><a href="#">天猫</a><a href="#">天猫超市</a><a href="#">一淘</a><a href="#">跳蚤市场</a>
+    </div>
+</body>
+</html>
+
+
+<!--导航切换：
+要的效果：
+1.刚打开页面，第一个标签颜色为暗色，字体加粗；其他标签颜色为浅色，字体正常
+2.对标签添加点击事件，被选中的a标签,颜色变暗，字体加粗
+
+知识点：
+对a标签添加点击事件
+1)a标签组成了数组，要取出数组中的a标签进行修饰,js中必须使用for循环
+2)取数组中的每个元素，进行css样式修饰时，不能使用for..in循环(会取出字符串下标)
+3)onclick事件的操作流程
+
+for(var i=0;i<arr.length;i++){
+    arr[i].onclick = function(){
+                    // 声明匿名函数
+
+        // 1.将要修饰的标签样式变成默认状态
+        // 2.找到当前要修饰的标签(this),对该标签进行样式修饰 
+
+
+    }
+}
+
+-->

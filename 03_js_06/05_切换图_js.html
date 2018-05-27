@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box{
+			border: 1px solid red;
+			margin: 0 auto;
+			width: 815px;
+		}
+		.box>img{
+			width: 815px;
+			height: 400px;
+		}
+		.box .box2 img{
+			width: 200px;
+			height: 100px;
+		}
+	</style>
+</head>
+<body>
+<div class="box">
+	<img id='atn' src="hero/b_1.jpg" alt="">
+	<div class="box2">
+		<img class='btn' src="hero/b_2.jpg" alt="">
+		<img class='btn' src="hero/b_3.jpg" alt="">
+		<img class='btn' src="hero/b_4.jpg" alt="">
+		<img class='btn' src="hero/b_5.jpg" alt="">
+	</div>
+</div>
+<script>
+	// 点击小图切换大图
+	// js
+	var atn_obj = document.getElementById('atn');
+	console.log(atn_obj);
+	
+	var btn_obj = document.getElementsByClassName('btn');
+	console.log(btn_obj);
+
+	for(var i=0;i<btn_obj.length;i++){
+		btn_obj[i].onclick = function(){
+			atn_obj.src = this.src;
+		}		
+	}
+</script>	
+</body>
+</html>
+
+<!-- 要做的效果：点击下面小图，切换大图
+	 思路：点击小图时，获取当前点击的小图的src属性(src属性链接的是图片的地址),将该src地址赋值给大图的src。
+	 注意：给小图添加点击事件
+	 	第一步：获取小图
+	 	小图组成了数组
+	 	取数组中的元素，js中使用for循环
+	 	for(var i=0;i<btn_obj.length;i++){
+			btn_obj[i]
+	 	}
+		
+		第二步：给获取的小图添加点击事件：
+		for(var i=0;i<btn_obj.length;i++){
+			btn_obj[i].onclick = function(){
+				
+			}
+	 	}
+		
+		第三步：匿名函数中要做的事情：将当前点击的图片的src地址赋值给大图
+		for(var i=0;i<btn_obj.length;i++){
+		btn_obj[i].onclick = function(){
+			atn_obj.src = this.src;
+		}
+	}
+
+ -->

@@ -1,0 +1,113 @@
+JS操作DOM:
+
+一.获取DOM元素
+ <script>
+	1)通过id获取	(唯一的一个元素)
+	document.getElementById(id名);
+	2)通过标签获取	(数组)
+	document.getElementsByTagName(标签名);
+	3)通过name获取	(数组)
+	document.getElementsByName(name名);
+	4)通过类名获取	(数组)
+	document.getElementsByClassName(类名);
+	// 得到数组
+	5)body标签		(body标签)
+	document.body;
+	6)title标签		(title标签)
+	document.title;	
+	7)form标签		(数组)
+		A)document.forms;
+		//数组
+		//获取页面中所有的form表单组成的数组
+		B)document.forms[num or name];
+		// num 或 name是表单下标
+		如：document.forms[0];//得到form数组中的第一个表单
+		如:document.forms['login'];
+		// 找到名字为login的表单
+		C)document.forms['login']['uname'];
+		// 找到名字为uname的表单控件
+		// <input name='uname'>	
+ </script>
+
+二.操作DOM属性
+ <script>
+	1)获取属性:DOM对象.属性名
+	var obj = document.getElementsByTagName('p');
+	obj.title;
+	2)给属性赋值:DOM对象.属性名 = 值;
+	obj.title = "提示文本信息";
+	如：
+	document.title = "您有一条新信息";
+
+ </script>
+	
+三.操作DOM内容
+ <script>
+	1)获取标签之间的内容(双标记标签,form表单不是):
+	// div/span/p/a/h1标签...
+		A)： DOM对象.innerHTML--识别html标签
+		B)： DOM对象.innerText--不识别
+	
+	2)form控件
+	// input,select,textarea..
+		值是存放在value里	
+
+		document.forms['表单名']['控件名'];
+	如:
+		document.forms['login']['uname'];
+		document.forms['login']['intro'];
+		document.forms[0]['intro'];
+	
+	3)给内容赋值
+		DOM对象.innerHTML = '<p>这是段落2</p>';
+		DOM对象.innerText = '<p>这是段落2</p>';//不识别p标签
+		document.forms['login']['uname'].value = 'apple';
+
+ </script>
+
+四.操作DOM样式
+	对style属性的操作
+ <script>
+	1)获取css样式
+		dom对象.style.width;
+		dom对象.style.height;
+	2)修饰css样式
+		dom对象.style.width = "300px";
+		dom对象.style.lineHeight = "50px";
+
+ </script>
+
+ 五、操作DOM元素的事件
+ <script>
+  	*单击：onclick
+  	*改变：onchange
+  	*获取焦点：onfocus
+  	*失去焦点：onblur
+
+
+  	1)直接在标签行内添加(自定义函数)
+	<p onclick="init()" id="p1"></p>
+	// 定义函数
+	function init(){
+		// 函数执行过程
+	}
+
+	2)通过js添加给标签(匿名函数)
+	var p_obj = document.getElementById("p1");
+	p_obj.onclick = function(){
+		// 函数执行过程
+	}
+
+ </script>
+
+ 六、js事件：关键字
+<script>
+ 	当前事件的作用对象
+ 	1)this
+	2)e.target
+</script>
+
+课下练习：
+1.全选和反选
+2.点击换图
+3.怎么获取this下标？
